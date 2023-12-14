@@ -466,6 +466,11 @@ p {
   margin-bottom: 25px;
   color: #737791;
 }
+.internal-sec-detail .ntfscn-dtal p {
+  color: #737791;
+  font-size: 15px;
+  font-weight: 400;
+}
 .internal-sec-detail .date-sec p {
   color: #737791;
   font-size: 15px;
@@ -6196,13 +6201,19 @@ select:-webkit-autofill:focus {
 }
 
 table.dataTable {
-  margin-bottom: 30px !important;
+  margin-bottom: 0px !important;
 }
 
+.middel-referrals-table .table.dataTable {
+  margin-bottom: 50px !important;
+}
 table.dataTable thead th,
 table.dataTable thead th {
   border-bottom: none;
-  padding: 15px 15px;
+  padding: 5px 15px;
+}
+.my-earnings-table td.text-center.referral-text {
+  padding-bottom: 12px;
 }
 
 table.dataTable thead tr th {
@@ -6218,7 +6229,7 @@ table.dataTable tbody tr td {
   color: var(--text-primary-color-2);
   /* color: #000 !important; */
   gap: 10px;
-  padding-top: 20px;
+  padding-top: 12px;
 }
 
 table.dataTable tbody tr.dataTable-white td {
@@ -6407,7 +6418,7 @@ table.dataTable tbody tr.dataTable-white td {
   display: flex;
   justify-content: space-between;
   border: 0.5px solid #212730;
-  padding: 30px 30px;
+  padding: 20px 30px;
   align-items: center;
   border-radius: 45px;
 }

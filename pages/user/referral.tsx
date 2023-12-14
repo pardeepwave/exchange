@@ -156,7 +156,7 @@ const Referral: NextPage = () => {
                 </table>
               </div>
             </div>
-            <div className="referrals-table">
+            <div className="middel-referrals-table">
               <h4 className="section-title-medium">{t("My References")}</h4>
               <div className="table-responsive">
                 <table className="table dataTable cp-user-custom-table table-borderless text-center">
@@ -207,7 +207,7 @@ const Referral: NextPage = () => {
                     {allData?.monthlyEarningHistories.length === 0 && (
                       <tr>
                         <td colSpan={6} className="text-center referral-text">
-                          <b>{t("No Data available")}</b>
+                          <b>{t("You have not invited anyone yet!")}</b>
                         </td>
                       </tr>
                     )}
