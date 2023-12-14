@@ -186,8 +186,8 @@ const NotificationDropdown = ({
                         <div className="notify-counter">
                           <div className="notify-pending">
                             <p>
-                              <span>{notificationData.length}</span>
-                              {t("pending notifications")}
+                              {/* <span>{notificationData.length}</span> */}
+                              {t("Notifications")}
                             </p>
                             <a
                               onClick={() => {
@@ -195,20 +195,56 @@ const NotificationDropdown = ({
                               }}
                               className="clear-all"
                               href="#"
-                            >
-                              {t("Clear All")}
+                            ><i className="fa-regular fa-circle-xmark"></i>
+                              {/* {t("Clear All")} */}
                             </a>
                           </div>
 
-                          <div className="notifiy-clear">
-                            <Link href="/user/notification">
-                              <a className="view-all">{t("View All")}</a>
-                            </Link>
-                            <HiArrowNarrowRight />
+                          
+                        </div>
+                        <div className="Notification-detail">
+                          <div className="inner-sec-detail">
+                            <div className="ntfscn-dtal">
+                              <p>Notification Details</p>
+                            </div>  
+                            <div className="date-sec">
+                              <p>12/12/12</p>
+                            </div>
+                          </div>
+                          <div className="inner-sec-detail">
+                            <div className="ntfscn-dtal">
+                              <p>Notification Details</p>
+                            </div>  
+                            <div className="date-sec">
+                              <p>12/12/12</p>
+                            </div>
+                          </div>
+                          <div className="inner-sec-detail">
+                            <div className="ntfscn-dtal">
+                              <p>Notification Details</p>
+                            </div>  
+                            <div className="date-sec">
+                              <p>12/12/12</p>
+                            </div>
+                          </div>
+                          <div className="internal-sec-detail">
+                            <div className="ntfscn-dtal">
+                              <p>Notification Details</p>
+                            </div>  
+                            <div className="date-sec">
+                              <p>12/12/12</p>
+                            </div>
                           </div>
                         </div>
                       </div>
-                      <div>
+                      <div className="notifiy-clear">
+                            <Link href="/user/notification">
+                              <a className="view-all">{t("View All")}</a>
+                            </Link>
+                            <i className="fa-solid fa-greater-than"></i>
+                            {/* <HiArrowNarrowRight /> */}
+                          </div>
+                      {/* <div>
                         <div className="notify-grid-item">
                           {notificationData?.length > 0 ? (
                             notificationData
@@ -238,7 +274,7 @@ const NotificationDropdown = ({
                             </p>
                           )}
                         </div>
-                      </div>
+                      </div> */}
                     </div>
 
                     <div

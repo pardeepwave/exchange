@@ -404,11 +404,11 @@ p {
 
 .cp-user-top-bar-right .dropdown-menu {
   padding: 0;
-  width: 350px;
+  width: 250px;
   background: var(--main-background-color);
   color: var(--text-primary-color-2);
-  border: 1px solid var(--border-color-2);
-  border: 1px solid var(--border-color);
+  /* border: 1px solid var(--border-color-2);
+  border: 1px solid var(--border-color); */
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
   border-radius: 0;
   padding: 0px;
@@ -418,7 +418,19 @@ p {
 .notify-pending {
   display: flex;
   align-items: center;
-  gap: 5px;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+  border-bottom: 1px solid #8D8D8D;
+}
+.notify-pending p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #737791;
+}
+.notify-pending i.fa-regular.fa-circle-xmark {
+  font-size: 16px;
+  color: #F00000;
 }
 
 .notify-counter {
@@ -429,10 +441,55 @@ p {
   background: var(--table-background-color);
   border-radius: 5px;
   align-items: center;
-  padding: 5px 10px;
   justify-content: space-between;
 }
-
+.inner-sec-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px;
+  border-bottom: 1px solid #8D8D8D;
+}
+.inner-sec-detail .ntfscn-dtal p {
+  color: #737791;
+  font-size: 15px;
+  font-weight: 400;
+}
+.inner-sec-detail .date-sec p {
+  color: #737791;
+  font-size: 15px;
+  font-weight: 400;
+}
+.internal-sec-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px;
+  margin-bottom: 25px;
+  color: #737791;
+}
+.internal-sec-detail .date-sec p {
+  color: #737791;
+  font-size: 15px;
+  font-weight: 400;
+}
+.notifiy-clear {
+  background-color: #F00000;
+  text-align: center;
+  border-bottom-right-radius: 14px;
+  border-bottom-left-radius: 15px;
+  padding: 4px;
+}
+.notifiy-clear a.view-all {
+  font-size: 14px;
+  font-weight: 400;
+}
+.notifiy-clear i.fa-solid.fa-greater-than {
+  font-size: 10px;
+  margin-left: 5px;
+}
+.ntfscn-dtal {
+  margin-top: 25px;
+  margin-bottom: 4px;
+}
 .clear-all {
   color: var(--primary-color) !important;
   font-size: 13px;
@@ -2227,7 +2284,37 @@ a#submit {
 .verify-input {
   width: 245px;
 }
-
+.email-section {
+  padding: 20px 0px;
+}
+.email-section span {
+  color: #F00000;
+}
+.email-section h2 {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 30px;
+}
+.email-section p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.input-group.mb-3 input.form-control {
+  border-radius: 50px !important;
+  height: 36px;
+}
+.input-group.mb-3 button#button-addon2 {
+  background: #f00000;
+  border: none;
+  padding: 3px 8px;
+  border-radius: 16px;
+  position: absolute;
+  right: 4px;
+  top: 3px;
+  color: #fff;
+  font-size: 16px;
+}
 /* id verify */
 
 .modal {
@@ -6273,7 +6360,7 @@ table.dataTable tbody tr.dataTable-white td {
   font-size: 16px;
   z-index: 9;
   width: 30px !important;
-  background-color: rgb(140 14 16);
+  background-color: #F00000;
   border-radius: 00000000;
   border-bottom-right-radius: 34px;
   border-top-right-radius: 34px;
@@ -6340,7 +6427,7 @@ table.dataTable tbody tr.dataTable-white td {
   margin: 0;
   font-size: 20px;
   font-weight: 600;
-  color: #8c0e10 !important;
+  color: #F00000 !important;
 }
 /* deposit-info-area */
 
