@@ -6,6 +6,7 @@ import useTranslation from "next-translate/useTranslation";
 import { useEffect, useState, useRef } from "react";
 import { toast } from "react-toastify";
 import { getReferral } from "service/refer";
+import EmailSubscription from "components/common/emailSubscription";
 
 const Referral: NextPage = () => {
   const [referral, setReferral] = useState<any>();
@@ -217,6 +218,7 @@ const Referral: NextPage = () => {
           </div>
         </div>
       </div>
+      <EmailSubscription />
       <Footer />
     </>
   );
