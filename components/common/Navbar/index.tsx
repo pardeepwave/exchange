@@ -309,7 +309,8 @@ const Navbar = ({
                                 style={{ height: "48px" }}
                               >
                                 <span className="cp-user-icon">
-                                  <FiSettings />
+                                  {/* <FiSettings /> */}
+                                  <img src="/fiat-money.svg" alt="nav-top" className="top-img"></img>
                                 </span>
                                 <span className="cp-user-name">
                                   {navbar?.fiat?.name
@@ -767,7 +768,8 @@ const Navbar = ({
                             <Link href="/user/referral">
                               <a>
                                 <span className="cp-user-icon">
-                                  <BiNetworkChart />
+                                  {/* <BiNetworkChart /> */}
+                                  <img src="/trade.svg" alt="nav-top" className="top-img"></img>
                                 </span>
                                 <span className="cp-user-name">
                                   {navbar?.myReferral?.name

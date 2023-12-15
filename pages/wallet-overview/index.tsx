@@ -264,12 +264,13 @@ const WalletOverview: NextPage = () => {
                   <div className="offset-md-1 col-md-4">
                     <div className="py-3">
                       <div style={{ overflow: "hidden", borderRadius: "10px" }}>
-                        <img
+                        <img src="/bitcoin.png" alt="bit" className="bitcoin-img"></img>
+                        {/* <img
                           className="w-full"
                           height={150}
                           src={`${walletOverviewData?.banner} `}
                           alt=""
-                        />
+                        /> */}
                       </div>
                     </div>
                     <div className="py-3">

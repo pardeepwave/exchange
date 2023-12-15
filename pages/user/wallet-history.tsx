@@ -180,22 +180,24 @@ const DepositHistory: NextPage = () => {
 
             <div>
               <div className="select-method mb-4">
-                {walletTypes?.map((wallet_type: any, index: number) => (
-                  <div
-                    className={
-                      selectedType.id === wallet_type.id
-                        ? "select-method-item-active mr-0 mr-md-3 mt-0"
-                        : "select-method-item mr-0 mr-md-3 mt-0"
-                    }
-                    key={index}
-                    onClick={() => {
-                      setSelectedType(wallet_type);
-                      setSelectedLimit("10");
-                    }}
-                  >
-                    {wallet_type.name}
-                  </div>
-                ))}
+                <div className="inner-sec-method">
+                  {walletTypes?.map((wallet_type: any, index: number) => (
+                    <div
+                      className={
+                        selectedType.id === wallet_type.id
+                          ? "select-method-item-active mr-0  mt-0"
+                          : "select-method-item mr-0  mt-0"
+                      }
+                      key={index}
+                      onClick={() => {
+                        setSelectedType(wallet_type);
+                        setSelectedLimit("10");
+                      }}
+                    >
+                      {wallet_type.name}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
             {selectedType.id == 1 && (
