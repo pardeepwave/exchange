@@ -14,7 +14,8 @@ const FiatSidebar = () => {
         <ul className="left-menu">
           <Link href="/fiat-deposit">
             <li className={router.pathname == "/fiat-deposit" ? "active" : ""}>
-              <RiLuggageDepositFill />
+              {/* <RiLuggageDepositFill /> */}
+              <img src="/dpst-money.svg" alt="left-fiat" className="left-fiat-img"></img>
               <a href="/fiat-deposit">{t("Fiat To Crypto Deposit")}</a>
             </li>
           </Link>
@@ -22,7 +23,8 @@ const FiatSidebar = () => {
             <li
               className={router.pathname == "/fiat-withdrawal" ? "active" : ""}
             >
-              <HiOutlineCash />
+              {/* <HiOutlineCash /> */}
+              <img src="/widral-money.svg" alt="left-fiat" className="left-fiat-img"></img>
               <a href="/fiat-withdrawal">{t("Crypto To Fiat Withdrawal")}</a>
             </li>
           </Link>

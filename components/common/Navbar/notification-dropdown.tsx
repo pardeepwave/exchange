@@ -110,7 +110,7 @@ const NotificationDropdown = ({
                       <Link href="/user/profile">
                         <button className="dropdown-item" type="button">
                           <a href="">
-                            <i className="fa-regular fa-circle-user"></i>
+                          <img src="/vector-4.svg" alt="Logo" className="logo-img"></img>
                             {t("Profile")}
                           </a>
                         </button>
@@ -118,7 +118,7 @@ const NotificationDropdown = ({
                       <Link href="/user/my-wallet">
                         <button className="dropdown-item" type="button">
                           <a href="-wallet">
-                            <i className="fa-solid fa-wallet"></i>
+                           <img src="/vector-3.svg" alt="Logo" className="logo-img"></img>
                             {t("My Wallet")}
                           </a>
                         </button>
@@ -126,7 +126,7 @@ const NotificationDropdown = ({
                       <Link href="/user/settings">
                         <button className="dropdown-item" type="button">
                           <a href="">
-                            <i className="fa-solid fa-gear"></i>
+                          <img src="/vector-5.svg" alt="Logo" className="logo-img"></img>
                             {t("Settings")}
                           </a>
                         </button>
@@ -136,7 +136,8 @@ const NotificationDropdown = ({
                       <Link href={isLoggedIn ? "/user/faq" : "/signin"}>
                         <button className="dropdown-item" type="button">
                           <a href="-wallet">
-                          <i className="fa-regular fa-circle-question"></i>
+                          {/* <i className="fa-regular fa-circle-question"></i> */}
+                          <img src="/vector-2.svg" alt="Logo" className="logo-img"></img>
                             {t("FAQs")}
                           </a>
                         </button>
@@ -148,8 +149,9 @@ const NotificationDropdown = ({
                           dispatch(LogoutAction());
                         }}
                       >
-                        <a>
-                          <i className="fa fa-sign-out"></i> {t("Logout")}
+                        <a href="">
+                          <img src="/vector-1.svg" alt="Logo" className="logo-img"></img>
+                          {t("Logout")}
                         </a>
                       </button>
                     </div>

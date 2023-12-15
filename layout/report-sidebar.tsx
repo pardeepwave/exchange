@@ -29,13 +29,15 @@ const ReportSidebar = () => {
         <ul className="left-menu">
           <Link href="/user/wallet-history?type=deposit">
             <li className={router.query.type == "deposit" ? "active" : ""}>
-              <RiLuggageDepositLine />
+              {/* <RiLuggageDepositLine /> */}
+              <img src="/deposit.svg" alt="Left-top" className="sidebar-img"></img>
               <a href="coinSwapHistory">{t("Deposit History")}</a>
             </li>
           </Link>
           <Link href="/user/wallet-history?type=withdrawal">
             <li className={router.query.type == "withdrawal" ? "active" : ""}>
-              <TbCashBanknoteOff />
+              {/* <TbCashBanknoteOff /> */}
+              <img src="/widrol.svg" alt="Left-top" className="sidebar-img"></img>
               <a href="coinSwapHistory">{t("Withdrawal History")}</a>
             </li>
           </Link>
@@ -47,7 +49,8 @@ const ReportSidebar = () => {
                   : ""
               }
             >
-              <BsFillStopCircleFill />
+              {/* <BsFillStopCircleFill /> */}
+              <img src="/stop.svg" alt="Left-top" className="sidebar-img"></img>
               <a href="coinSwapHistory">{t("Stop Limit History")}</a>
             </li>
           </Link>
@@ -57,7 +60,8 @@ const ReportSidebar = () => {
                 router.pathname == "/user/swap-history" ? "active" : ""
               }
             >
-              <MdOutlineSwapHorizontalCircle />
+              {/* <MdOutlineSwapHorizontalCircle /> */}
+              <img src="/swap.svg" alt="Left-top" className="sidebar-img"></img>
               <a href="coinSwapHistory">{t("Swap History")}</a>
             </li>
           </Link>
@@ -67,7 +71,8 @@ const ReportSidebar = () => {
                 router.pathname == "/user/buy-order-history" ? "active" : ""
               }
             >
-              <GiBuyCard />
+              {/* <GiBuyCard /> */}
+              <img src="/buy-order.svg" alt="Left-top" className="sidebar-img"></img>
               <a href="getAllOrdersHistoryBuy">{t("Buy Order History")}</a>
             </li>
           </Link>
@@ -77,7 +82,8 @@ const ReportSidebar = () => {
                 router.pathname == "/user/sell-order-history" ? "active" : ""
               }
             >
-              <MdSell />
+              {/* <MdSell /> */}
+              <img src="/sell.svg" alt="Left-top" className="sidebar-img"></img>
               <a href="getAllOrdersHistorySell">{t("Sell Order History")}</a>
             </li>
           </Link>
@@ -87,7 +93,8 @@ const ReportSidebar = () => {
                 router.pathname == "/user/transaction-history" ? "active" : ""
               }
             >
-              <MdOutlineTransferWithinAStation />
+              {/* <MdOutlineTransferWithinAStation /> */}
+              <img src="/transat.svg" alt="Left-top" className="sidebar-img"></img>
               <a href="getAllTransactionHistory">{t("Transaction History")}</a>
             </li>
           </Link>
@@ -100,7 +107,8 @@ const ReportSidebar = () => {
                     : ""
                 }
               >
-                <SiFiat />
+                {/* <SiFiat /> */}
+                <img src="/crypto-deposit.svg" alt="Left-top" className="sidebar-img"></img>
                 <a href="getAllTransactionHistory">
                   {t("Fiat To Crypto deposit History")}
                 </a>
@@ -116,7 +124,8 @@ const ReportSidebar = () => {
                     : ""
                 }
               >
-                <SiFiat />
+                {/* <SiFiat /> */}
+                <img src="/history.svg" alt="Left-top" className="sidebar-img"></img>
                 <a href="getAllTransactionHistory">
                   {t("Crypto To Fiat withdrawal History")}
                 </a>
@@ -134,7 +143,8 @@ const ReportSidebar = () => {
                   : ""
               }
             >
-              <SiFiat />
+              {/* <SiFiat /> */}
+              <img src="/withdrawal.svg" alt="Left-top" className="sidebar-img"></img>
               <a href="getAllTransactionHistory">
                 {t("Referral earning from withdrawal")}
               </a>
@@ -149,7 +159,8 @@ const ReportSidebar = () => {
                   : ""
               }
             >
-              <SiFiat />
+              {/* <SiFiat /> */}
+              <img src="/trade.svg" alt="Left-top" className="sidebar-img"></img>
               <a href="getAllTransactionHistory">
                 {t("Referral earning from trade")}
               </a>
