@@ -55,7 +55,7 @@ export class TVChartContainer extends React.Component<MyProps> {
       "mainSeriesProperties.candleStyle.downColor": "#000000",
       "mainSeriesProperties.candleStyle.drawBorder": true,
       "mainSeriesProperties.candleStyle.borderUpColor": "#00ff00",
-      "mainSeriesProperties.candleStyle.borderDownColor": "#ff0000",
+      "mainSeriesProperties.candleStyle.borderDownColor": "#358af2",
       "mainSeriesProperties.style": 1,
     },
   };
