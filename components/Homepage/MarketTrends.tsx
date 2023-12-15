@@ -166,7 +166,7 @@ const MarketTrends = ({
                             </th>
                           </tr>
                         </thead>
-                        <tbody style={{ background: "#F9F9F9", color: "#000" }}>
+                        <tbody style={{ background: "#000", color: "#fff" }}>
                           {asset_coin_pairs?.map((item: any, index: number) => (
                             <tr role="row" className="odd" key={index}>
                               <td className="p-3">
@@ -181,7 +181,7 @@ const MarketTrends = ({
                                   <a className="cellMarket" href="#">
                                     <div
                                       className="marketSymbols"
-                                      style={{ color: "black" }}
+                                      style={{ color: "#fff" }}
                                     >
                                       <span className="quoteSymbol">
                                         {item?.child_coin_name}

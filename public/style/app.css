@@ -44,7 +44,7 @@ Tags: admin, best react admin template, das
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 :root {
-  --primary-color: #cd0909;
+  --primary-color: #358af2;
   --text-primary-color: #ffff;
   --text-primary-color-2: #23262f;
   --text-primary-color-3: #777778;
@@ -75,7 +75,7 @@ Tags: admin, best react admin template, das
 }
 
 :root[data-theme="dark"] {
-  --primary-color: #cd0909;
+  --primary-color: #358af2;
   --text-primary-color: #ffffff;
   --text-primary-color-2: #ffffff;
   --text-primary-color-3: #ffffff;
@@ -1450,7 +1450,7 @@ img.icon.mr-3 {
   margin: 0 !important;
 }
 .footer-hr{
-  border-top: 1px solid red;
+  border-top: 1px solid #26b885;
   width: 25%;
 }
 
@@ -1465,7 +1465,7 @@ img.icon.mr-3 {
 }
 
 .heading1mySub {
-  color: #f00000;
+  color: #26b885;
   font-family: Inter;
   font-size: 45px;
   font-style: normal;
@@ -1494,7 +1494,7 @@ img.icon.mr-3 {
 
 .button1my {
   color: white;
-  background-color: red;
+  background-color: #358af2;
   border: none;
   border-radius: 30px;
   padding: 6px;

@@ -2298,7 +2298,10 @@ a#submit {
   padding: 20px 0px;
 }
 .email-section span {
-  color: #F00000;
+  color:#26b885;
+}
+.myNewCon img.icon-mobile.mr-3 {
+  width: 59%;
 }
 .email-section h2 {
   font-size: 30px;
@@ -2315,7 +2318,7 @@ a#submit {
   height: 36px;
 }
 .input-group.mb-3 button#button-addon2 {
-  background: #f00000;
+  background: #358af2;
   border: none;
   padding: 3px 8px;
   border-radius: 16px;
@@ -6251,8 +6254,7 @@ table.dataTable thead tr th {
 table.dataTable tbody tr td {
   font-size: 12px;
   font-weight: 400;
-  color: var(--text-primary-color-2);
-  /* color: #000 !important; */
+  color: #fff !important;
   gap: 10px;
   padding-top: 12px;
 }
@@ -11615,7 +11617,7 @@ input[type="number"] {
   content: attr(title);
   display: block;
   left: 0;
-  padding: 5px 10px;
+  padding: 0px 12px;
   position: absolute;
   z-index: 1;
   font-size: 12px;
@@ -12529,7 +12531,7 @@ input[type="number"] {
   content: attr(title);
   display: block;
   left: 0;
-  padding: 5px 10px;
+  padding: 0px 12px;
   position: absolute;
   z-index: 1;
   font-size: 12px;

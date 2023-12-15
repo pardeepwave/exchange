@@ -55,7 +55,7 @@ const SliderSection = ({
           style={{ display: "flex", justifyContent: "center" }}
         >
           <div className="myNewCon">
-            <div style={{ padding: "10rem" }}>
+            <div style={{ padding: "5rem 14rem" }}>
               <div>
                 {/* <img
                   className="icon mr-3"
@@ -82,7 +82,7 @@ const SliderSection = ({
               </div>
             </div>
             <div>
-              <img className="icon mr-3" src={"/605ac437304c53b21642dd0f_hero_iphone 1.png"} alt="ad1" />
+              <img className="icon-mobile mr-3" src={"/605ac437304c53b21642dd0f_hero_iphone 1.png"} alt="ad1" />
             </div>
           </div>
 

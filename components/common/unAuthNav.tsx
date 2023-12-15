@@ -211,7 +211,7 @@ const UnAuthNav = ({
                       <a
                         style={{
                           padding: "3px 10px",
-                          background: "#E80404",
+                          background: "#358af2",
                           borderRadius: "18px",
                           gap: "4px",
                           width: "100px",
@@ -228,7 +228,7 @@ const UnAuthNav = ({
                       <a
                         style={{
                           padding: "3px 10px",
-                          background: "#E80404",
+                          background: "#358af2",
                           borderRadius: "18px",
                           gap: "4px",
                           width: "100px",
