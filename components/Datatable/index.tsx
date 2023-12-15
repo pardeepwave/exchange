@@ -95,7 +95,7 @@ const CustomDataTable = ({
                       style={{
                         borderBottom: "1px solid #7d7d7d33",
                         background: "var(--main-background-color)",
-                        padding: "12px 8px",
+                        padding: "16px 8px",
                         textAlign: "left", // Update this line
                         cursor: "pointer",
                       }}
@@ -132,7 +132,7 @@ const CustomDataTable = ({
                             {...cell.getCellProps()}
                             style={{
                               borderBottom: "1px solid #7d7d7d33",
-                              padding: "12px 8px",
+                              padding: "16px 8px",
                               textAlign: "start",
                               whiteSpace: "nowrap",
                               textOverflow: "ellipsis",

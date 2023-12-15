@@ -1450,7 +1450,7 @@ img.icon.mr-3 {
   margin: 0 !important;
 }
 .footer-hr{
-  border-top: 1px solid red;
+  border-top: 1px solid #26b885;
   width: 25%;
 }
 
@@ -1465,7 +1465,7 @@ img.icon.mr-3 {
 }
 
 .heading1mySub {
-  color: #f00000;
+  color: #26b885;
   font-family: Inter;
   font-size: 45px;
   font-style: normal;
