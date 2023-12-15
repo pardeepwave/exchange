@@ -40,32 +40,7 @@ const Advertisement = ({
                 navigation={true}
                 modules={[Navigation]}
               >
-                <SwiperSlide>
-                  <img className="icon mr-3" src={"/ad1.png"} alt="ad1" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img className="icon mr-3" src={"/ad2.png"} alt="ad2" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img className="icon mr-3" src={"/ad3.png"} alt="ad3" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img className="icon mr-3" src={"/ad1.png"} alt="ad1" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img className="icon mr-3" src={"/ad2.png"} alt="ad2" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img className="icon mr-3" src={"/ad3.png"} alt="ad3" />
-                </SwiperSlide>
-                {/* {bannerListdata.length > 0 &&
-                parseInt(landing?.landing_second_section_status) === 1 && (
-                    bannerListdata?.map((item: any, index: number) => (
-                      <SwiperSlide>
-                      <img className="icon mr-3" src={item.image} alt="ad1" />
-                    </SwiperSlide>
-                    ))
-                  )} */}
+
                 {bannerListdata?.length > 0 && parseInt(landing?.landing_second_section_status) === 1 && (
                   <Swiper>
                     {bannerListdata.map((item: any, index: number) => (
