@@ -2915,7 +2915,7 @@ a#submit {
 }
 
 .red-text {
-  color: #ff0000;
+  color: #358af2;
   margin-bottom: 10px;
   margin-top: 0px;
 }
@@ -2925,7 +2925,7 @@ a#submit {
 }
 
 .user-form .form-control.invalid-field {
-  border-color: #ff0000;
+  border-color: #358af2;
 }
 
 .user-form .form-control:focus {
@@ -5720,7 +5720,7 @@ img.sidebar-img {
 }
 
 .page-left-sidebar .sidebar-top .left-menu li:hover {
-  background: #ff0000 !important;
+  background: #358af2 !important;
   transition: 0.3s;
   border-radius: 30px;
   margin: 10px;
@@ -5728,7 +5728,7 @@ img.sidebar-img {
 }
 
 .page-left-sidebar .sidebar-top .left-menu li.active {
-  background: #ff0000;
+  background: #358af2;
   border-radius: 30px;
   margin: 10px;
 }
