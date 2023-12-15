@@ -2300,7 +2300,7 @@ a#submit {
 .email-section span {
   color:#26b885;
 }
-.myNewCon img.icon-mobile.mr-3 {
+.myNewCon img.icon-mobile .mr-3 {
   width: 59%;
 }
 .email-section h2 {
