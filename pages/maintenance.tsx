@@ -26,7 +26,7 @@ const Maintenance = ({ data }: any) => {
             {data?.data?.maintenance_mode_title
               ? data?.data?.maintenance_mode_title
               : t(
-                  "Tradexpro Exchange is temporarily unavailable due to maintenance"
+                  "Republic Exchange is temporarily unavailable due to maintenance"
                 )}
           </h2>
           <p>

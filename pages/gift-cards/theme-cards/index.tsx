@@ -72,7 +72,7 @@ export default function Index() {
                 <p className="my-3 gift-font-color font-medium text-16">
                   {t(
                     themedCardData?.description ||
-                      "Tradexpro exchange is such a marketplace where people can trade directly with each other"
+                      "Republic Exchange is such a marketplace where people can trade directly with each other"
                   )}
                 </p>
               </div>

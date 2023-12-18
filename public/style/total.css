@@ -2328,6 +2328,33 @@ a#submit {
   color: #fff;
   font-size: 16px;
 }
+.content-sec-mobile h2 {
+  font-size: 54px;
+  font-weight: 500;
+  line-height: 62px;
+  font-family: inter;
+}
+.content-sec-mobile h2 span {
+  color: #26b885;
+}
+.content-sec-mobile p {
+  font-size: 16px;
+  font-family: inter;
+  font-weight: 400;
+  line-height: 24px;
+}
+.content-sec-mobile {
+  padding-top: 9rem;
+}
+section.main-sub-sec {
+  margin: 20px 0px;
+}
+.inner-sub-mob-sec {
+  max-width: 1500px;
+  margin: 0 auto;
+  background: #07090b;
+  border-radius: 80px;
+}
 /* id verify */
 
 .modal {

@@ -50,7 +50,7 @@ const GetInTouch = ({ landing, featureListdata }: any) => {
                   <h3 className="card-title">Careers</h3>
                   <p className="card-content">
                     Help build the future of technology. Start your new career
-                    at Tradexpro
+                    at Republic Exchange
                   </p>
                 </a>
               </div>
@@ -76,7 +76,7 @@ const GetInTouch = ({ landing, featureListdata }: any) => {
                   <h3 className="card-title">Community</h3>
                   <p className="card-content">
                     Help build the future of technology. Start your new career
-                    at Tradexpro
+                    at Republic Exchange
                   </p>
                 </a>
               </div>
@@ -102,7 +102,7 @@ const GetInTouch = ({ landing, featureListdata }: any) => {
                   <h3 className="card-title">24 / 7 Support</h3>
                   <p className="card-content">
                     Help build the future of technology. Start your new career
-                    at Tradexpro
+                    at Republic Exchange.
                   </p>
                 </a>
               </div>

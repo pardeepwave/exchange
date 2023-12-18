@@ -114,7 +114,7 @@ const UnAuthNav = ({
                     style={{ height: "48px" }}
                   >
                     <span className="cp-user-icon">
-                    <img src={"/stock market.png"} />
+                    <img src={"/stockmarket.png"} />
                       {/* <BsBarChartLine /> */}
                     </span>
                     <span>{t("Exchange")}</span>

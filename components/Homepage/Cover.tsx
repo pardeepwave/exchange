@@ -40,7 +40,7 @@ const Cover = ({ landing, loggedin, landing_banner_image }: any) => {
                 {/* <p className="banner-content">
                   {landing?.landing_description ||
                     t(
-                      "Tradexpro exchange is such a marketplace where people can trade directly with each other"
+                      "Republic Exchange is such a marketplace where people can trade directly with each other"
                     )}
                 </p> */}
                 {!loggedin && (

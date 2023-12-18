@@ -244,7 +244,7 @@ const Footer = () => {
                       <p>
                         {(copyright_text && copyright_text) ||
                           t("Copyright@2022")}{" "}
-                        <a href="">{settings?.app_title ?? t("TradexPro")}</a>
+                        <a href="">{settings?.app_title ?? t("Republic Exchange")}</a>
                       </p>
                     </div>
                   </div>
