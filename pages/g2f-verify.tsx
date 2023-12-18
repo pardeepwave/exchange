@@ -25,7 +25,7 @@ const G2fverify = () => {
           <Link href="/">
             <a className="auth-logo" href="">
               <img
-                width="65%"
+                width="50%"
                 src={settings.logo || ""}
                 className="pt-5 pt-md-4"
                 alt=""

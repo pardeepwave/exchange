@@ -168,7 +168,7 @@ const Signup: NextPage = () => {
                               ? "is-invalid"
                               : ""
                           }`}
-                          placeholder={t("Enter your Fulll Name here")}
+                          placeholder={t("Enter Your first name here")}
                         />
                       </div>
 
@@ -183,7 +183,7 @@ const Signup: NextPage = () => {
                               ? "is-invalid"
                               : ""
                           }`}
-                          placeholder={t("Your last name here")}
+                          placeholder={t("Enter Your last name here")}
                         />
                       </div>
 

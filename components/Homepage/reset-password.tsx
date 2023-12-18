@@ -32,15 +32,15 @@ const ResetPassword: NextPage = () => {
       <div className="d-md-flex d-block">
         <div
           className="col-md-5 login_bg_new"
-          style={{
-            backgroundImage: `url(${settings.login_background})`,
-          }}
+          // style={{
+          //   backgroundImage: `url(${settings.login_background})`,
+          // }}
         >
           <div className="user-content-text text-center text-md-left">
             <Link href="/">
               <a className="auth-logo" href="">
                 <img
-                  width="65%"
+                  width="50%"
                   src={settings.logo || ""}
                   className="pt-5 pt-md-4"
                   alt=""
@@ -49,7 +49,8 @@ const ResetPassword: NextPage = () => {
             </Link>
           </div>
           <div className="d-md-flex d-block align-items-center justify-content-center h-75">
-            <div className="text-center text-md-left">
+          <img src="/Vector Image.png"></img>
+            {/* <div className="text-center text-md-left">
               <h1 className="text-white">
                 {t("Welcome To")} {settings.app_title}
               </h1>
@@ -61,7 +62,7 @@ const ResetPassword: NextPage = () => {
                   </a>
                 </p>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="col-md-7 d-flex align-items-center login_from_res">
