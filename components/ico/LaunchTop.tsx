@@ -19,12 +19,12 @@ const LaunchTop = ({ data }: any) => {
             <h1 className="big-top-title text-white">
               {data?.launchpad_first_title
                 ? data?.launchpad_first_title
-                : t("Tradexpro Token Launch Platform")}
+                : t("Republic Exchange Token Launch Platform")}
             </h1>
             <h4 className="blance-title text-white">
               {data?.launchpad_first_description
                 ? data?.launchpad_first_description
-                : t("Buy Or Earn New Tokens Directly On Tradexpro.")}
+                : t("Buy Or Earn New Tokens Directly On Republic Exchange.")}
             </h4>
           </div>
         </div>

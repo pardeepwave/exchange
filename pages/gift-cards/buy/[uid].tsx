@@ -133,7 +133,7 @@ export default function Index() {
                 <h4 className="font-normal mt-3">
                   {buyPageData?.description ||
                     t(
-                      "Tradexpro exchange is such a marketplace where people can trade directly with each other"
+                      "Republic Exchange is such a marketplace where people can trade directly with each other"
                     )}
                 </h4>
               </div>

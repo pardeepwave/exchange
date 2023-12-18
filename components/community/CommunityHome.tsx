@@ -69,13 +69,13 @@ export default function CommunityHome() {
         <div className="community-home-header">
           <div className="section-title">
             <h2 className="heading1my" style={{ textAlign: "center" }}>
-              Benefits of <span className="heading1mySub">Tradexpo </span>
+              Benefits of <span className="heading1mySub">Republic Exchange </span>
               Trades
             </h2>
           </div>
           {/* <div className="community-home-title-section">
             <h3 className="community-home-title">
-              {blog_section_heading ?? "Trending on TradexPro Feed"}
+              {blog_section_heading ?? "Trending on Republic Exchange Feed"}
             </h3>
             <Link href={`/blog`}>
               <span className="community-home-btn">

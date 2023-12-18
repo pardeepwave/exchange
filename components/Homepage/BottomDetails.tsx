@@ -8,7 +8,35 @@ const BottomDetails = ({ landing }: any) => {
   return (
     <div>
     {" "}
-    {parseInt(landing.landing_fifth_section_status) === 1 && (
+    <section className="main-sub-sec">
+      <div className="inner-sub-mob-sec">
+        <div className ="container">
+          <div className="row">
+            <div className="col-lg-7 cpl-md-6 col-12">
+              <div className="content-sec-mobile">
+                <h2>                  {landing?.secure_trade_title ? (
+                      <div dangerouslySetInnerHTML={{ __html: landing?.secure_trade_title }} />
+                    ) : (
+                      <>
+                        {t("Buy & Sell Instantly & Hold ")}
+                        <span style={{ color: 'red' }}>Cryptocurrency</span> With Crypto
+                      </>
+                    )}</h2>
+                
+                <p>A Right Place To Start Your Trading Career</p>
+                <button className="button1my">Explore now</button>
+              </div>
+            </div>
+            <div className="col-lg-5 cpl-md-6 col-12">
+              <div className="mobile-images">
+              <img className="iphone" src={landing?.secure_trade_left_img} alt="ad1" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {/* {parseInt(landing.landing_fifth_section_status) === 1 && (
         <div style={{ padding: "2rem 0" }}>
           <section>
             <div
@@ -43,7 +71,7 @@ const BottomDetails = ({ landing }: any) => {
             </div>
           </section>
         </div>
-        )}
+        )} */}
     </div>
   );
 

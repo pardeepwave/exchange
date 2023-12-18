@@ -35,7 +35,7 @@ return (
       <div className="container">
           <div className="row">
               <div className="col-lg-7 col-md-6 col-12">
-                  <h2>Tradexpro Exchange <span>Newsletter!</span></h2>
+                  <h2>Republic Exchange <span>Newsletter!</span></h2>
                   <p>The standard Lorem Ipsum passage, used since the 1500sLorem ipsum dolor sit ame</p>
               </div>
               <div className="col-lg-5 col-md-6 col-12">
