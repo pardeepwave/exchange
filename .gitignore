@@ -31,6 +31,9 @@ yarn-error.log*
 .env.production.local
 .vscode
 .idea
+deploy.sh
+.env.swp
+.gitignore
 
 # vercel
 .vercel
