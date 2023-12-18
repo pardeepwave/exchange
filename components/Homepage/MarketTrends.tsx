@@ -166,7 +166,7 @@ const MarketTrends = ({
                             </th>
                           </tr>
                         </thead>
-                        <tbody style={{ background: "#000", color: "#fff" }}>
+                        <tbody style={{ background: "#181a20", color: "#fff" }}>
                           {asset_coin_pairs?.map((item: any, index: number) => (
                             <tr role="row" className="odd" key={index}>
                               <td className="p-3">
@@ -197,7 +197,7 @@ const MarketTrends = ({
                                 className="text-black p-3"
                                 style={{
                                   color: "black",
-                                  fontSize: "16px",
+                                  fontSize: "12px",
                                   fontWeight: "400",
                                 }}
                               >
@@ -206,7 +206,7 @@ const MarketTrends = ({
                               <td className="p-3">
                                 <span
                                   style={{
-                                    fontSize: "16px",
+                                    fontSize: "12px",
                                     fontWeight: "400",
                                   }}
                                   className={`changePos  ${
@@ -241,7 +241,7 @@ const MarketTrends = ({
                                 className="text-black p-3"
                                 style={{
                                   color: "black",
-                                  fontSize: "16px",
+                                  fontSize: "12px",
                                   fontWeight: "400",
                                 }}
                               >
@@ -317,7 +317,7 @@ const MarketTrends = ({
                         role="grid"
                         aria-describedby="DataTables_Table_1_info"
                       >
-                        <thead>
+                        <thead style={{ background: "#000", color: "#fff" }}>
                           <tr role="row">
                             <th
                               scope="col"
@@ -485,7 +485,7 @@ const MarketTrends = ({
                         role="grid"
                         aria-describedby="DataTables_Table_2_info"
                       >
-                        <thead>
+                        <thead style={{ background: "#000", color: "#fff" }}>
                           <tr role="row">
                             <th
                               scope="col"
