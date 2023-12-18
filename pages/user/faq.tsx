@@ -126,7 +126,7 @@ const Index: NextPage = ({ faq }: any) => {
               </div>
               <div className="col-lg-6 mt-5 mt-lg-0">
                 <div className="faq-image text-center">
-                  <img src="/dubai.jpg" alt="faq-image" />
+                  <img src="/dubai.png" alt="faq-im age" />
                 </div>
               </div>
             </div>
