@@ -42,15 +42,15 @@ const Signup: NextPage = () => {
     <div className="login_reg_box">
       <div
         className="col-md-5 login_bg_new"
-        style={{
-          backgroundImage: `url(${settings.login_background})`,
-        }}
+        // style={{
+        //   backgroundImage: `url(${settings.login_background})`,
+        // }}
       >
         <div className="user-content-text text-center text-md-left">
           <Link href="/">
             <a className="auth-logo" href="">
               <img
-                width="65%"
+                width="50%"
                 src={settings.logo || ""}
                 className="pt-5 pt-md-4"
                 alt=""
@@ -59,7 +59,8 @@ const Signup: NextPage = () => {
           </Link>
         </div>
         <div className="d-md-flex d-block align-items-center justify-content-center h-75">
-          <div className="text-center text-md-left">
+        <img src="/Vector Image.png"></img>
+          {/* <div className="text-center text-md-left">
             <h1 className="text-white">
               {t("Welcome To")} {settings.app_title}
             </h1>
@@ -72,7 +73,7 @@ const Signup: NextPage = () => {
                 </a>
               </p>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="col-md-7 d-flex align-items-center login_from_res">
@@ -93,8 +94,8 @@ const Signup: NextPage = () => {
             <div className="user-form border-0 my-5 my-md-0">
               <div className="user-form-inner">
                 <div className="form-top text-left">
-                  <h2>{t("Sign Up")}</h2>
-                  <p>{t("Create a new account")}.</p>
+                  <h2>{t("Welcome to Republic Exchange!")}</h2>
+                  {/* <p>{t("Create a new account")}.</p> */}
                 </div>
                 <Formik
                   initialValues={{
@@ -157,6 +158,7 @@ const Signup: NextPage = () => {
                   {({ errors, touched, setFieldValue }) => (
                     <Form>
                       <div className="form-group">
+                      <label>First Name</label>
                         <Field
                           type="text"
                           name="first_name"
@@ -166,11 +168,12 @@ const Signup: NextPage = () => {
                               ? "is-invalid"
                               : ""
                           }`}
-                          placeholder={t("Your first name here")}
+                          placeholder={t("Enter your Fulll Name here")}
                         />
                       </div>
 
                       <div className="form-group">
+                      <label>Last Name</label>
                         <Field
                           type="text"
                           name="last_name"
@@ -185,6 +188,7 @@ const Signup: NextPage = () => {
                       </div>
 
                       <div className="form-group">
+                      <label>Email</label>
                         <Field
                           type="email"
                           name="email"
@@ -192,11 +196,12 @@ const Signup: NextPage = () => {
                           className={`form-control ${
                             touched.email && errors.email ? "is-invalid" : ""
                           }`}
-                          placeholder={t("Your email here")}
+                          placeholder={t("Enter Your email here")}
                         />
                       </div>
 
                       <div className="form-group">
+                      <label>Password</label>
                         <Field
                           type={showPassword.password ? "text" : "password"}
                           name="password"
@@ -206,7 +211,7 @@ const Signup: NextPage = () => {
                               ? "is-invalid"
                               : ""
                           }`}
-                          placeholder={t("Your password here")}
+                          placeholder={t("Enter Your password here")}
                         />
 
                         <span
@@ -223,6 +228,7 @@ const Signup: NextPage = () => {
                       </div>
 
                       <div className="form-group">
+                      <label>Password</label>
                         <Field
                           type={
                             showPassword.confirm_password ? "text" : "password"
@@ -235,7 +241,7 @@ const Signup: NextPage = () => {
                               ? "is-invalid"
                               : ""
                           }`}
-                          placeholder={t("Your password here")}
+                          placeholder={t("Enter Your password here")}
                         />
 
                         <span
@@ -286,6 +292,13 @@ const Signup: NextPage = () => {
                           t("Sign Up")
                         )}
                       </button>
+                      <div className="loginacnt">
+                          <>
+                          {t("Already have a account? ")}<a href="https://republicexchange.io/signin">
+                        <span style={{color:'red'}}>Log in</span></a>
+                        
+                        </>
+                      </div>
                     </Form>
                   )}
                 </Formik>
