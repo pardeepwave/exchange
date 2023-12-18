@@ -42,15 +42,15 @@ const Signup: NextPage = () => {
     <div className="login_reg_box">
       <div
         className="col-md-5 login_bg_new"
-        // style={{
-        //   backgroundImage: `url(${settings.login_background})`,
-        // }}
+        style={{
+          backgroundImage: `url(${settings.login_background})`,
+        }}
       >
         <div className="user-content-text text-center text-md-left">
           <Link href="/">
             <a className="auth-logo" href="">
               <img
-                width="50%"
+                width="65%"
                 src={settings.logo || ""}
                 className="pt-5 pt-md-4"
                 alt=""
@@ -59,8 +59,7 @@ const Signup: NextPage = () => {
           </Link>
         </div>
         <div className="d-md-flex d-block align-items-center justify-content-center h-75">
-        <img src="/Vector Image.png"></img>
-          {/* <div className="text-center text-md-left">
+          <div className="text-center text-md-left">
             <h1 className="text-white">
               {t("Welcome To")} {settings.app_title}
             </h1>
@@ -73,7 +72,7 @@ const Signup: NextPage = () => {
                 </a>
               </p>
             </Link>
-          </div> */}
+          </div>
         </div>
       </div>
       <div className="col-md-7 d-flex align-items-center login_from_res">
@@ -94,8 +93,8 @@ const Signup: NextPage = () => {
             <div className="user-form border-0 my-5 my-md-0">
               <div className="user-form-inner">
                 <div className="form-top text-left">
-                  <h2>{t("Welcome to Tedexpro!")}</h2>
-                  {/* <p>{t("Create a new account")}.</p> */}
+                  <h2>{t("Sign Up")}</h2>
+                  <p>{t("Create a new account")}.</p>
                 </div>
                 <Formik
                   initialValues={{
@@ -158,7 +157,6 @@ const Signup: NextPage = () => {
                   {({ errors, touched, setFieldValue }) => (
                     <Form>
                       <div className="form-group">
-                        <label>Full Name</label>
                         <Field
                           type="text"
                           name="first_name"
@@ -168,11 +166,11 @@ const Signup: NextPage = () => {
                               ? "is-invalid"
                               : ""
                           }`}
-                          placeholder={t("Enter your Fulll Name here")}
+                          placeholder={t("Your first name here")}
                         />
                       </div>
 
-                      {/* <div className="form-group">
+                      <div className="form-group">
                         <Field
                           type="text"
                           name="last_name"
@@ -184,10 +182,9 @@ const Signup: NextPage = () => {
                           }`}
                           placeholder={t("Your last name here")}
                         />
-                      </div> */}
+                      </div>
 
                       <div className="form-group">
-                        <label>Email</label>
                         <Field
                           type="email"
                           name="email"
@@ -195,12 +192,11 @@ const Signup: NextPage = () => {
                           className={`form-control ${
                             touched.email && errors.email ? "is-invalid" : ""
                           }`}
-                          placeholder={t("Enter your Email here")}
+                          placeholder={t("Your email here")}
                         />
                       </div>
 
                       <div className="form-group">
-                        <label>Password</label>
                         <Field
                           type={showPassword.password ? "text" : "password"}
                           name="password"
@@ -210,7 +206,7 @@ const Signup: NextPage = () => {
                               ? "is-invalid"
                               : ""
                           }`}
-                          placeholder={t("Enter your Password here")}
+                          placeholder={t("Your password here")}
                         />
 
                         <span
@@ -227,7 +223,6 @@ const Signup: NextPage = () => {
                       </div>
 
                       <div className="form-group">
-                      <label>Password</label>
                         <Field
                           type={
                             showPassword.confirm_password ? "text" : "password"
@@ -240,7 +235,7 @@ const Signup: NextPage = () => {
                               ? "is-invalid"
                               : ""
                           }`}
-                          placeholder={t("Enter your Password here")}
+                          placeholder={t("Your password here")}
                         />
 
                         <span
@@ -256,6 +251,10 @@ const Signup: NextPage = () => {
                         </span>
                       </div>
 
+                      <div className="form-group">
+                        <label></label>
+                        <p className="invalid-feedback">{t("Message")} </p>
+                      </div>
                       {captchaData?.NOCAPTCHA_SITEKEY &&
                         parseInt(captchaData?.select_captcha_type) ===
                           CAPTCHA_TYPE_RECAPTCHA && (
@@ -284,16 +283,9 @@ const Signup: NextPage = () => {
                             <span>{t("Please wait")}</span>
                           </>
                         ) : (
-                          t("Sign in")
+                          t("Sign Up")
                         )}
                       </button>
-                      <div className="loginacnt">
-                          <>
-                          {t("Already have a account? ")}<a href="https://republicexchange.io/signin">
-                        <span style={{color:'red'}}>Log in</span></a>
-                        
-                        </>
-                      </div>
                     </Form>
                   )}
                 </Formik>
