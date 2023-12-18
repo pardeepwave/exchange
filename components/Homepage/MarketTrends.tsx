@@ -166,7 +166,7 @@ const MarketTrends = ({
                             </th>
                           </tr>
                         </thead>
-                        <tbody style={{ background: "#000", color: "#fff" }}>
+                        <tbody style={{ background: "#", color: "#fff" }}>
                           {asset_coin_pairs?.map((item: any, index: number) => (
                             <tr role="row" className="odd" key={index}>
                               <td className="p-3">

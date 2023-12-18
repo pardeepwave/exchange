@@ -28,7 +28,7 @@ narrative with a very good potential. Remember,Ai hype
 isn't over yet.`;
 // Add a function to determine the color based on the index
 const getColorByIndex = (index : any) => {
-  const colors = ['#F00000', '#00A66C', '#525CDD', '#70C1F9', '#F79B3A', '#49D968', 'yellow'];
+  const colors = ['#26b885', '#00A66C', '#525CDD', '#70C1F9', '#F79B3A', '#49D968', 'yellow'];
   return colors[index % colors.length];
 };
 

@@ -428,7 +428,7 @@ h6 {
 }
 .notify-pending i.fa-regular.fa-circle-xmark {
   font-size: 16px;
-  color: #F00000;
+  color: #26b885;
 }
 
 .notify-counter {
@@ -475,7 +475,7 @@ h6 {
   font-weight: 400;
 }
 .notifiy-clear {
-  background-color: #F00000;
+  background-color: #26b885;
   text-align: center;
   border-bottom-right-radius: 14px;
   border-bottom-left-radius: 15px;
@@ -6425,7 +6425,7 @@ table.dataTable tbody tr.dataTable-white td {
   font-size: 16px;
   z-index: 9;
   width: 30px !important;
-  background-color: #F00000;
+  background-color: #26b885;
   border-radius: 00000000;
   border-bottom-right-radius: 34px;
   border-top-right-radius: 34px;
@@ -6492,7 +6492,7 @@ table.dataTable tbody tr.dataTable-white td {
   margin: 0;
   font-size: 20px;
   font-weight: 600;
-  color: #F00000 !important;
+  color: #26b885 !important;
 }
 /* deposit-info-area */
 
@@ -12372,10 +12372,10 @@ input[type="number"] {
   color: var(--primary-color);
   cursor: pointer;
   border-radius: 31px;
-  border: 1px solid var(--primary-color);
+  border: 1px solid #26b885;
   padding-left: 53px;
   padding-right: 53px;
-  background: red;
+  background: #26b885;
   color: #fff;
 }
 
@@ -13455,6 +13455,16 @@ textarea.apply-file-input {
 .bank-table-header {
   display: flex;
   justify-content: space-between;
+  padding: 15px;
+}
+table#DataTables_Table_0 tr.odd {
+  border-bottom: 0.5px solid #2d2c2c;
+}
+table#DataTables_Table_1 tr.odd {
+  border-bottom: 0.5px solid #2d2c2c;
+}
+table#DataTables_Table_2{
+  border-bottom: 0.5px solid #2d2c2c;
 }
 
 .add-bank-btn {
