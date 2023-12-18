@@ -16326,3 +16326,8 @@ input:checked + .gift-card-buy-slider:before {
 .newsCardText {
   padding: 50px 0px;
 }
+
+input.form-control.no-outline {
+  background: none;
+  color: white;
+}
