@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 const EmailSubscription = () => {
   const [email, setEmail] = useState("");
-const handleSubscription = async (event) => {
+const handleSubscription = async (event:any) => {
   event.preventDefault();
   try {
     const response = await fetch(
