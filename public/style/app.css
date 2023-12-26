@@ -40,16 +40,16 @@ Tags: admin, best react admin template, das
 /*=================================================
     1. default css
 ==================================================*/
-
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 :root {
-  --primary-color: #358af2;
-  --text-primary-color: #ffff;
-  --text-primary-color-2: #23262f;
-  --text-primary-color-3: #777778;
-  --text-primary-color-4: #6e6e6e;
-  --border-color: rgb(126 126 126 / 20%);
+  --primary-color: #0052fc;
+  --primary-color-dark: #0f41a2;
+  --bs-primary: var(--primary-color);
+  --text-primary-color: #121212;
+  --text-primary-color-2: #3e4245;
+  --text-primary-color-3: #080808;
+  --text-primary-color-4: #545454;
+  --border-color: #e7e7e7;
   --border-color-1: #e6e8ec;
   --border-color-2: #353535;
   --hover-color: #f7cf33;
@@ -61,58 +61,53 @@ Tags: admin, best react admin template, das
   --white: #ffffff;
   --black: #000000;
   --color-pallet-1: #b4b8d7;
-  --background-color: #ffff;
-  --background-color-trade: #2a2e37;
-  --main-background-color: rgb(250, 250, 250);
-  --card-background-color: #ffffff;
-  --table-background-color: #f5f5f5;
-  --footer-background-color: #f7f7f8;
-  --background-color-hover: #fafafa;
+  --background-color: #f2f4f5;
+  --background-color-trade: #ffffff;
+  --main-background-color: #ffffff;
+  --card-background-color: #fefefe;
+  --table-background-color: #ffffff;
+  --footer-background-color: #ffffff;
+  --background-color-hover: #f0f1f2;
   --loading-color: #4b4b4b;
-  --box-shadow-color: rgb(0 0 0 / 5%) 0px 0px 0px 2px;
-  --hover-bg-color: #fafafa;
+  --box-shadow-color: 0px 24px 48px rgba(0, 0, 0, 0.08);
+  --hover-bg-color: #0b0b0b;
   --percentage: 0%;
+  --bs-form-check-bg: #ebf2f2;
 }
 
 :root[data-theme="dark"] {
-  --primary-color: #358af2;
-  --text-primary-color: #ffffff;
+  --text-primary-color: #f5f5f5;
   --text-primary-color-2: #ffffff;
-  --text-primary-color-3: #ffffff;
-  --text-primary-color-4: #cbcfd7;
-  --border-color: rgb(33 39 48);
-  --border-color-1: #535353;
-  --border-color-2: #ffffff;
-  --trade-green: #32d777;
-  --trade-red: #d63031;
-  --hover-color: #f7cf33;
+  --text-primary-color-3: #858585;
+  --text-primary-color-4: #7b7b7b;
+  --border-color: #1f1f1f;
+  --border-color-1: #222222;
+  --border-color-2: #212121;
   --font-color: #ffffff;
-  --bColor: #424242;
+  --bColor: #181818;
   --title-color: #ffffff;
-  --white: #ffffff;
-  --black: #000000;
-  --color-pallet-1: #535353;
-  --background-color: rgb(22, 26, 30);
-  --background-color-trade: rgb(11, 14, 17);
-  --main-background-color: rgb(11, 14, 17);
-  --card-background-color: rgb(24, 26, 32);
-  --table-background-color: #353535;
-  --footer-background-color: rgb(24, 26, 32);
-  --background-color-hover: rgb(24, 26, 35);
-  --loading-color: #4b4b4b;
-  --box-shadow-color: rgba(247, 247, 247, 0.05);
-  --hover-bg-color: #383839;
+  --color-pallet-1: #7f7f7f;
+  --background-color: #181818;
+  --background-color-trade: #000000;
+  --main-background-color: #000000;
+  --card-background-color: #171717;
+  --table-background-color: #000000;
+  --footer-background-color: #000000;
+  --background-color-hover: #1f2125;
+  --loading-color: #9c9c9c;
+  --box-shadow-color: 0px 24px 48px rgba(255, 255, 255, 0.08);
+  --hover-bg-color: #181818;
   --percentage: 100%;
 }
 
 html,
 body {
   height: 100%;
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
-  color: var(--bColor);
+  color: var(--font-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -123,7 +118,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "DM Sans", sans-serif;
   font-weight: 700;
   color: var(--title-color);
 }
@@ -168,6 +162,7 @@ video {
 a {
   text-decoration: none;
   outline: 0;
+  color: var(--primary-color);
 }
 
 a:active,
@@ -206,7 +201,10 @@ button:focus {
 .btn:focus {
   border: 1px solid transparent;
 }
-
+.form-check-input {
+	background-color: #ebf2f2;
+	border: 2px solid #ebf2f2;
+}
 .form-control:focus,
 .btn.focus,
 .btn:focus {
@@ -215,7 +213,14 @@ button:focus {
   outline: 0;
   box-shadow: none;
 }
-
+.btn-primary {
+	--bs-btn-bg: var(--primary-color);
+	--bs-btn-border-color: var(--primary-color);
+	--bs-btn-hover-bg: var(--primary-color);
+	--bs-btn-hover-border-color: var(--primary-color-dark);
+	--bs-btn-active-bg: var(--primary-color-dark);
+	--bs-btn-active-border-color: var(--primary-color-dark);
+}
 .acurate {
   margin: 0;
   padding: 0;
@@ -1277,10 +1282,6 @@ client-area
   .secondary-btn {
     min-width: 190px;
   }
-}
-
-.user-form .form-check-label {
-  padding-left: 20px;
 }
 
 .notFound-container {

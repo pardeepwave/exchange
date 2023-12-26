@@ -40,215 +40,192 @@ const Signin: NextPage = () => {
 
   return (
     <>
-      <div className="d-md-flex d-block">
-        <div
-          className="col-md-5 login_bg_new"
-          // style={{
-          //   backgroundImage: `url(${settings.login_background})`,
-          // }}
-        >
-          <div className="user-content-text text-center text-md-left">
-            <Link href="/">
-              <a className="auth-logo" href="">
-                <img
-                  width="50%"
-                  src={settings.logo || ""}
-                  className="pt-5 pt-md-4"
-                  alt=""
-                />
+      <div className="container-fluid">
+        <div className="row flex-md-row-reverse">
+          <div className="col-md-6 col-12 login_bg_new" >
+            <div className="user-content-text text-center text-md-left">
+              <a href="/" className="auth-logo d-md-none d-block">
+                  <img
+                    src={settings.logo || ""}
+                    className="pt-5 img-fluid mw-50"
+                    alt=""
+                  />
               </a>
-            </Link>
+            </div>
+            
           </div>
-          
-          <div className="d-md-flex d-block align-items-center justify-content-center h-75">
-          <img src="/Vector Image.png"></img>
-            {/* <div className="text-center text-md-left">
-              <h1 className="text-white">
-                {t("Welcome To")} {settings.app_title}
-              </h1>
-              <Link href="/signup">
-                <p className="text-white h5 mt-2">
-                  {t("Don’t have an account ? ")}
-                  <a className="text-theme" href="">
-                    {t(" Sign Up ")}
-                  </a>
-                </p>
-              </Link>
-            </div> */}
-          </div>
-        </div>
-        <div className="col-md-7 d-flex align-items-center login_from_res">
-          <div className="row w-100 mx-auto">
-            <div className="col-lg-8 col-md-12 mx-md-auto">
-              <div className="user-content-text text-left d-block d-md-none">
-                <Link href="/">
-                  <a className="auth-logo" href="">
-                    <img
-                      width="60%"
-                      src={settings.logo || ""}
-                      className="pt-5 pt-md-4"
-                      alt=""
-                    />
-                  </a>
-                </Link>
-              </div>
-              <div className="user-form border-0 my-4 my-md-0">
-                <div className="user-form-inner">
-                  <div className="form-top text-left">
-                    <h2>{t("Welcome Back!")}</h2>
-                    {/* <p>{t("Please Sign In To Your Account")}</p> */}
-                  </div>
-                  <Formik
-                    initialValues={{
-                      email: "",
-                      password: "",
-                      recapcha:
-                        parseInt(captchaData?.select_captcha_type) !==
-                        CAPTCHA_TYPE_RECAPTCHA
-                          ? "ksmaldkmalksmdlkamsdlk"
-                          : "",
-                    }}
-                    validationSchema={Yup.object({
-                      email: Yup.string()
-                        .email(t("Invalid email address"))
-                        .required(t("Email is required")),
-                      password: Yup.string()
-                        .min(6)
-                        .required(t("Password is required")),
-                      recapcha: Yup.string()
-                        .min(6)
-                        .required(t("Recapcha is required")),
-                    })}
-                    onSubmit={async (values) => {
-                      if (
-                        parseInt(captchaData?.select_captcha_type) ===
-                        CAPTCHA_TYPE_GEETESTCAPTCHA
-                      ) {
-                        geeTest.showCaptcha();
-                        geeTest.onSuccess(async () => {
-                          var result = geeTest.getValidate();
-                          let local_value: any = values;
-                          local_value.lot_number = result.lot_number;
-                          local_value.captcha_output = result.captcha_output;
-                          local_value.pass_token = result.pass_token;
-                          local_value.gen_time = result.gen_time;
-                          await dispatch(
-                            SigninAction(local_value, setProcessing)
-                          );
-                          await dispatch(GetUserInfoByTokenAction());
-                        });
-                      } else {
-                        await dispatch(SigninAction(values, setProcessing));
-                        await dispatch(GetUserInfoByTokenAction());
-                      }
-                    }}
-                  >
-                    {({ errors, touched, setFieldValue }) => (
-                      //@ts-ignore
-                      <Form>
-                        <div className="form-group">
-                          <label>Email</label>
-                          <Field
-                            type="email"
-                            name="email"
-                            id="email"
-                            className={`form-control ${
-                              touched.email && errors.email ? "is-invalid" : ""
-                            }`}
-                            placeholder={t("Enter Your email here")}
+          <div className="col-md-6 d-flex align-items-center login_from_res">
+            <div className="row">
+              <div className="col-lg-8 col-md-12 mx-md-auto">
+                <div className="user-form border-0 my-4 my-md-0">
+                  <div className="user-form-inner">
+                    <div className="form-top text-left">
+                      <a href="/" className="auth-logo dark-logo">
+                          <img
+                            src={settings.logo || ""}
+                            className="w-50 mb-3 img-fluid"
+                            alt=""
                           />
-                        </div>
-
-                        <div className="form-group my-4">
-                        <label>Password</label>
-                          <Field
-                            type={showPassword ? "text" : "password"}
-                            name="password"
-                            id="password"
-                            className={`form-control form-control-password look-pass ${
-                              touched.password && errors.password
-                                ? "is-invalid"
-                                : ""
-                            }`}
-                            placeholder={t("Enter Your password here")}
-                          />
-
-                          <span
-                            className="eye rev"
-                            onClick={() => setShowPassword(!showPassword)}
-                          >
-                            {showPassword ? (
-                              <i className="fa fa-eye toggle-password"></i>
-                            ) : (
-                              <i className="fa fa-eye-slash toggle-password"></i>
-                            )}
-                          </span>
-                        </div>
-
-                        {/* <div className="form-group">
-                          <p className="invalid-feedback">{t("Message")}</p>
-                        </div> */}
-                        <div className="d-flex justify-content-between rememberme align-items-center mb-4">
-                          <div className="form-check">
-                            <input
-                              type="checkbox"
-                              className="form-check-input ml-1"
-                              id="exampleCheck1"
-                            />
-                            <label className="form-check-label ml-2">
-                              {t("Remember me")}
-                            </label>
-                          </div>
-                          <div className="text-right">
-                            <Link href="/forgot-password">
-                              <a className="text-theme forgot-password">
-                                {t("Forgot Password?")}
-                              </a>
-                            </Link>
-                          </div>
-                        </div>
-                        {captchaData?.NOCAPTCHA_SITEKEY &&
+                      </a>
+                      <h2>{t("Sign In")}</h2>
+                      <p>{t("Enter your account details")}</p>
+                    </div>
+                    <Formik
+                      initialValues={{
+                        email: "",
+                        password: "",
+                        recapcha:
+                          parseInt(captchaData?.select_captcha_type) !==
+                          CAPTCHA_TYPE_RECAPTCHA
+                            ? "ksmaldkmalksmdlkamsdlk"
+                            : "",
+                      }}
+                      validationSchema={Yup.object({
+                        email: Yup.string()
+                          .email(t("Invalid email address"))
+                          .required(t("Email is required")),
+                        password: Yup.string()
+                          .min(6)
+                          .required(t("Password is required")),
+                        recapcha: Yup.string()
+                          .min(6)
+                          .required(t("Recapcha is required")),
+                      })}
+                      onSubmit={async (values) => {
+                        if (
                           parseInt(captchaData?.select_captcha_type) ===
-                            CAPTCHA_TYPE_RECAPTCHA && (
-                            <ReCAPTCHA
-                              ref={(r: any) => setCaptchaRef(r)}
-                              sitekey={captchaData?.NOCAPTCHA_SITEKEY}
-                              render="explicit"
-                              onChange={(response: any) => {
-                                setFieldValue("recapcha", response);
-                              }}
+                          CAPTCHA_TYPE_GEETESTCAPTCHA
+                        ) {
+                          geeTest.showCaptcha();
+                          geeTest.onSuccess(async () => {
+                            var result = geeTest.getValidate();
+                            let local_value: any = values;
+                            local_value.lot_number = result.lot_number;
+                            local_value.captcha_output = result.captcha_output;
+                            local_value.pass_token = result.pass_token;
+                            local_value.gen_time = result.gen_time;
+                            await dispatch(
+                              SigninAction(local_value, setProcessing)
+                            );
+                            await dispatch(GetUserInfoByTokenAction());
+                          });
+                        } else {
+                          await dispatch(SigninAction(values, setProcessing));
+                          await dispatch(GetUserInfoByTokenAction());
+                        }
+                      }}
+                    >
+                      {({ errors, touched, setFieldValue }) => (
+                        //@ts-ignore
+                        <Form>
+                          <div className="form-group">
+                            <label>Email</label>
+                            <Field
+                              type="email"
+                              name="email"
+                              id="email"
+                              className={`form-control ${
+                                touched.email && errors.email ? "is-invalid" : ""
+                              }`}
+                              placeholder={t("Enter Your email here")}
                             />
-                          )}
+                            <span
+                              className="eye rev"
+                            >
+                              <img className="toggle-password" src={"/envelope.svg"} />
+                            </span>
+                          </div>
 
-                        <button
-                          onClick={() => resetCaptcha()}
-                          type="submit"
-                          disabled={processing}
-                          className="btn nimmu-user-sibmit-button mt-4"
-                        >
-                          {processing ? (
-                            <>
-                              <span
-                                className="spinner-border spinner-border-md"
-                                role="status"
-                                aria-hidden="true"
-                              ></span>
-                              <span>{t("Please wait")}</span>
+                          <div className="form-group my-4">
+                          <label>Password</label>
+                            <Field
+                              type={showPassword ? "text" : "password"}
+                              name="password"
+                              id="password"
+                              className={`form-control form-control-password look-pass ${
+                                touched.password && errors.password
+                                  ? "is-invalid"
+                                  : ""
+                              }`}
+                              placeholder={t("Enter Your password here")}
+                            />
+
+                            <span
+                              className="eye rev"
+                              onClick={() => setShowPassword(!showPassword)}
+                            >
+                              {showPassword ? (
+                               <img className="toggle-password" src={"/hide.svg"} />
+                              ) : (
+                                <img className="toggle-password" src={"/view.svg"} />
+                              )}
+                            </span>
+                          </div>
+
+                          {/* <div className="form-group">
+                            <p className="invalid-feedback">{t("Message")}</p>
+                          </div> */}
+                          <div className="d-flex justify-content-between rememberme align-items-center mb-4">
+                            <div className="form-check">
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                                id="exampleCheck1"
+                              />
+                              <label className="form-check-label" htmlFor="exampleCheck1">
+                                {t("Remember me")}
+                              </label>
+                            </div>
+                            <div className="text-right">
+                              <a className=" text-dark fw-bold forgot-password" href="/forgot-password">
+                                  {t("Forgot Password?")}
+                              </a>
+                            </div>
+                          </div>
+                          {captchaData?.NOCAPTCHA_SITEKEY &&
+                            parseInt(captchaData?.select_captcha_type) ===
+                              CAPTCHA_TYPE_RECAPTCHA && (
+                              <ReCAPTCHA
+                                ref={(r: any) => setCaptchaRef(r)}
+                                sitekey={captchaData?.NOCAPTCHA_SITEKEY}
+                                render="explicit"
+                                onChange={(response: any) => {
+                                  setFieldValue("recapcha", response);
+                                }}
+                              />
+                            )}
+                          <div className="d-grid gap-2">
+                            <button
+                              onClick={() => resetCaptcha()}
+                              type="submit"
+                              disabled={processing}
+                              className="btn btn-primary btn-lg"
+                            >
+                              {processing ? (
+                                <>
+                                  <span
+                                    className="spinner-border spinner-border-md"
+                                    role="status"
+                                    aria-hidden="true"
+                                  ></span>
+                                  <span>{t("Please wait")}</span>
+                                </>
+                              ) : (
+                                t("Login")
+                              )}
+                            </button>
+                            <div className="text-center mt-2">
+                              <>
+                              {t("Don’t have an account?  ")}<strong><a href="/signup">
+                            <span className="text-primary">Create Account</span></a> </strong>                                                                                                                                        
+                            
                             </>
-                          ) : (
-                            t("Login")
-                          )}
-                        </button>
-                        <div className="loginacnt">
-                          <>
-                          {t("Don’t have an account?  ")}<a href="https://republicexchange.io/signup">
-                        <span style={{color:'red'}}>Create Account</span></a>                                                                                                                                           
-                        
-                        </>
-                      </div>
-                      </Form>
-                    )}
-                  </Formik>
+                          </div>
+                        </div>
+                        </Form>
+                      )}
+                    </Formik>
+                  </div>
                 </div>
               </div>
             </div>

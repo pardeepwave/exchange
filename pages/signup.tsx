@@ -39,269 +39,267 @@ const Signup: NextPage = () => {
   };
 
   return (
-    <div className="login_reg_box">
-      <div
-        className="col-md-5 login_bg_new"
-        // style={{
-        //   backgroundImage: `url(${settings.login_background})`,
-        // }}
-      >
-        <div className="user-content-text text-center text-md-left">
-          <Link href="/">
-            <a className="auth-logo" href="">
-              <img
-                width="50%"
-                src={settings.logo || ""}
-                className="pt-5 pt-md-4"
-                alt=""
-              />
+    <div className="container-fluid">
+      <div className="row login_reg_box flex-md-row-reverse">
+        <div className="col-md-6 col-12 login_bg_new" >
+          <div className="user-content-text text-center text-md-left">
+            <a href="/" className="auth-logo d-md-none d-block">
+                <img
+                  src={settings.logo || ""}
+                  className="pt-5 img-fluid mw-50"
+                  alt=""
+                />
             </a>
-          </Link>
+          </div>
+          
         </div>
-        <div className="d-md-flex d-block align-items-center justify-content-center h-75">
-        <img src="/Vector Image.png"></img>
-          {/* <div className="text-center text-md-left">
-            <h1 className="text-white">
-              {t("Welcome To")} {settings.app_title}
-            </h1>
-            <Link href="/signin">
-              <p className="text-white h5">
-                {t("Already have an account")} ?{" "}
-                <a className="text-theme" href="">
-                  {" "}
-                  {t("Sign In")}
-                </a>
-              </p>
-            </Link>
-          </div> */}
-        </div>
-      </div>
-      <div className="col-md-7 d-flex align-items-center login_from_res">
-        <div className="row w-100 mx-auto">
-          <div className="col-lg-8 col-md-12 mx-md-auto">
-            <div className="user-content-text text-left d-block d-md-none">
-              <Link href="/">
-                <a className="auth-logo" href="">
-                  <img
-                    width="60%"
-                    src={settings.logo || ""}
-                    className="pt-5 pt-md-4"
-                    alt=""
-                  />
-                </a>
-              </Link>
-            </div>
-            <div className="user-form border-0 my-5 my-md-0">
-              <div className="user-form-inner">
-                <div className="form-top text-left">
-                  <h2>{t("Welcome to Republic Exchange!")}</h2>
-                  {/* <p>{t("Create a new account")}.</p> */}
-                </div>
-                <Formik
-                  initialValues={{
-                    email: "",
-                    first_name: "",
-                    last_name: "",
-                    password: "",
-                    password_confirmation: "",
-                    recapcha:
-                      parseInt(captchaData?.select_captcha_type) !==
-                      CAPTCHA_TYPE_RECAPTCHA
-                        ? "ksmaldkmalksmdlkamsdlk"
-                        : "",
-                  }}
-                  validationSchema={Yup.object({
-                    email: Yup.string()
-                      .email(t("Invalid email address"))
-                      .required(t("Email is required")),
-                    first_name: Yup.string()
-                      .min(2)
-                      .required(t("First name is required")),
-                    last_name: Yup.string()
-                      .min(2)
-                      .required(t("Last name is required")),
-                    password: Yup.string()
-                      .min(8)
-                      .required(t("Password is required")),
-                    password_confirmation: Yup.string()
-                      .oneOf(
-                        [Yup.ref("password"), null],
-                        t("Passwords must match")
-                      )
-                      .required("Confirm password is required"),
-                    recapcha: Yup.string()
-                      .min(6)
-                      .required(t("Recapcha is required")),
-                  })}
-                  onSubmit={async (values) => {
-                    if (
-                      parseInt(captchaData?.select_captcha_type) ===
-                      CAPTCHA_TYPE_GEETESTCAPTCHA
-                    ) {
-                      geeTest.showCaptcha();
-                      geeTest.onSuccess(async () => {
-                        var result = geeTest.getValidate();
-                        let local_value: any = values;
-                        local_value.lot_number = result.lot_number;
-                        local_value.captcha_output = result.captcha_output;
-                        local_value.pass_token = result.pass_token;
-                        local_value.gen_time = result.gen_time;
-                        dispatch(
-                          SignupAction(local_value, setProcessing, ref_code)
-                        );
-                      });
-                    } else {
-                      dispatch(SignupAction(values, setProcessing, ref_code));
-                    }
-                  }}
-                >
-                  {({ errors, touched, setFieldValue }) => (
-                    <Form>
-                      <div className="form-group">
-                      <label>First Name</label>
-                        <Field
-                          type="text"
-                          name="first_name"
-                          id="first_name"
-                          className={`form-control ${
-                            touched.first_name && errors.first_name
-                              ? "is-invalid"
-                              : ""
-                          }`}
-                          placeholder={t("Enter Your first name here")}
-                        />
-                      </div>
-
-                      <div className="form-group">
-                      <label>Last Name</label>
-                        <Field
-                          type="text"
-                          name="last_name"
-                          id="last_name"
-                          className={`form-control ${
-                            touched.last_name && errors.last_name
-                              ? "is-invalid"
-                              : ""
-                          }`}
-                          placeholder={t("Enter Your last name here")}
-                        />
-                      </div>
-
-                      <div className="form-group">
-                      <label>Email</label>
-                        <Field
-                          type="email"
-                          name="email"
-                          id="email"
-                          className={`form-control ${
-                            touched.email && errors.email ? "is-invalid" : ""
-                          }`}
-                          placeholder={t("Enter Your email here")}
-                        />
-                      </div>
-
-                      <div className="form-group">
-                      <label>Password</label>
-                        <Field
-                          type={showPassword.password ? "text" : "password"}
-                          name="password"
-                          id="password"
-                          className={`form-control form-control-password look-pass ${
-                            touched.password && errors.password
-                              ? "is-invalid"
-                              : ""
-                          }`}
-                          placeholder={t("Enter Your password here")}
-                        />
-
-                        <span
-                          className="eye rev"
-                          onClick={() =>
-                            setShowPassword({
-                              ...showPassword,
-                              password: !showPassword.password,
-                            })
-                          }
-                        >
-                          <i className="fa fa-eye-slash toggle-password"></i>
-                        </span>
-                      </div>
-
-                      <div className="form-group">
-                      <label>Password</label>
-                        <Field
-                          type={
-                            showPassword.confirm_password ? "text" : "password"
-                          }
-                          name="password_confirmation"
-                          id="password_confirmation"
-                          className={`form-control form-control-password look-pass ${
-                            touched.password_confirmation &&
-                            errors.password_confirmation
-                              ? "is-invalid"
-                              : ""
-                          }`}
-                          placeholder={t("Enter Your password here")}
-                        />
-
-                        <span
-                          className="eye rev"
-                          onClick={() =>
-                            setShowPassword({
-                              ...showPassword,
-                              confirm_password: !showPassword.confirm_password,
-                            })
-                          }
-                        >
-                          <i className="fa fa-eye-slash toggle-password"></i>
-                        </span>
-                      </div>
-
-                      <div className="form-group">
-                        <label></label>
-                        <p className="invalid-feedback">{t("Message")} </p>
-                      </div>
-                      {captchaData?.NOCAPTCHA_SITEKEY &&
-                        parseInt(captchaData?.select_captcha_type) ===
-                          CAPTCHA_TYPE_RECAPTCHA && (
-                          <ReCAPTCHA
-                            ref={(r: any) => setCaptchaRef(r)}
-                            sitekey={captchaData?.NOCAPTCHA_SITEKEY}
-                            render="explicit"
-                            onChange={(response: any) => {
-                              setFieldValue("recapcha", response);
-                            }}
+        <div className="col-md-6 d-flex align-items-center login_from_res">
+          <div className="row">
+            <div className="col-lg-8 col-md-12 mx-md-auto">
+              <div className="user-form border-0 my-5 my-md-0">
+                <div className="user-form-inner">
+                  <div className="form-top text-left">
+                  <a href="/" className="auth-logo dark-logo">
+                          <img
+                            src={settings.logo || ""}
+                            className="w-50 mb-3 img-fluid"
+                            alt=""
                           />
-                        )}
-                      <button
-                        onClick={() => resetCaptcha()}
-                        type="submit"
-                        disabled={processing}
-                        className="btn nimmu-user-sibmit-button mt-3"
-                      >
-                        {processing ? (
-                          <>
-                            <span
-                              className="spinner-border spinner-border-md"
-                              role="status"
-                              aria-hidden="true"
-                            ></span>
-                            <span>{t("Please wait")}</span>
+                      </a>
+                    <h2>{t("Sign Up")}</h2>
+                    <p>{t("Create a new account")}.</p>
+                  </div>
+                  <Formik
+                    initialValues={{
+                      email: "",
+                      first_name: "",
+                      last_name: "",
+                      password: "",
+                      password_confirmation: "",
+                      recapcha:
+                        parseInt(captchaData?.select_captcha_type) !==
+                        CAPTCHA_TYPE_RECAPTCHA
+                          ? "ksmaldkmalksmdlkamsdlk"
+                          : "",
+                    }}
+                    validationSchema={Yup.object({
+                      email: Yup.string()
+                        .email(t("Invalid email address"))
+                        .required(t("Email is required")),
+                      first_name: Yup.string()
+                        .min(2)
+                        .required(t("First name is required")),
+                      last_name: Yup.string()
+                        .min(2)
+                        .required(t("Last name is required")),
+                      password: Yup.string()
+                        .min(8)
+                        .required(t("Password is required")),
+                      password_confirmation: Yup.string()
+                        .oneOf(
+                          [Yup.ref("password"), null],
+                          t("Passwords must match")
+                        )
+                        .required("Confirm password is required"),
+                      recapcha: Yup.string()
+                        .min(6)
+                        .required(t("Recapcha is required")),
+                    })}
+                    onSubmit={async (values) => {
+                      if (
+                        parseInt(captchaData?.select_captcha_type) ===
+                        CAPTCHA_TYPE_GEETESTCAPTCHA
+                      ) {
+                        geeTest.showCaptcha();
+                        geeTest.onSuccess(async () => {
+                          var result = geeTest.getValidate();
+                          let local_value: any = values;
+                          local_value.lot_number = result.lot_number;
+                          local_value.captcha_output = result.captcha_output;
+                          local_value.pass_token = result.pass_token;
+                          local_value.gen_time = result.gen_time;
+                          dispatch(
+                            SignupAction(local_value, setProcessing, ref_code)
+                          );
+                        });
+                      } else {
+                        dispatch(SignupAction(values, setProcessing, ref_code));
+                      }
+                    }}
+                  >
+                    {({ errors, touched, setFieldValue }) => (
+                      <Form>
+                        <div className="form-group">
+                        <label>First Name</label>
+                          <Field
+                            type="text"
+                            name="first_name"
+                            id="first_name"
+                            className={`form-control ${
+                              touched.first_name && errors.first_name
+                                ? "is-invalid"
+                                : ""
+                            }`}
+                            placeholder={t("Enter Your first name here")}
+                          />
+                          <span
+                            className="eye rev"
+                          >
+                            <img className="toggle-password" src={"/user.svg"} />
+                          </span>
+                        </div>
+
+                        <div className="form-group">
+                          <label>Last Name</label>
+                          <Field
+                            type="text"
+                            name="last_name"
+                            id="last_name"
+                            className={`form-control ${
+                              touched.last_name && errors.last_name
+                                ? "is-invalid"
+                                : ""
+                            }`}
+                            placeholder={t("Enter Your last name here")}
+                          />
+                          <span
+                            className="eye rev"
+                          >
+                            <img className="toggle-password" src={"/user.svg"} />
+                          </span>
+                        </div>
+
+                        <div className="form-group col-12">
+                        <label>Email</label>
+                          <Field
+                            type="email"
+                            name="email"
+                            id="email"
+                            className={`form-control ${
+                              touched.email && errors.email ? "is-invalid" : ""
+                            }`}
+                            placeholder={t("Enter Your email here")}
+                          />
+                          <span
+                            className="eye rev"
+                          >
+                            <img className="toggle-password" src={"/envelope.svg"} />
+                          </span>
+                        </div>
+
+                        <div className="form-group">
+                        <label>Password</label>
+                          <Field
+                            type={showPassword.password ? "text" : "password"}
+                            name="password"
+                            id="password"
+                            className={`form-control form-control-password look-pass ${
+                              touched.password && errors.password
+                                ? "is-invalid"
+                                : ""
+                            }`}
+                            placeholder={t("Enter Your password here")}
+                          />
+
+                          <span
+                            className="eye rev"
+                            onClick={() =>
+                              setShowPassword({
+                                ...showPassword,
+                                password: !showPassword.password,
+                              })
+                            }
+                          >
+                            {showPassword ? (
+                            <img className="toggle-password" src={"/hide.svg"} />
+                            ) : (
+                              <img className="toggle-password" src={"/view.svg"} />
+                            )}
+                          </span>
+                        </div>
+
+                        <div className="form-group">
+                        <label>Confirm Password</label>
+                          <Field
+                            type={
+                              showPassword.confirm_password ? "text" : "password"
+                            }
+                            name="password_confirmation"
+                            id="password_confirmation"
+                            className={`form-control form-control-password look-pass ${
+                              touched.password_confirmation &&
+                              errors.password_confirmation
+                                ? "is-invalid"
+                                : ""
+                            }`}
+                            placeholder={t("Enter Your password here")}
+                          />
+
+                          <span
+                            className="eye rev"
+                            onClick={() =>
+                              setShowPassword({
+                                ...showPassword,
+                                confirm_password: !showPassword.confirm_password,
+                              })
+                            }
+                          >
+                            {showPassword ? (
+                            <img className="toggle-password" src={"/hide.svg"} />
+                            ) : (
+                              <img className="toggle-password" src={"/view.svg"} />
+                            )}
+                          </span>
+                        </div>
+
+                        <div className="form-group">
+                          <label></label>
+                          <p className="invalid-feedback">{t("Message")} </p>
+                        </div>
+                        {captchaData?.NOCAPTCHA_SITEKEY &&
+                          parseInt(captchaData?.select_captcha_type) ===
+                            CAPTCHA_TYPE_RECAPTCHA && (
+                            <ReCAPTCHA
+                              ref={(r: any) => setCaptchaRef(r)}
+                              sitekey={captchaData?.NOCAPTCHA_SITEKEY}
+                              render="explicit"
+                              onChange={(response: any) => {
+                                setFieldValue("recapcha", response);
+                              }}
+                            />
+                          )}
+                        <div className="d-grid gap-2">
+                          <button
+                            onClick={() => resetCaptcha()}
+                            type="submit"
+                            disabled={processing}
+                            className="btn btn-primary btn-lg"
+                          >
+                            {processing ? (
+                              <>
+                                <span
+                                  className="spinner-border spinner-border-md"
+                                  role="status"
+                                  aria-hidden="true"
+                                ></span>
+                                <span>{t("Please wait")}</span>
+                              </>
+                            ) : (
+                              t("Sign Up")
+                            )}
+                          </button>
+                        </div>
+                        <div className="text-center mt-2">
+                            <>
+                            {t("Already have a account? ")}<a href="/signin">
+                          <span className="text-primary">Log in</span></a>
+                          
                           </>
-                        ) : (
-                          t("Sign Up")
-                        )}
-                      </button>
-                      <div className="loginacnt">
-                          <>
-                          {t("Already have a account? ")}<a href="https://republicexchange.io/signin">
-                        <span style={{color:'red'}}>Log in</span></a>
-                        
-                        </>
-                      </div>
-                    </Form>
-                  )}
-                </Formik>
+                        </div>
+                      </Form>
+                    )}
+                  </Formik>
+                </div>
               </div>
             </div>
           </div>
