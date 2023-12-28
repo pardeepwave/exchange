@@ -313,7 +313,7 @@ const Home: NextPage = ({
                                       className="sorting_disabled"
                                       rowSpan={1}
                                       colSpan={1}
-                                      style={{ width: "127.344px" }}
+                                      style={{ width: "67.344px" }}
                                     >
                                       {t("Actions")}
                                     </th>

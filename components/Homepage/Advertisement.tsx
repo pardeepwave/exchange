@@ -23,20 +23,20 @@ const Advertisement = ({
   console.log(asset_coin_pairs);
 
   return (
-    <div style={{ padding: "2rem 0" }}>
+    <React.Fragment>
       {parseInt(landing.landing_third_section_status) === 1 && (
         <section>
-          <div className="container" style={{ padding: "1.5rem 0 1px" }}>
-            <div className="section-title">
-              <h2 className="title" style={{ textAlign: "center" }}>
+          <div className="container">
+            {/* <div className="section-title">
+              <h2 className="title">
                 {t("Advertisement Coins")}
               </h2>
-            </div>
-            <div className="exchange-tab-menu">
+            </div> */}
+            <div className="exchange-tab-menu advertisements">
               <Swiper
                 className="mySwiper"
                 slidesPerView={3}
-                spaceBetween={30}
+                spaceBetween={15}
                 navigation={true}
                 modules={[Navigation]}
               >
@@ -44,8 +44,8 @@ const Advertisement = ({
                 {bannerListdata?.length > 0 && parseInt(landing?.landing_second_section_status) === 1 && (
                   <Swiper>
                     {bannerListdata.map((item: any, index: number) => (
-                      <SwiperSlide key={index}>
-                        <img className="icon mr-3" src={item?.image} alt={`ad${index + 1}`} />
+                      <SwiperSlide key={index} className="advertisementSlide">
+                        <img className="advertisementImg" src={item?.image} alt={`ad${index + 1}`} />
                       </SwiperSlide>
                     ))}
                   </Swiper>
@@ -55,7 +55,7 @@ const Advertisement = ({
           </div>
         </section>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

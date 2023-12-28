@@ -32,43 +32,20 @@ const ForgotPassword: NextPage = () => {
 
   return (
     <>
-      <div className="d-md-flex d-block">
-        <div
-          className="col-md-5 login_bg_new"
-          // style={{
-          //   backgroundImage: `url(${settings.login_background})`,
-          // }}
-        >
+      <div className="row flex-md-row-reverse">
+        <div className="col-md-6 col-12 login_bg_new" >
           <div className="user-content-text text-center text-md-left">
-            <Link href="/">
-              <a className="auth-logo" href="">
+            <a href="/" className="auth-logo d-md-none d-block">
                 <img
-                  width="50%"
                   src={settings.logo || ""}
-                  className="pt-5 pt-md-4"
+                  className="pt-5 img-fluid mw-50"
                   alt=""
                 />
-              </a>
-            </Link>
+            </a>
           </div>
-          <div className="d-md-flex d-block align-items-center justify-content-center h-75">
-          <img src="/Vector Image.png"></img>
-            {/* <div className="text-center text-md-left">
-              <h1 className="text-white">
-                {t("Welcome To")} {settings.app_title}
-              </h1>
-              <Link href="/signin">
-                <p className="text-white h5">
-                  {t("Return to")}
-                  <a className="text-theme" href="">
-                    {t(" Sign In ")}
-                  </a>
-                </p>
-              </Link>
-            </div> */}
-          </div>
+          
         </div>
-        <div className="col-md-7 d-flex align-items-center login_from_res">
+        <div className="col-md-6 d-flex align-items-center login_from_res">
           <div className="row w-100 mx-auto">
             <div className="col-lg-8 col-md-12 mx-md-auto">
               <div className="user-content-text text-left d-block d-md-none">
@@ -86,6 +63,13 @@ const ForgotPassword: NextPage = () => {
               <div className="user-form border-0 my-4 my-md-0">
                 <div className="user-form-inner">
                   <div className="form-top text-left">
+                      <a href="/" className="auth-logo dark-logo">
+                          <img
+                            src={settings.logo || ""}
+                            className="w-50 mb-3 img-fluid"
+                            alt=""
+                          />
+                      </a>
                     <h2>{t("Forgot Password ?")}</h2>
                     <p>
                       {t(
@@ -136,6 +120,7 @@ const ForgotPassword: NextPage = () => {
                     {({ errors, touched, setFieldValue }) => (
                       <Form>
                         <div className="form-group">
+                          <label>Email</label>
                           <Field
                             type="email"
                             name="email"
@@ -145,6 +130,11 @@ const ForgotPassword: NextPage = () => {
                             }`}
                             placeholder={t("Your email here")}
                           />
+                          <span
+                              className="eye rev"
+                            >
+                            <img className="toggle-password" src={"/envelope.svg"} />
+                          </span>
                         </div>
 
                         {captchaData?.NOCAPTCHA_SITEKEY &&
@@ -159,10 +149,11 @@ const ForgotPassword: NextPage = () => {
                               }}
                             />
                           )}
+                      <div className="d-grid gap-2">
                         <button
                           onClick={() => resetCaptcha()}
                           type="submit"
-                          className="btn nimmu-user-sibmit-button mt-3"
+                          className="btn btn-primary btn-lg"
                         >
                           {processing ? (
                             <>
@@ -177,6 +168,14 @@ const ForgotPassword: NextPage = () => {
                             t("Send")
                           )}
                         </button>
+                          <div className="text-center mt-2">
+                              <>
+                              {t("Want to log in? Return to  ")}<strong><a href="/signin">
+                            <span className="text-primary">Sign In</span></a> </strong>                                                                                                                                        
+                            
+                            </>
+                          </div>
+                      </div>
                       </Form>
                     )}
                   </Formik>

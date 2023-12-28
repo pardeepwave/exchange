@@ -108,14 +108,14 @@ const MarketTrends = ({
                         role="grid"
                         aria-describedby="DataTables_Table_0_info"
                       >
-                        <thead style={{ background: "#000", color: "#fff" }}>
+                        <thead>
                           <tr role="row">
                             <th
                               scope="col"
                               className="sorting_disabled"
                               rowSpan={1}
                               colSpan={1}
-                              style={{ width: "137.516px" }}
+                              style={{ width: "217.516px" }}
                             >
                               {t("Market")}
                             </th>
@@ -133,7 +133,7 @@ const MarketTrends = ({
                               className="sorting_disabled"
                               rowSpan={1}
                               colSpan={1}
-                              style={{ width: "193.797px" }}
+                              style={{ width: "143.797px" }}
                             >
                               {t("Change (24h)")}
                             </th>
@@ -142,7 +142,7 @@ const MarketTrends = ({
                               className="sorting_disabled"
                               rowSpan={1}
                               colSpan={1}
-                              style={{ width: "182.297px" }}
+                              style={{ width: "102.297px" }}
                             >
                               {t("Chart")}
                             </th>
@@ -160,17 +160,17 @@ const MarketTrends = ({
                               className="sorting_disabled"
                               rowSpan={1}
                               colSpan={1}
-                              style={{ width: "127.344px" }}
+                              style={{ width: "67.344px" }}
                             >
                               {t("Actions")}
                             </th>
                           </tr>
                         </thead>
-                        <tbody style={{ background: "#181a20", color: "#fff" }}>
+                        <tbody>
                           {asset_coin_pairs?.map((item: any, index: number) => (
                             <tr role="row" className="odd" key={index}>
-                              <td className="p-3">
-                                <div className="d-flex flex-wrap">
+                              <td className="">
+                                <div className="d-flex align-items-center flex-wrap">
                                   <img
                                     className="icon mr-3"
                                     src={item?.coin_icon || "/bitcoin.png"}
@@ -181,7 +181,6 @@ const MarketTrends = ({
                                   <a className="cellMarket" href="#">
                                     <div
                                       className="marketSymbols"
-                                      style={{ color: "#fff" }}
                                     >
                                       <span className="quoteSymbol">
                                         {item?.child_coin_name}
@@ -194,21 +193,12 @@ const MarketTrends = ({
                                 </div>
                               </td>
                               <td
-                                className="text-black p-3"
-                                style={{
-                                  color: "black",
-                                  fontSize: "12px",
-                                  fontWeight: "400",
-                                }}
+                                className="text-black "
                               >
                                 {item.last_price}
                               </td>
-                              <td className="p-3">
+                              <td className="">
                                 <span
-                                  style={{
-                                    fontSize: "12px",
-                                    fontWeight: "400",
-                                  }}
                                   className={`changePos  ${
                                     parseFloat(item.price_change) >= 0
                                       ? "text-success"
@@ -218,7 +208,7 @@ const MarketTrends = ({
                                   {item.price_change}%
                                 </span>
                               </td>
-                              <td className="p-3">
+                              <td className="">
                                 {item.price_change >= 0 ? (
                                   <img
                                     src="/chart-image-1.png"
@@ -234,21 +224,17 @@ const MarketTrends = ({
                                     src="/chart-image-2.png"
                                     alt="chart-image"
                                     className="chart-img"
+                                    style={{
+                                      height: "35px",
+                                      width: "75px",
+                                    }}
                                   />
                                 )}
                               </td>
-                              <td
-                                className="text-black p-3"
-                                style={{
-                                  color: "black",
-                                  fontSize: "12px",
-                                  fontWeight: "400",
-                                }}
-                              >
+                              <td >
                                 {item.volume} {item.parent_coin_name}
                               </td>
                               <td
-                                className="p-3"
                                 onClick={async () => {
                                   await localStorage.setItem(
                                     "base_coin_id",
@@ -284,8 +270,7 @@ const MarketTrends = ({
                                   }
                                 >
                                   <a
-                                    className="btnTrade btn-link"
-                                    style={{ borderRadius: "18px" }}
+                                    className="btn btn-primary btn-sm"
                                   >
                                     {t("Trade")}
                                   </a>
@@ -379,7 +364,7 @@ const MarketTrends = ({
                           {hourly_coin_pairs?.map(
                             (item: any, index: number) => (
                               <tr role="row" className="odd" key={index}>
-                                <td className="p-3">
+                                <td className="">
                                   <div className="d-flex flex-wrap">
                                     <img
                                       className="icon mr-3"
@@ -400,10 +385,10 @@ const MarketTrends = ({
                                     </a>
                                   </div>
                                 </td>
-                                <td className="text-black p-3">
+                                <td className="text-black ">
                                   {item.last_price}
                                 </td>
-                                <td className="p-3">
+                                <td className="">
                                   <span
                                     className={`changePos  ${
                                       parseFloat(item.price_change) >= 0
@@ -414,7 +399,7 @@ const MarketTrends = ({
                                     {item.price_change}%
                                   </span>
                                 </td>
-                                <td className="p-3">
+                                <td className="">
                                   {item.price_change >= 0 ? (
                                     <img
                                       src="/chart-image-1.png"
@@ -429,7 +414,7 @@ const MarketTrends = ({
                                     />
                                   )}
                                 </td>
-                                <td className="text-black p-3">
+                                <td className="text-black ">
                                   {item.volume} {item.parent_coin_name}
                                 </td>
                                 <td
@@ -449,7 +434,7 @@ const MarketTrends = ({
                                         item?.parent_coin_name
                                     );
                                   }}
-                                  className="p-3"
+                                  className=""
                                 >
                                   <a
                                     href="/exchange/dashboard"
@@ -547,7 +532,7 @@ const MarketTrends = ({
                           {latest_coin_pairs?.map(
                             (item: any, index: number) => (
                               <tr role="row" className="odd" key={index}>
-                                <td className="p-3">
+                                <td className="">
                                   <div className="d-flex flex-wrap">
                                     <img
                                       className="icon mr-3"
@@ -568,10 +553,10 @@ const MarketTrends = ({
                                     </a>
                                   </div>
                                 </td>
-                                <td className="text-black p-3">
+                                <td className="text-black ">
                                   {item.last_price}
                                 </td>
-                                <td className="p-3">
+                                <td className="">
                                   <span
                                     className={`changePos  ${
                                       parseFloat(item.price_change) >= 0
@@ -582,7 +567,7 @@ const MarketTrends = ({
                                     {item.price_change}%
                                   </span>
                                 </td>
-                                <td className="p-3">
+                                <td className="">
                                   {item.price_change >= 0 ? (
                                     <img
                                       src="/chart-image-1.png"
@@ -597,7 +582,7 @@ const MarketTrends = ({
                                     />
                                   )}
                                 </td>
-                                <td className="text-black p-3">
+                                <td className="text-black ">
                                   {item.volume} {item.parent_coin_name}
                                 </td>
                                 <td
@@ -617,7 +602,7 @@ const MarketTrends = ({
                                         item?.parent_coin_name
                                     );
                                   }}
-                                  className="p-3"
+                                  className=""
                                 >
                                   <a
                                     href="/exchange/dashboard"

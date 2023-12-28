@@ -83,15 +83,13 @@ const UnAuthNav = ({
   return (
     <div className="">
       <div className="cp-user-top-bar position-fixed">
-        <div className="container-fluid">
+        <div className="container">
           <div
             className="d-flex align-items-center justify-content-between"
-            style={{ padding: "0.5rem 5rem" }}
           >
             <div className="cp-user-logo">
               <div
                 className="d-flex align-items-center"
-                style={{ gap: "20px" }}
               >
                 <Link href="/">
                   <a href="">
@@ -111,10 +109,9 @@ const UnAuthNav = ({
                     className="flex"
                     href="#"
                     aria-expanded="true"
-                    style={{ height: "48px" }}
                   >
                     <span className="cp-user-icon">
-                    <img src={"/stockmarket.png"} />
+                    <img src={"/transfer.svg"} />
                       {/* <BsBarChartLine /> */}
                     </span>
                     <span>{t("Exchange")}</span>
@@ -123,26 +120,24 @@ const UnAuthNav = ({
                   <ul className="lang-list dropdown-menu-main">
                     <li>
                       <a
-                        // href="/exchange/dashboard"
+                         className="menu-hover"
                         href={
                           router.locale !== "en"
                             ? `/${router.locale}/exchange/dashboard`
                             : "/exchange/dashboard"
                         }
                       >
-                        <a className="py-1 menu-hover">
                           <span className="cp-user-icon">
                             {" "}
                             <BiShapeCircle />{" "}
                           </span>{" "}
                           <span>{t("Spot Trading")}</span>{" "}
-                        </a>
                       </a>
                     </li>
                     {parseInt(settings?.p2p_module) === 1 && (
                       <li>
                         <Link href="/p2p">
-                          <a className="py-1 menu-hover">
+                          <a className="menu-hover">
                             {" "}
                             <span className="cp-user-icon">
                               <FaPeopleArrows />
@@ -188,7 +183,7 @@ const UnAuthNav = ({
                     <a>
                       <span className="cp-user-icon">
                         {/* <BiLineChart /> */}
-                        <img src={"/trend.png"} />
+                        <img src={"/graph.svg"} />
                       </span>
                       <span>{t("Markets")}</span>
                     </a>
@@ -200,49 +195,25 @@ const UnAuthNav = ({
             <div className="d-none d-lg-flex align-items-center">
               <nav className="main-menu">
                 <ul>
-                  {/* <li>
-                    <Link href={`/signin?redirect=${router.asPath}`}>
-                      {t("Login")}
-                    </Link>
-                  </li> */}
-                  
                   <li>
-                    <Link href="/signin">
-                      <a
-                        style={{
-                          padding: "3px 10px",
-                          background: "#358af2",
-                          borderRadius: "18px",
-                          gap: "4px",
-                          width: "100px",
-                          justifyContent: "center",
-                        }}
+                      <a href="/signin"
+                        className="btn btn-primary"
                       >
-                        <span>{t("Login")}</span>{" "}
+                        {t("Login")}
                       </a>
-                    </Link>
                   </li>
 
                   <li>
-                    <Link href="/signup">
                       <a
-                        style={{
-                          padding: "3px 10px",
-                          background: "#358af2",
-                          borderRadius: "18px",
-                          gap: "4px",
-                          width: "100px",
-                          justifyContent: "center",
-                        }}
+                         href="/signup"
+                        className="btn btn-light"
                       >
                         <span>{t("Register")}</span>{" "}
                       </a>
-                    </Link>
                   </li>
 
                   <li
-                    style={{ height: "48px" }}
-                    className="d-flex align-items-center"
+                    className="d-inline-flex align-items-center"
                   >
                     <IoMdGlobe size={20} />{" "}
                     <a className="flex" href="#" aria-expanded="true">
@@ -258,7 +229,7 @@ const UnAuthNav = ({
                       {settings?.LanguageList?.map((item: any, index: any) => (
                         <li key={index}>
                           <Link href={router.asPath} locale={item.key}>
-                            <a className="py-1 menu-hover">{item.name}</a>
+                            <a className="menu-hover">{item.name}</a>
                           </Link>
                         </li>
                       ))}

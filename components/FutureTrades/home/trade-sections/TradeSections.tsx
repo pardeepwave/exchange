@@ -108,7 +108,7 @@ export default function TradeSections() {
                                   className="sorting_disabled"
                                   rowSpan={1}
                                   colSpan={1}
-                                  style={{ width: "137.516px" }}
+                                  style={{ width: "217.516px" }}
                                 >
                                   {t("Market")}
                                 </th>
@@ -126,7 +126,7 @@ export default function TradeSections() {
                                   className="sorting_disabled text-center"
                                   rowSpan={1}
                                   colSpan={1}
-                                  style={{ width: "193.797px" }}
+                                  style={{ width: "143.797px" }}
                                 >
                                   {t("Change (24h)")}
                                 </th>
@@ -135,7 +135,7 @@ export default function TradeSections() {
                                   className="sorting_disabled text-center"
                                   rowSpan={1}
                                   colSpan={1}
-                                  style={{ width: "182.297px" }}
+                                  style={{ width: "102.297px" }}
                                 >
                                   {t("Chart")}
                                 </th>
@@ -153,7 +153,7 @@ export default function TradeSections() {
                                   className="sorting_disabled text-right"
                                   rowSpan={1}
                                   colSpan={1}
-                                  style={{ width: "127.344px" }}
+                                  style={{ width: "67.344px" }}
                                 >
                                   {t("Actions")}
                                 </th>
@@ -163,7 +163,7 @@ export default function TradeSections() {
                               {tradeDatas?.coins?.map(
                                 (item: any, index: any) => (
                                   <tr role="row" className="odd" key={index}>
-                                    <td className="d-flex">
+                                    <td className="d-flex align-items-center">
                                       <img
                                         className="icon mr-3"
                                         src={item?.coin_icon ?? "/bitcoin.png"}

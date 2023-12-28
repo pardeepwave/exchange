@@ -102,8 +102,8 @@ const MarketTrends2 = ({
   return (
     <div>
       {parseInt(landing.landing_third_section_status) === 1 && (
-        <section style={{ background: "#06101B;" }}>
-          <div className="container-fluid" style={{ padding: "1.5rem 8.0rem" }}>
+        <section className="hero-banner-bottom">
+          <div className="container-fluid">
             {/* <div className="section-title">
               <h2 className="title">
                 {landing?.market_trend_title || t("Market Trend")}
@@ -111,7 +111,7 @@ const MarketTrends2 = ({
             </div> */}
             <div className="exchange-tab-menu">
               <Swiper
-                className="mySwiper"
+                className="mySwiper item-list"
                 slidesPerView={6}
                 spaceBetween={30}
                 loop={true}
@@ -121,42 +121,30 @@ const MarketTrends2 = ({
                   (item: any, index: number) => (
                     <SwiperSlide key={index}>
                       {/* Your slide content based on the highlight_coin data */}
-                      <div className="d-flex flex-wrap my18font">
+                      <div className="d-flex single-item">
                         {/* Display coin details using item properties */}
                         <img
-                          className="icon mr-3"
+                          className="icon"
                           src={item.coin_icon}
                           alt={item.coin_type}
-                          width="25px"
-                          height="25px"
                         />
-                        <a className="cellMarket" href="#">
-                          <div className="marketSymbols">
-                            <span
-                              className="quoteSymbol my18font"
-                              style={{ color: "white" }}
-                            >
-                              <b>{item.coin_type}</b>
-                            </span>
-                          </div>
-                        </a>
-                        <div>
-                          <span className="mx-2 my15font">{item?.currency_symbol}{parseFloat(item?.usdt_price).toFixed(2)}</span>
+                        <div className="marketSymbols">
+                          <span
+                            className="quoteSymbol my18font"
+                          >
+                            <b>{item.coin_type}</b>
+                          </span>
                         </div>
-                        <div>
+                        <span className="symbolPrice">{item?.currency_symbol}{parseFloat(item?.usdt_price).toFixed(2)}</span>
                         <span
-                          className={`mx-2 my18font ${
-                            parseFloat(item?.change) >= 0 ? "text-success" : "text-danger"
+                          className={`percent ${
+                            parseFloat(item?.change) >= 0 ? "incrase" : "decrase"
                           } `}
                         >
                           {item?.change >= 0
                             ? "+" + parseFloat(item?.change).toFixed(2)
                             : parseFloat(item?.change).toFixed(2)}%
                         </span>
-                        </div>
-                        <div className="exlamation">
-                          <img src="/Rectangle 2324.png" alt="" />
-                        </div>
                       </div>
                     </SwiperSlide>
                   )
@@ -165,42 +153,30 @@ const MarketTrends2 = ({
                   (item: any, index: number) => (
                     <SwiperSlide key={index}>
                       {/* Your slide content based on the highlight_coin data */}
-                      <div className="d-flex flex-wrap my18font">
+                      <div className="d-flex single-item">
                         {/* Display coin details using item properties */}
                         <img
-                          className="icon mr-3"
+                          className="icon"
                           src={item.coin_icon}
                           alt={item.coin_type}
-                          width="25px"
-                          height="25px"
                         />
-                        <a className="cellMarket" href="#">
-                          <div className="marketSymbols">
-                            <span
-                              className="quoteSymbol my18font"
-                              style={{ color: "white" }}
-                            >
-                              <b>{item.coin_type}</b>
-                            </span>
-                          </div>
-                        </a>
-                        <div>
-                          <span className="mx-2 my15font">{item?.currency_symbol}{parseFloat(item?.usdt_price).toFixed(2)}</span>
+                        <div className="marketSymbols">
+                          <span
+                            className="quoteSymbol my18font"
+                          >
+                            <b>{item.coin_type}</b>
+                          </span>
                         </div>
-                        <div>
+                        <span className="symbolPrice">{item?.currency_symbol}{parseFloat(item?.usdt_price).toFixed(2)}</span>
                         <span
-                          className={`mx-2 my18font ${
-                            parseFloat(item?.change) >= 0 ? "text-success" : "text-danger"
+                          className={`percent ${
+                            parseFloat(item?.change) >= 0 ? "incrase" : "decrase"
                           } `}
                         >
                           {item?.change >= 0
                             ? "+" + parseFloat(item?.change).toFixed(2)
                             : parseFloat(item?.change).toFixed(2)}%
                         </span>
-                        </div>
-                        <div className="exlamation">
-                          <img src="/Rectangle 2324.png" alt="" />
-                        </div>
                       </div>
                     </SwiperSlide>
                   )

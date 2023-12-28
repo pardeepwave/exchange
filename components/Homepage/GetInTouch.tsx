@@ -5,48 +5,20 @@ const GetInTouch = ({ landing, featureListdata }: any) => {
   return (
     <div>
       <section className="get-touch-area">
-        <div className="section-title">
-          <div style={{ textAlign: "center" }}>
-            {/* <img
-              className="icon mr-3"
-              src={"/lorem.svg"}
-              alt="ad1"
-              height={"18px"}
-            /> */}
-          </div>
-          <h2 className="heading1my" style={{ textAlign: "center" }}>
-            Get In <span className="heading1mySub"> Touch </span>
-          </h2>
-          <div style={{ textAlign: "center" }}>
-            {/* <h5 className="subheading1">
-              Lorem ipsum dolor sit amet quis nostrud
-            </h5> */}
-          </div>
-        </div>
+        
         <div className="container">
           <div className="section-title mb-3">
-            <h2 className="title">{landing?.landing_feature_title}</h2>
+            <h2 className="title">
+              {landing?.landing_feature_title} 
+              <img draggable="false" alt="arrow" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTMiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MyA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ljc0NDAyZS0wNiAwTDI4LjA1MDkgMS42Njg5M2UtMDVDMzMuMDIxNCAxLjk1NTAzZS0wNSAzNy4wNTA5IDQuMDI5NDUgMzcuMDUwOSA5LjAwMDAxVjM0LjMxMTFMNDcuMTY1IDI0LjE0OTVMNTIuODM1IDI5Ljc5MzFMMzMuMDUwOSA0OS42NzAxTDEzLjI2NjcgMjkuNzkzMUwxOC45MzY3IDI0LjE0OTVMMjkuMDUwOSAzNC4zMTExVjkuMDAwMDFDMjkuMDUwOSA4LjQ0NzczIDI4LjYwMzEgOC4wMDAwMiAyOC4wNTA5IDguMDAwMDJMMCA4TDQuNzQ0MDJlLTA2IDBaIiBmaWxsPSIjMTAxMTExIi8+Cjwvc3ZnPgo=" className="css-1uyp34x" />
+            </h2>
           </div>
 
           <div className="row">
             <div className="col-lg-4 col-md-6 mt-4">
-              <div
-                style={{
-                  borderRadius: "20px",
-                  border: "1px solid #000",
-                  background: "#13171C",
-                  padding: "40px",
-                }}
-              >
+              <div className="contactCard">
+                <img src="./career.svg" />
                 <a href={"#"} target={"_blank"} rel="noreferrer">
-                  <img
-                    className="card-icon"
-                    src={"goal 1.png"}
-                    alt="icon"
-                    style={{
-                      marginBottom: "40px",
-                    }}
-                  />
                   <h3 className="card-title">Careers</h3>
                   <p className="card-content">
                     Help build the future of technology. Start your new career
@@ -56,23 +28,9 @@ const GetInTouch = ({ landing, featureListdata }: any) => {
               </div>
             </div>
             <div className="col-lg-4 col-md-6 mt-4 ">
-              <div
-                style={{
-                  borderRadius: "20px",
-                  border: "1px solid #000",
-                  background: "#13171C",
-                  padding: "40px",
-                }}
-              >
+              <div className="contactCard">
+                <img src="./team.svg" />
                 <a href={"#"} target={"_blank"} rel="noreferrer">
-                  <img
-                    className="card-icon"
-                    src={"community 1.png"}
-                    alt="icon"
-                    style={{
-                      marginBottom: "40px",
-                    }}
-                  />
                   <h3 className="card-title">Community</h3>
                   <p className="card-content">
                     Help build the future of technology. Start your new career
@@ -82,23 +40,9 @@ const GetInTouch = ({ landing, featureListdata }: any) => {
               </div>
             </div>
             <div className="col-lg-4 col-md-6 mt-4">
-              <div
-                style={{
-                  borderRadius: "20px",
-                  border: "1px solid #000",
-                  background: "#13171C",
-                  padding: "40px",
-                }}
-              >
+              <div className="contactCard">
+                <img src="./24-hours.svg" />
                 <a href={"#"} target={"_blank"} rel="noreferrer">
-                  <img
-                    className="card-icon"
-                    src={"24-hour-service 1.png"}
-                    alt="icon"
-                    style={{
-                      marginBottom: "40px",
-                    }}
-                  />
                   <h3 className="card-title">24 / 7 Support</h3>
                   <p className="card-content">
                     Help build the future of technology. Start your new career

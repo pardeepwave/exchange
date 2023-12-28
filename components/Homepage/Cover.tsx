@@ -15,34 +15,28 @@ const Cover = ({ landing, loggedin, landing_banner_image }: any) => {
       {parseInt(landing?.landing_first_section_status) === 1 && (
         <section className="hero-banner-area">
           <div className="container">
-            <div className="row" style={{ height: "500px" }}>
-              <div className="col-md-6 ">
-                <ImageComponent
-                  src={landing_banner_image || "/pngwing 2.png"}
+            <div className="row flex-md-row-reverse align-items-center">
+              <div className="col-md-6 main_banner_img">
+                <img
+                  src={landing_banner_image || "/homepage_graphic2.jpg"}
                 />
-                {/* <ImageComponent src={"/pngwing 2.png"} /> */}
-
-                <div className="graph-img">
-                  <img src="/graph.png"></img>
-                </div>
               </div>
               <div className="col-md-6 conver-col1">
-                <h1 className="banner-title" style={{ marginBottom: "45px" }}>
+                <h1 className="banner-title">
                   {landing?.landing_title ? (
                     <div dangerouslySetInnerHTML={{ __html: landing?.landing_title }} />
                   ) : (
                     <>
-                      {t("Buy & Sell Instantly & Hold ")}
-                      <span style={{ color: 'red' }}>Cryptocurrency</span> With Crypto
+                      {t("Trade with a new way in a new World")}
                     </>
                   )}
                 </h1>
-                {/* <p className="banner-content">
+                <p className="banner-content">
                   {landing?.landing_description ||
                     t(
                       "Republic Exchange is such a marketplace where people can trade directly with each other"
                     )}
-                </p> */}
+                </p>
                 {!loggedin && (
               
                   <a
@@ -51,17 +45,12 @@ const Cover = ({ landing, loggedin, landing_banner_image }: any) => {
                         ? `/${router.locale}/signup`
                         : "/signup"
                     }
-                    className="primary-btn"
+                    className="btn btn-primary banner-btn"
                   >
                     {t("Let’s Get Started")}
-                    <span>
                     <img src="/Group.png" alt="" />
-                    </span>
                   </a>
                 )}
-                <div className="coin-img">
-                  <img src="/coin.png"></img>
-                </div>
               </div>
             </div>
           </div>

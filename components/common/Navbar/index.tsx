@@ -95,7 +95,6 @@ const Navbar = ({
               <div className="d-flex align-items-center justify-content-between">
                 <div
                   className="d-flex align-items-center"
-                  style={{ gap: "20px" }}
                 >
                   <div className="cp-user-logo">
                     <Link href="/">

@@ -85,6 +85,12 @@ const Home: NextPage = ({
               hourly_coin_pairs={hourly_coin_pairs}
               latest_coin_pairs={latest_coin_pairs}
             />
+            <MarketTrends
+              landing={landing}
+              asset_coin_pairs={asset_coin_pairs}
+              hourly_coin_pairs={hourly_coin_pairs}
+              latest_coin_pairs={latest_coin_pairs}
+            />
             {/* <SliderSection
               bannerListdata={bannerListdata}
               landing={landing}
@@ -102,12 +108,7 @@ const Home: NextPage = ({
               latest_coin_pairs={latest_coin_pairs}
               announcementListdata={announcementListdata}
             />
-            <MarketTrends
-              landing={landing}
-              asset_coin_pairs={asset_coin_pairs}
-              hourly_coin_pairs={hourly_coin_pairs}
-              latest_coin_pairs={latest_coin_pairs}
-            />
+            
             <SliderSection2
               bannerListdata={bannerListdata}
               landing={landing}

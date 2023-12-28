@@ -50,40 +50,34 @@ const SliderSection2 = ({
   };
 
   return (
-    <div style={{ padding: "2rem 0" }}>
-      <section>
+    <div>
+      <section className="customizationWrap">
         <div
-          className="container-fulid"
-          style={{ display: "flex", justifyContent: "center" }}
+          className="container"
         >
           <div
-            className="myNewCon row"
-            style={{ padding: "0 5rem", height: "450px" }}
+            className="row justify-content-between align-items-center flex-md-row-reverse"
           >
-            <div className="col-6" style={{ padding: "6rem 0" }}>
+            <div className="col-lg-5 col-md-6 col-12">
+              <img
+                className="icon"
+                src={landing?.trade_anywhere_left_img}
+                alt="ad1"
+              />
+            </div>
+            <div className="col-lg-5 col-md-6 col-12">
               <div className="heading1my">
                 {landing?.market_trend_title ? (
                         <div dangerouslySetInnerHTML={{ __html: landing?.market_trend_title }} />
                       ) : (
                         <>
-                          {t("Buy & Sell Instantly & Hold ")}
-                          <span style={{ color: 'red' }}>Cryptocurrency</span> With Crypto
+                          {t("Earn Crytpo by learning about blockchain ")}
                         </>
                       )}
               </div>
-              <div style={{ padding: "15px 0" }}>
-                <button className="button1my">Know More</button>
+              <div>
+                <button className="btn btn-primary">Know More</button>
               </div>
-            </div>
-            <div className="col-6">
-              <img
-                className="icon mr-3"
-                src={landing?.trade_anywhere_left_img}
-                alt="ad1"
-                style={{
-                  padding: "0 10rem",
-                }}
-              />
             </div>
           </div>
 
