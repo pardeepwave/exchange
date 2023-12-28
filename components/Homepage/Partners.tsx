@@ -29,7 +29,7 @@ const Partners = ({
           <div className="container">
             <div className="section-title">
               <h2 className="heading1my">
-              That's why you should choose <span className="heading1mySub"> Republic Exchange</span>. We provide <span className="heading1mySub">simple and efficient</span> software as well as <span className="heading1mySub">unbeatable and secure</span> hardware
+              That is why you should choose <span className="heading1mySub"> Republic Exchange</span>. We provide <span className="heading1mySub">simple and efficient</span> software as well as <span className="heading1mySub">unbeatable and secure</span> hardware
               </h2>
               <p className="subheading3">
               YOUR CHOICE IS THE SAME AS THEIRS
