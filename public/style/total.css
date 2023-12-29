@@ -1479,10 +1479,11 @@ select {
 
 .form-control {
   height: 60px;
-  border: 1px solid #dcdff2;
+  border: 1px solid var(--border-color-1);
   border-radius: 3px;
   box-shadow: none;
   color: var(--text-primary-color-2);
+  background-color: var(--main-background-color);
 }
 
 .modal .form-control::-webkit-input-placeholder {
@@ -2278,6 +2279,7 @@ a#submit {
 }
 .content-sec-mobile .detailDescription {
   padding-left: 30px;
+  width: calc(100% - 60px);
 }
 .content-sec-mobile .detailDescription h4 {
   font-size: 18px;
@@ -4663,6 +4665,7 @@ select:-webkit-autofill:focus {
 
 .main-menu ul li ul li  {
   display: block;
+  width: 100%;
 }
 .main-menu ul li ul li a {
   display: flex;

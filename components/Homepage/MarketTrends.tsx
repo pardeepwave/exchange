@@ -18,7 +18,7 @@ const MarketTrends = ({
       {parseInt(landing.landing_third_section_status) === 1 && (
         <section className="market-trend-area">
           <div className="container">
-            <div className="section-title">
+            <div className="section-title mb-3">
               <div style={{ textAlign: "center" }}>
                 {/* <img
                   className="icon mr-3"
@@ -192,21 +192,15 @@ const MarketTrends = ({
                                   </a>
                                 </div>
                               </td>
-                              <td
-                                className="text-black "
-                              >
+                              <td>
                                 {item.last_price}
                               </td>
                               <td className="">
-                                <span
-                                  className={`changePos  ${
-                                    parseFloat(item.price_change) >= 0
-                                      ? "text-success"
-                                      : "text-danger"
-                                  } `}
-                                >
-                                  {item.price_change}%
-                                </span>
+                                { parseFloat(item.price_change) >= 0 ? 
+                                  <span className="changePos  text-success ">+{parseFloat(item.price_change).toFixed(2)}%</span>
+                                      : 
+                                  <span className="changePos  text-danger ">{parseFloat(item.price_change).toFixed(2)}%</span>
+                                } 
                               </td>
                               <td className="">
                                 {item.price_change >= 0 ? (
@@ -232,7 +226,7 @@ const MarketTrends = ({
                                 )}
                               </td>
                               <td >
-                                {item.volume} {item.parent_coin_name}
+                                {parseFloat(item.volume).toFixed(2)} <small className="text-muted">{item.parent_coin_name}</small>
                               </td>
                               <td
                                 onClick={async () => {
@@ -270,7 +264,7 @@ const MarketTrends = ({
                                   }
                                 >
                                   <a
-                                    className="btn btn-primary btn-sm"
+                                    className="btn btn-light btn-sm"
                                   >
                                     {t("Trade")}
                                   </a>

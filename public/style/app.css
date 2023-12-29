@@ -118,6 +118,7 @@ body {
   color: var(--font-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--main-background-color);
 }
 
 h1,
@@ -794,7 +795,7 @@ client-area
     background-color: var(--bColor);
 }
 .hero-banner-bottom .item-list {
-  padding: 23px;
+  padding: 15px;
 }
 
 .hero-banner-bottom .item-list .single-item {
@@ -1519,7 +1520,7 @@ img.icon.mr-3 {
 }
 .myCardDivSub {
   padding: 30px;
-  background-color: var(--white);
+  background-color: var(--main-background-color);
 }
 .myCardDivSub img {
 	width: 100%;
@@ -1561,10 +1562,32 @@ img.icon.mr-3 {
 	width: 87px;
 	margin-right: 20px;
 }
+[data-theme="dark"] .css-1uyp34x,
+[data-theme="dark"] .contactCard > img {
+	filter: invert(1);
+}
 .contactCard .card-title {
   font-size: 24px;
   color: var(--title-color);
   margin-bottom: 10px;
+}
+#exchangeTab {
+	border-radius: 40px;
+	margin-bottom: 20px;
+	box-shadow: var(--box-shadow-color);
+	padding: 10px;
+}
+#exchangeTab.nav-tabs .nav-link {
+	color: var(--title-color);
+	font-weight: 500;
+	border-radius: 20px;
+}
+#exchangeTab.nav-tabs .nav-link.active {
+	background: #23b682;
+  background: linear-gradient(45deg, #23b682 23%, rgba(73,109,202,1) 100%);
+  border: 0 none;
+  color: var(--white);
+  box-shadow: 0 0 9px rgba(73,109,202,0.51);
 }
 .exchange-volume-table {
   border: 1px solid var(--border-color);
@@ -1577,6 +1600,7 @@ img.icon.mr-3 {
 	color: var(--title-color);
 	font-size: 14px;
 	font-weight: 600;
+  background-color: var(--background-color);
 }
 .exchange-volume-table table.dataTable tbody tr td {
 	border-bottom: 1px solid var(--border-color);
@@ -1585,12 +1609,27 @@ img.icon.mr-3 {
 	font-size: 14px;
 	line-height: 1;
 	vertical-align: middle;
+  background-color: var(--main-background-color);
 }
 .exchange-volume-table table.dataTable tbody tr td .icon {
   width: 20px;
   height: 20px;
   object-fit: contain;
   margin-right: 10px !important;
+}
+.exchange-volume-table table.dataTable tbody tr td .changePos {
+	padding: 6px 10px;
+  width: 75px;
+  display: inline-block;
+	border-radius: 19px;
+	line-height: 1;
+  text-align: center;
+}
+.exchange-volume-table table.dataTable tbody tr td .changePos.text-success {
+	background-color: #32d77730;
+}
+.exchange-volume-table table.dataTable tbody tr td .changePos.text-danger {
+	background-color: #d6303130;
 }
 .quoteSymbol {
   color: var(--text-primary-color);

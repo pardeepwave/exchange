@@ -122,7 +122,8 @@ export const checkDashboardThemeSettings = (
 };
 
 export const checkDarkMode = (settings: any, dispatch: any) => {
-  const theme = localStorage.getItem("theme");
+  // const theme = localStorage.getItem("theme");
+  const theme = settings?.default_theme_mode;
   if (theme === "light") {
     localStorage.setItem("theme", "light");
     dispatch(setThemeColor("light"));
