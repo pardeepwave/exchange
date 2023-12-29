@@ -48,7 +48,7 @@ const OrderHistorySection = ({ bottom }: any) => {
             >
               <a
                 id="Open-orders-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="Open-orders"
                 aria-selected="true"
@@ -70,7 +70,7 @@ const OrderHistorySection = ({ bottom }: any) => {
             >
               <a
                 id="Open-orders-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="Open-orders"
                 aria-selected="true"
@@ -92,7 +92,7 @@ const OrderHistorySection = ({ bottom }: any) => {
             >
               <a
                 id="Open-orders-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="Open-orders"
                 aria-selected="true"

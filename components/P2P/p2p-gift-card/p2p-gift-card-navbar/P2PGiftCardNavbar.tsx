@@ -52,7 +52,7 @@ export default function P2PGiftCardNavbar() {
             <a
               href=""
               className="dropdown-toggle"
-              data-toggle="dropdown"
+              data-bs-toggle="dropdown"
               aria-expanded="false"
             >
               More

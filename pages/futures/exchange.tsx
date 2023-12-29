@@ -62,7 +62,7 @@ const Exchange = () => {
                               <span
                                 className="coin-badge dropdown-toggle"
                                 id="dropdownMenuButton"
-                                data-toggle="dropdown"
+                                data-bs-toggle="dropdown"
                                 aria-haspopup="true"
                                 aria-expanded="false"
                               >

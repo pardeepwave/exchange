@@ -73,7 +73,7 @@ const NotificationDropdown = ({
                   <button
                     type="button"
                     className="btn dropdown-toggle bg-transparent"
-                    data-toggle="dropdown"
+                    data-bs-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
                     style={{ marginLeft: "0" }}
@@ -101,8 +101,9 @@ const NotificationDropdown = ({
                         />
                       </p>
                       <div className="user-name">
-                        <p className="nav-userName">
-                          {user?.first_name!} {user?.last_name!}
+                        <p className="nav-userName m-0">
+                          {user?.first_name!} {user?.last_name!};<br/>
+                          <small className="text-muted">{user?.email}</small>
                         </p>
                       </div>
                     </div>
@@ -168,7 +169,7 @@ const NotificationDropdown = ({
                   <button
                     type="button"
                     className="notification-btn dropdown-toggle"
-                    data-toggle="dropdown"
+                    data-bs-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
                   >

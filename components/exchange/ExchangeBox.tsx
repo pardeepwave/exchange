@@ -140,7 +140,7 @@ const ExchangeBox = () => {
             <li role="presentation" className="nav-item">
               <a
                 id="Limit-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="Limit"
                 aria-selected="true"
@@ -155,7 +155,7 @@ const ExchangeBox = () => {
             <li role="presentation" className="nav-item">
               <a
                 id="Market-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="Market"
                 aria-selected="false"
@@ -170,7 +170,7 @@ const ExchangeBox = () => {
             <li role="presentation" className="nav-item">
               <a
                 id="Stop-limit-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="Stop-limit"
                 aria-selected="false"
@@ -231,7 +231,7 @@ const ExchangeBox = () => {
             >
               <a
                 id="sell-Limit-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="LimitSell"
                 aria-selected="true"
@@ -249,7 +249,7 @@ const ExchangeBox = () => {
             >
               <a
                 id="sell-Market-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="MarketSell"
                 aria-selected="false"
@@ -267,7 +267,7 @@ const ExchangeBox = () => {
             >
               <a
                 id="sell-Stop-limit-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="Stop-limitSell"
                 aria-selected="false"

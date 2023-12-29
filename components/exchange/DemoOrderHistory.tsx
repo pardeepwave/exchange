@@ -29,7 +29,7 @@ const DemoOrderHistory = ({
             <a
               className="nav-link active"
               id="buy-tab"
-              data-toggle="tab"
+              data-bs-toggle="tab"
               href="#buy"
               role="tab"
               aria-controls="buy"
@@ -42,7 +42,7 @@ const DemoOrderHistory = ({
             <a
               className="nav-link"
               id="sell-tab"
-              data-toggle="tab"
+              data-bs-toggle="tab"
               href="#sell"
               role="tab"
               aria-controls="sell"

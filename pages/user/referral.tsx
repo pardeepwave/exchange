@@ -46,13 +46,8 @@ const Referral: NextPage = () => {
                       <div className="input-group rounded">
                         <input
                           ref={selectReference}
-                          onClick={() => {
-                            navigator.clipboard.writeText(referral);
-                            toast.success(t("Copied to clipboard"));
-                            selectReference.current.select();
-                          }}
                           type="url"
-                          className="form-control referel-inputfield rounded-0"
+                          className="form-control referel-inputfield"
                           id="url"
                           defaultValue={referral}
                           readOnly
@@ -64,16 +59,32 @@ const Referral: NextPage = () => {
                             navigator.clipboard.writeText(referral);
                             toast.success(t("Copied to clipboard"));
                             selectReference.current.select();
-                          }}>copy
-
-                          <i className="fa fa-clone" />
+                          }}>
+                          <svg version="1.1" id="Capa_1"  fill="currentColor" x="0px" y="0px"
+                              width="30px" height="30px" viewBox="0 0 699.428 699.428">
+                            <g>
+                              <g id="_x33__31_">
+                                <g>
+                                  <path d="M502.714,0.678C500.004,0.678,240.428,0,240.428,0C194.178,0,153,42.425,153,87.429l-25.267,0.59
+                                    c-46.228,0-84.019,41.834-84.019,86.838V612c0,45.004,41.179,87.428,87.429,87.428H459c46.249,0,87.428-42.424,87.428-87.428
+                                    h21.857c46.25,0,87.429-42.424,87.429-87.428v-349.19L502.714,0.678z M459,655.715H131.143c-22.95,0-43.714-21.441-43.714-43.715
+                                    V174.857c0-32.523,26.753-43.714,65.571-43.714v393.429C153,569.576,194.178,612,240.428,612c0,0,236.975-0.24,262.482-0.24
+                                    C502.91,638.295,485.513,655.715,459,655.715z M502.714,459.24H306c-12.065,0-21.857-9.77-21.857-21.836
+                                    c0-12.064,9.792-21.834,21.857-21.834h196.714c12.065,0,21.857,9.77,21.857,21.834
+                                    C524.571,449.471,514.779,459.24,502.714,459.24z M502.714,350.064H306c-12.065,0-21.857-9.771-21.857-21.835
+                                    c0-12.065,9.792-21.835,21.857-21.835h196.714c12.065,0,21.857,9.77,21.857,21.835
+                                    C524.571,340.272,514.779,350.064,502.714,350.064z M546.428,174.857c-23.277,0-43.714-21.004-43.714-43.714
+                                    c0,0,0-44.283,0-86.751v-0.044L612,174.857H546.428z"/>
+                                </g>
+                              </g>
+                            </g>
+                            </svg>
                         </button>
                       </div>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis felis ac augue tincidunt hendrerit. consectetur  Vivamus quis felis ac  augue tincidunt hendrerit.consectetur adipiscing elit. Vivamus quis felis ac augue tincidunt hendrerit.consectetur adipiscing elit. Vivamus quis felis ac augue tincidunt hendrerit.</p>
                     </div>
                   </div>
                   <div className="col-lg-5 col-md-6 col-12 text-center">
-                     <img src="/gils-loud.png"></img>     
+                     <img src="/blog4.png"></img>     
                   </div>
                 </div>
               </div>
@@ -88,7 +99,7 @@ const Referral: NextPage = () => {
                   <div className="single-item">
                     <h4>{t("Total Rewards")}</h4>
                     <h2>
-                      {parseFloat(allData?.total_reward).toFixed(6)} <span />
+                      {parseFloat(allData?.total_reward).toFixed(3)} <span />
                     </h2>
                   </div>
                 </div>

@@ -83,7 +83,7 @@ export default function Index() {
 
   return (
     <section>
-      <div className="container">
+      <div className="container-fluid">
         <div className=" pt-4 pb-2 p2p-gift-card-navbar-margin-top">
           <h1 className="banner-title">{t("Markets Overview")}</h1>
           <div className="d-flex gap-5 align-items-center">

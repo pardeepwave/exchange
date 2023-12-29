@@ -80,7 +80,7 @@ const DemoNotificationDropdown = ({
                   <button
                     type="button"
                     className="btn dropdown-toggle bg-transparent"
-                    data-toggle="dropdown"
+                    data-bs-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
                     style={{ marginLeft: "0" }}
@@ -160,7 +160,7 @@ const DemoNotificationDropdown = ({
                   <button
                     type="button"
                     className="notification-btn dropdown-toggle"
-                    data-toggle="dropdown"
+                    data-bs-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
                   >

@@ -52,7 +52,7 @@ const MarketTrends = ({
                   <a
                     className="exchangeTabButton nav-link active"
                     id="CoreAssets-tab"
-                    data-toggle="tab"
+                    data-bs-toggle="tab"
                     href="#CoreAssets"
                     role="tab"
                     aria-controls="CoreAssets"
@@ -65,7 +65,7 @@ const MarketTrends = ({
                   <a
                     className="exchangeTabButton nav-link"
                     id="Gainers-tab"
-                    data-toggle="tab"
+                    data-bs-toggle="tab"
                     href="#Gainers"
                     role="tab"
                     aria-controls="Gainers"
@@ -78,7 +78,7 @@ const MarketTrends = ({
                   <a
                     className="exchangeTabButton nav-link"
                     id="Listings-tab"
-                    data-toggle="tab"
+                    data-bs-toggle="tab"
                     href="#Listings"
                     role="tab"
                     aria-controls="Listings"
@@ -296,14 +296,14 @@ const MarketTrends = ({
                         role="grid"
                         aria-describedby="DataTables_Table_1_info"
                       >
-                        <thead style={{ background: "#000", color: "#fff" }}>
+                        <thead>
                           <tr role="row">
                             <th
                               scope="col"
                               className="sorting_disabled"
                               rowSpan={1}
                               colSpan={1}
-                              style={{ width: "0px" }}
+                              style={{ width: "217.516px" }}
                             >
                               {t("Market")}
                             </th>
@@ -312,7 +312,7 @@ const MarketTrends = ({
                               className="sorting_disabled"
                               rowSpan={1}
                               colSpan={1}
-                              style={{ width: "0px" }}
+                              style={{ width: "81.2812px" }}
                             >
                               {t("Price")}
                             </th>
@@ -321,7 +321,7 @@ const MarketTrends = ({
                               className="sorting_disabled"
                               rowSpan={1}
                               colSpan={1}
-                              style={{ width: "0px" }}
+                              style={{ width: "143.797px" }}
                             >
                               {t("Change (24h)")}
                             </th>
@@ -330,7 +330,7 @@ const MarketTrends = ({
                               className="sorting_disabled"
                               rowSpan={1}
                               colSpan={1}
-                              style={{ width: "0px" }}
+                              style={{ width: "102.297px" }}
                             >
                               {t("Chart")}
                             </th>
@@ -339,7 +339,7 @@ const MarketTrends = ({
                               className="sorting_disabled"
                               rowSpan={1}
                               colSpan={1}
-                              style={{ width: "0px" }}
+                              style={{ width: "207.766px" }}
                             >
                               {t("Volume")}
                             </th>
@@ -348,7 +348,7 @@ const MarketTrends = ({
                               className="sorting_disabled"
                               rowSpan={1}
                               colSpan={1}
-                              style={{ width: "0px" }}
+                              style={{ width: "67.344px" }}
                             >
                               {t("Actions")}
                             </th>
@@ -383,15 +383,11 @@ const MarketTrends = ({
                                   {item.last_price}
                                 </td>
                                 <td className="">
-                                  <span
-                                    className={`changePos  ${
-                                      parseFloat(item.price_change) >= 0
-                                        ? "text-success"
-                                        : "text-danger"
-                                    } `}
-                                  >
-                                    {item.price_change}%
-                                  </span>
+                                { parseFloat(item.price_change) >= 0 ? 
+                                  <span className="changePos  text-success ">+{parseFloat(item.price_change).toFixed(2)}%</span>
+                                      : 
+                                  <span className="changePos  text-danger ">{parseFloat(item.price_change).toFixed(2)}%</span>
+                                } 
                                 </td>
                                 <td className="">
                                   {item.price_change >= 0 ? (
@@ -409,7 +405,7 @@ const MarketTrends = ({
                                   )}
                                 </td>
                                 <td className="text-black ">
-                                  {item.volume} {item.parent_coin_name}
+                                  {parseFloat(item.volume).toFixed(2)} <small className="text-muted">{item.parent_coin_name}</small>
                                 </td>
                                 <td
                                   onClick={async () => {
@@ -432,7 +428,7 @@ const MarketTrends = ({
                                 >
                                   <a
                                     href="/exchange/dashboard"
-                                    className="btnTrade btn-link"
+                                    className="btn btn-light btn-sm"
                                   >
                                     {t("Trade")}
                                   </a>
@@ -464,14 +460,14 @@ const MarketTrends = ({
                         role="grid"
                         aria-describedby="DataTables_Table_2_info"
                       >
-                        <thead style={{ background: "#000", color: "#fff" }}>
+                        <thead>
                           <tr role="row">
                             <th
                               scope="col"
                               className="sorting_disabled"
                               rowSpan={1}
                               colSpan={1}
-                              style={{ width: "0px" }}
+                              style={{ width: "217.516px" }}
                             >
                               {t("Market")}
                             </th>
@@ -480,7 +476,7 @@ const MarketTrends = ({
                               className="sorting_disabled"
                               rowSpan={1}
                               colSpan={1}
-                              style={{ width: "0px" }}
+                              style={{ width: "81.2812px" }}
                             >
                               {t("Price")}
                             </th>
@@ -489,7 +485,7 @@ const MarketTrends = ({
                               className="sorting_disabled"
                               rowSpan={1}
                               colSpan={1}
-                              style={{ width: "0px" }}
+                              style={{ width: "143.797px" }}
                             >
                               {t("Change (24h)")}
                             </th>
@@ -498,7 +494,7 @@ const MarketTrends = ({
                               className="sorting_disabled"
                               rowSpan={1}
                               colSpan={1}
-                              style={{ width: "0px" }}
+                              style={{ width: "102.297px" }}
                             >
                               {t("Chart")}
                             </th>
@@ -507,7 +503,7 @@ const MarketTrends = ({
                               className="sorting_disabled"
                               rowSpan={1}
                               colSpan={1}
-                              style={{ width: "0px" }}
+                              style={{ width: "207.766px" }}
                             >
                               {t("Volume")}
                             </th>
@@ -516,7 +512,7 @@ const MarketTrends = ({
                               className="sorting_disabled"
                               rowSpan={1}
                               colSpan={1}
-                              style={{ width: "0px" }}
+                              style={{ width: "67.344px" }}
                             >
                               {t("Actions")}
                             </th>
@@ -551,15 +547,11 @@ const MarketTrends = ({
                                   {item.last_price}
                                 </td>
                                 <td className="">
-                                  <span
-                                    className={`changePos  ${
-                                      parseFloat(item.price_change) >= 0
-                                        ? "text-success"
-                                        : "text-danger"
-                                    } `}
-                                  >
-                                    {item.price_change}%
-                                  </span>
+                                { parseFloat(item.price_change) >= 0 ? 
+                                  <span className="changePos  text-success ">+{parseFloat(item.price_change).toFixed(2)}%</span>
+                                      : 
+                                  <span className="changePos  text-danger ">{parseFloat(item.price_change).toFixed(2)}%</span>
+                                } 
                                 </td>
                                 <td className="">
                                   {item.price_change >= 0 ? (
@@ -577,7 +569,7 @@ const MarketTrends = ({
                                   )}
                                 </td>
                                 <td className="text-black ">
-                                  {item.volume} {item.parent_coin_name}
+                                  {parseFloat(item.volume).toFixed(2)} <small className="text-muted">{item.parent_coin_name}</small>
                                 </td>
                                 <td
                                   onClick={async () => {
@@ -600,7 +592,7 @@ const MarketTrends = ({
                                 >
                                   <a
                                     href="/exchange/dashboard"
-                                    className="btnTrade btn-link"
+                                    className="btn btn-light btn-sm"
                                   >
                                     {t("Trade")}
                                   </a>

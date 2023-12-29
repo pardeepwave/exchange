@@ -354,7 +354,7 @@ const ExchangeBox = ({ disableCross, disableIsolated }: any) => {
             <li role="presentation" className="nav-item mr-0">
               <a
                 id="Limit-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="Limit"
                 aria-selected="true"
@@ -369,7 +369,7 @@ const ExchangeBox = ({ disableCross, disableIsolated }: any) => {
             <li role="presentation" className="nav-item mr-0">
               <a
                 id="Market-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="Market"
                 aria-selected="false"
@@ -384,7 +384,7 @@ const ExchangeBox = ({ disableCross, disableIsolated }: any) => {
             <li role="presentation" className="nav-item mr-0">
               <a
                 id="Market-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="Market"
                 aria-selected="false"
@@ -399,7 +399,7 @@ const ExchangeBox = ({ disableCross, disableIsolated }: any) => {
             <li role="presentation" className="nav-item mr-0">
               <a
                 id="Market-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="Market"
                 aria-selected="false"
@@ -489,7 +489,7 @@ const ExchangeBox = ({ disableCross, disableIsolated }: any) => {
             >
               <a
                 id="sell-Limit-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="LimitSell"
                 aria-selected="true"
@@ -507,7 +507,7 @@ const ExchangeBox = ({ disableCross, disableIsolated }: any) => {
             >
               <a
                 id="sell-Market-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="MarketSell"
                 aria-selected="false"
@@ -519,7 +519,7 @@ const ExchangeBox = ({ disableCross, disableIsolated }: any) => {
             <li role="presentation" className="nav-item sellBox mr-0">
               <a
                 id="Market-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="Market"
                 aria-selected="false"
@@ -534,7 +534,7 @@ const ExchangeBox = ({ disableCross, disableIsolated }: any) => {
             <li role="presentation" className="nav-item sellBox mr-0">
               <a
                 id="Market-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="Market"
                 aria-selected="false"

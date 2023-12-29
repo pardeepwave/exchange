@@ -205,7 +205,7 @@ const Home: NextPage = ({
                           <a
                             className="nav-link active"
                             id="CoreAssets-tab"
-                            data-toggle="tab"
+                            data-bs-toggle="tab"
                             href="#CoreAssets"
                             role="tab"
                             aria-controls="CoreAssets"
@@ -218,7 +218,7 @@ const Home: NextPage = ({
                           <a
                             className="nav-link"
                             id="Gainers-tab"
-                            data-toggle="tab"
+                            data-bs-toggle="tab"
                             href="#Gainers"
                             role="tab"
                             aria-controls="Gainers"
@@ -231,7 +231,7 @@ const Home: NextPage = ({
                           <a
                             className="nav-link"
                             id="Listings-tab"
-                            data-toggle="tab"
+                            data-bs-toggle="tab"
                             href="#Listings"
                             role="tab"
                             aria-controls="Listings"

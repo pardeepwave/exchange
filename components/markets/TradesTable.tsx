@@ -95,11 +95,10 @@ export default function TradesTable({ selectedCurrency }: any) {
 
   const { t } = useTranslation();
   return (
-    <section className="container mt-5">
+    <section className="container-fluid">
       <div className="row">
         <div className="col-12 px-2">
           <div className="market-trend-area ">
-            <div className="container">
               <div className="row">
                 <div className="col-md-9 col-12">
                   <div className="exchange-tab-menu">
@@ -112,7 +111,7 @@ export default function TradesTable({ selectedCurrency }: any) {
                         <a
                           className="nav-link active"
                           id="CoreAssets-tab"
-                          data-toggle="tab"
+                          data-bs-toggle="tab"
                           href="#CoreAssets"
                           role="tab"
                           aria-controls="CoreAssets"
@@ -128,7 +127,7 @@ export default function TradesTable({ selectedCurrency }: any) {
                         <a
                           className="nav-link"
                           id="Gainers-tab"
-                          data-toggle="tab"
+                          data-bs-toggle="tab"
                           href="#Gainers"
                           role="tab"
                           aria-controls="Gainers"
@@ -142,7 +141,7 @@ export default function TradesTable({ selectedCurrency }: any) {
                         <a
                           className="nav-link"
                           id="Listings-tab"
-                          data-toggle="tab"
+                          data-bs-toggle="tab"
                           href="#Listings"
                           role="tab"
                           aria-controls="Listings"
@@ -156,7 +155,7 @@ export default function TradesTable({ selectedCurrency }: any) {
                         <a
                           className="nav-link"
                           id="Listings-tab"
-                          data-toggle="tab"
+                          data-bs-toggle="tab"
                           href="#Listings"
                           role="tab"
                           aria-controls="Listings"
@@ -220,7 +219,7 @@ export default function TradesTable({ selectedCurrency }: any) {
                                     </th>
                                     <th
                                       scope="col"
-                                      className="sorting_disabled text-center"
+                                      className="sorting_disabled"
                                       rowSpan={1}
                                       colSpan={1}
                                       style={{ width: "81.2812px" }}
@@ -229,7 +228,7 @@ export default function TradesTable({ selectedCurrency }: any) {
                                     </th>
                                     <th
                                       scope="col"
-                                      className="sorting_disabled text-center"
+                                      className="sorting_disabled"
                                       rowSpan={1}
                                       colSpan={1}
                                       style={{ width: "143.797px" }}
@@ -238,7 +237,7 @@ export default function TradesTable({ selectedCurrency }: any) {
                                     </th>
                                     {/* <th
                                   scope="col"
-                                  className="sorting_disabled text-center"
+                                  className="sorting_disabled"
                                   rowSpan={1}
                                   colSpan={1}
                                   style={{ width: "102.297px" }}
@@ -247,19 +246,19 @@ export default function TradesTable({ selectedCurrency }: any) {
                                 </th> */}
                                     <th
                                       scope="col"
-                                      className="sorting_disabled text-center"
+                                      className="sorting_disabled"
                                       rowSpan={1}
                                       colSpan={1}
-                                      style={{ width: "207.766px" }}
+                                      style={{ width: "107.766px" }}
                                     >
                                       {t("Volume")}
                                     </th>
                                     <th
                                       scope="col"
-                                      className="sorting_disabled text-center"
+                                      className="sorting_disabled"
                                       rowSpan={1}
                                       colSpan={1}
-                                      style={{ width: "207.766px" }}
+                                      style={{ width: "147.766px" }}
                                     >
                                       {t("Market Cap")}
                                     </th>
@@ -277,47 +276,45 @@ export default function TradesTable({ selectedCurrency }: any) {
                                 <tbody>
                                   {tradeItems?.map((item: any, index: any) => (
                                     <tr role="row" className="odd" key={index}>
-                                      <td className="d-flex mb-2">
-                                        <img
-                                          className="icon mr-3"
-                                          src={
-                                            item?.coin_icon || "/bitcoin.png"
-                                          }
-                                          alt="coin"
-                                          width="25px"
-                                          height="25px"
-                                        />
-                                        <a className="cellMarket" href="#">
-                                          <div className="marketSymbols">
-                                            <span className="quoteSymbol">
-                                              {selectType == 2 ||
-                                              selectType == 3 ? (
-                                                <>
-                                                  {item.coin_type}/
-                                                  {item.base_coin_type}
-                                                </>
-                                              ) : (
-                                                <>{item.coin_type}</>
-                                              )}
-                                            </span>
-                                          </div>
-                                        </a>
+                                      <td>
+                                        <div  className="d-flex">
+                                          <img
+                                            className="icon mr-3"
+                                            src={
+                                              item?.coin_icon || "/bitcoin.png"
+                                            }
+                                            alt="coin"
+                                            width="25px"
+                                            height="25px"
+                                          />
+                                          <a className="cellMarket" href="#">
+                                            <div className="marketSymbols">
+                                              <span className="quoteSymbol">
+                                                {selectType == 2 ||
+                                                selectType == 3 ? (
+                                                  <>
+                                                    {item.coin_type}/
+                                                    {item.base_coin_type}
+                                                  </>
+                                                ) : (
+                                                  <>{item.coin_type}</>
+                                                )}
+                                              </span>
+                                            </div>
+                                          </a>
+                                        </div>
                                       </td>
-                                      <td className="text-black text-center">
+                                      <td>
                                         {item.price}
                                       </td>
-                                      <td className="text-center">
-                                        <span
-                                          className={`changePos  ${
-                                            parseFloat(item.change) >= 0
-                                              ? "text-success"
-                                              : "text-danger"
-                                          } `}
-                                        >
-                                          {item.change}%
-                                        </span>
+                                      <td>
+                                        { parseFloat(item.change) >= 0 ? 
+                                          <span className="changePos  text-success ">+{parseFloat(item.change).toFixed(2)}%</span>
+                                              : 
+                                          <span className="changePos  text-danger ">{parseFloat(item.change).toFixed(2)}%</span>
+                                        } 
                                       </td>
-                                      {/* <td className="text-center">
+                                      {/* <td>
                                       {parseFloat(item.change) >= 0 ? (
                                         <img
                                           src="/chart-image-1.png"
@@ -332,10 +329,10 @@ export default function TradesTable({ selectedCurrency }: any) {
                                         />
                                       )}
                                     </td> */}
-                                      <td className="text-black text-center">
-                                        {item.volume}
+                                      <td>
+                                        {parseFloat(item.volume).toFixed(2)}
                                       </td>
-                                      <td className="text-black text-center">
+                                      <td>
                                         {item.total_balance
                                           ? parseFloat(
                                               item.total_balance
@@ -382,7 +379,7 @@ export default function TradesTable({ selectedCurrency }: any) {
                               </table>
                             </div>
                           </div>
-                          <div className="row justify-content-end mt-1">
+                          <div className="p-2">
                             <ReactPaginate
                               nextLabel=">"
                               onPageChange={handlePageClick}
@@ -405,7 +402,6 @@ export default function TradesTable({ selectedCurrency }: any) {
                   )}
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </div>

@@ -60,9 +60,12 @@ const Navbar = ({
     const data = await notification();
     dispatch(setNotificationData(data.data.data));
   };
+
+  /** for detecting homePage */
   useEffect(() => {
     showSettings &&
       checkDashboardThemeSettings(setThemeColor, ThemeColor, setLayout);
+      console.log('@@@@@@',router.pathname);
   }, []);
   const seen = async () => {
     let arr: any = [];
@@ -90,7 +93,7 @@ const Navbar = ({
     <>
       {isLoggedIn ? (
         <>
-          <div className="cp-user-top-bar position-fixed">
+          <div className={`cp-user-top-bar position-fixed loggedIn ${router.pathname === '/' ? 'home': ''}`}>
             <div className="container-fluid">
               <div className="d-flex align-items-center justify-content-between">
                 <div
@@ -1116,7 +1119,7 @@ const Navbar = ({
                             href="#"
                             id="navbarDropdown"
                             role="button"
-                            data-toggle="dropdown"
+                            data-bs-toggle="dropdown"
                             aria-haspopup="true"
                             aria-expanded="false"
                           >
@@ -1311,7 +1314,7 @@ const Navbar = ({
                               href="#"
                               id="navbarDropdown"
                               role="button"
-                              data-toggle="dropdown"
+                              data-bs-toggle="dropdown"
                               aria-haspopup="true"
                               aria-expanded="false"
                             >
@@ -1419,7 +1422,7 @@ const Navbar = ({
                             href="#"
                             id="navbarDropdown"
                             role="button"
-                            data-toggle="dropdown"
+                            data-bs-toggle="dropdown"
                             aria-haspopup="true"
                             aria-expanded="false"
                           >
@@ -1832,7 +1835,7 @@ const Navbar = ({
                             href="#"
                             id="navbarDropdown"
                             role="button"
-                            data-toggle="dropdown"
+                            data-bs-toggle="dropdown"
                             aria-haspopup="true"
                             aria-expanded="false"
                           >
@@ -1912,7 +1915,7 @@ const Navbar = ({
                             href="#"
                             id="navbarDropdown"
                             role="button"
-                            data-toggle="dropdown"
+                            data-bs-toggle="dropdown"
                             aria-haspopup="true"
                             aria-expanded="false"
                           >
@@ -2003,7 +2006,7 @@ const Navbar = ({
                             href="#"
                             id="navbarDropdown"
                             role="button"
-                            data-toggle="dropdown"
+                            data-bs-toggle="dropdown"
                             aria-haspopup="true"
                             aria-expanded="false"
                           >
