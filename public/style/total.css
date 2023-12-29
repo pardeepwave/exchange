@@ -157,7 +157,9 @@ Tags: admin, best react admin template, dashboard, material design, bootstrap, r
   left: 0;
   border-bottom: 1px solid var(--border-color);
 }
-
+.cp-user-top-bar.loggedIn:not(.home) {
+  padding: 4px 0;
+}
 .dark-board {
   background: var(--background-color);
   padding: 10px 0;
@@ -346,22 +348,23 @@ Tags: admin, best react admin template, dashboard, material design, bootstrap, r
   justify-content: space-between;
   width: 100%;
   padding: 15px;
-  border-bottom: 1px solid #8D8D8D;
+  border-bottom: 1px solid var(--border-color);
 }
 .notify-pending p {
   font-size: 16px;
   font-weight: 600;
-  color: var(--white);
+  color: var(--font-color);
+  margin: 0;
 }
 .notify-pending i.fa-regular.fa-circle-xmark {
   font-size: 16px;
-  color: #26b885;
+  color: var(--secondary-color);
 }
 
 .notify-counter {
   display: flex;
-  color: rgb(82, 80, 80);
-  background: #f5f5f5;
+  color: var(--text-primary-color-1);
+  background: var(--background-color);
   color: var(--text-primary-color-2);
   background: var(--table-background-color);
   border-radius: 5px;
@@ -372,17 +375,19 @@ Tags: admin, best react admin template, dashboard, material design, bootstrap, r
   display: flex;
   justify-content: space-between;
   padding: 15px 15px;
-  border-bottom: 1px solid #8D8D8D;
+  border-bottom: 1px solid var(--border-color);
 }
 .inner-sec-detail .ntfscn-dtal p {
-  color: var(--white);
+  color: var(--font-color);
   font-size: 15px;
   font-weight: 400;
+  margin: 0;
 }
 .inner-sec-detail .date-sec p {
-  color: var(--white);
-  font-size: 15px;
+  color: var(--text-primary-color-4);
+  font-size: 12px;
   font-weight: 400;
+  margin: 0;
 }
 .internal-sec-detail {
   display: flex;
@@ -404,13 +409,15 @@ Tags: admin, best react admin template, dashboard, material design, bootstrap, r
 .notifiy-clear {
   background-color: #26b885;
   text-align: center;
-  border-bottom-right-radius: 14px;
-  border-bottom-left-radius: 15px;
-  padding: 4px;
+  padding: 10px;
+  color: var(--white);
 }
 .notifiy-clear a.view-all {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 600;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 .notifiy-clear i.fa-solid.fa-greater-than {
   font-size: 10px;
@@ -543,16 +550,14 @@ Tags: admin, best react admin template, dashboard, material design, bootstrap, r
 .cp-user-top-bar-right .profile-dropdown .dropdown-menu .big-user-thumb {
   width: 50px;
   height: 50px;
-  /* overflow: hidden; */
   display: block;
   object-fit: cover;
-  margin: 20px 20px;
+  margin: 10px;
   position: relative;
 }
 .profile-img-name {
   display: flex;
   align-items: center;
-  border-bottom: 0.5px solid #8D8D8D;
   padding-bottom: 8px;
 }
 .user-list {
@@ -826,7 +831,9 @@ span.cp-user-icon {
   flex-direction: column;
   min-height: 100vh;
 }
-
+.cp-user-main-wrapper[data-isloggedin="true"] {
+  margin-top: 57px;
+}
 .cp-user-main-wrapper-dashboard {
   padding: 0;
   overflow: hidden;
@@ -4290,12 +4297,6 @@ table.dataTable tbody tr.selected td {
   border-bottom: 1px solid var(--border-color-2);
 }
 
-.card {
-  background-color: var(--main-background-color);
-  border-radius: 12px;
-  border: 0;
-}
-
 .dataTables_wrapper.no-footer .dataTables_scrollBody {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -5282,14 +5283,6 @@ img.left-fiat-img {
 .mb-25 {
   margin-bottom: 25px;
 }
-
-.cp-user-main-wrapper > .container-fluid {
-  width: 100%;
-  padding-right: 0;
-  padding-left: 0;
-  overflow: hidden;
-}
-
 .page-wrap {
   display: flex;
   height: auto;
@@ -6302,7 +6295,7 @@ table.dataTable tbody tr.dataTable-white td {
 }
 .input-group.rounded input#url {
   border-radius: 34px ;
-  height: 38px;
+  height: 62px;
 }
 .invite-friends .input-group .copy-url-btn {
   position: absolute;
@@ -6312,7 +6305,8 @@ table.dataTable tbody tr.dataTable-white td {
   color: var(--white);
   font-size: 16px;
   z-index: 9;
-  width: 30px ;
+  width: 70px ;
+  height: 62px;
   background-color: #26b885;
   border-radius: 00000000;
   border-bottom-right-radius: 34px;
@@ -9258,9 +9252,16 @@ input:checked+.gift-card-buy-slider:before {
 .h-40 {
   height:42px!important
 }
+
+.blance-text {
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  flex-direction:column
+}
 .active-paginate-cls {
   background:var(--primary-color)!important;
-  color:#fff!important;
+  color:var(--white)!important;
   border-radius:3px;
   font-weight:700
 }
@@ -9287,6 +9288,41 @@ input:checked+.gift-card-buy-slider:before {
 }
 .primary-border-color {
   border-color:var(--border-color)!important
+}
+
+.paginate-button {
+  font-size:19px;
+  font-weight:700;
+  cursor:pointer;
+  padding:0;
+  border:none!important;
+  background:transparent!important;
+  margin-right:5px;
+  margin-left:5px
+}
+.paginate-button,
+.paginate-button:hover,
+.paginate-number {
+  color:var(--primary-color)
+}
+.paginate-number {
+  font-weight:400;
+  padding:3px 12px;
+  cursor:pointer;
+  border:none;
+  background:transparent;
+  align-items:center;
+  font-size:16px
+}
+a.paginate_button.paginate-number:hover {
+  background:var(--primary-color)!important;
+  color:var(--title-color)!important
+}
+a.paginate_button.paginate-number.text-warning {
+  background:var(--primary-color)!important;
+  color:#fff!important;
+  border-radius:3px;
+  font-weight:700
 }
 .custom-select__multi-value {
   height:35px!important;

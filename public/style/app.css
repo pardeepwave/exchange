@@ -305,11 +305,13 @@ ul {
 
 ::-moz-selection {
   background: var(--primary-color);
+  color: var(--white);
   text-shadow: none;
 }
 
 ::selection {
   background: var(--primary-color);
+  color: var(--white);
   text-shadow: none;
 }
 
@@ -373,7 +375,82 @@ ul {
   padding-top: 50px;
   padding-bottom: 50px;
 }
-
+.dropdown-menu {
+	--bs-dropdown-zindex: 1000;
+	--bs-dropdown-min-width: 10rem;
+	--bs-dropdown-padding-x: 0;
+	--bs-dropdown-padding-y: 0.5rem;
+	--bs-dropdown-spacer: 0.125rem;
+	--bs-dropdown-font-size: 0.875rem;
+	--bs-dropdown-color: var(--bs-body-color);
+	--bs-dropdown-bg: var(--bs-body-bg);
+	--bs-dropdown-border-color: var(--bs-border-color-translucent);
+	--bs-dropdown-border-radius: 7px;
+	--bs-dropdown-border-width: 0;
+	--bs-dropdown-inner-border-radius: calc(7px - 0);
+	--bs-dropdown-divider-bg: var(--bs-border-color-translucent);
+	--bs-dropdown-divider-margin-y: 0.5rem;
+	--bs-dropdown-box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+	--bs-dropdown-link-color: var(--bs-body-color);
+	--bs-dropdown-link-hover-color: var(--bs-body-color);
+	--bs-dropdown-link-hover-bg: var(--background-color-hover);
+	--bs-dropdown-link-active-color: var(--bColor);
+	--bs-dropdown-link-active-bg: #f6f9fc;
+	--bs-dropdown-link-disabled-color: var(--bs-tertiary-color);
+	--bs-dropdown-item-padding-x: 1rem;
+	--bs-dropdown-item-padding-y: 10px;
+	--bs-dropdown-header-color: var(--bColor);
+	--bs-dropdown-header-padding-x: 1rem;
+	--bs-dropdown-header-padding-y: 0.5rem;
+	position: absolute;
+	z-index: var(--bs-dropdown-zindex);
+	display: none;
+	min-width: var(--bs-dropdown-min-width);
+	padding: var(--bs-dropdown-padding-y) var(--bs-dropdown-padding-x);
+	margin: 0;
+	font-size: var(--bs-dropdown-font-size);
+	color: var(--bs-dropdown-color);
+	text-align: left;
+	list-style: none;
+	background-color: var(--bs-dropdown-bg);
+	background-clip: padding-box;
+	border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
+	border-radius: var(--bs-dropdown-border-radius);
+	box-shadow: var(--bs-dropdown-box-shadow);
+}
+.card {
+	--bs-card-spacer-y: 30px;
+	--bs-card-spacer-x: 30px;
+	--bs-card-title-spacer-y: 0.5rem;
+	--bs-card-title-color: var(--title-color);
+	--bs-card-subtitle-color: var(--bs-body-color);
+	--bs-card-border-width: 0px;
+	--bs-card-border-color: var(--border-color-1);
+	--bs-card-border-radius: 7px;
+	--bs-card-box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+	--bs-card-inner-border-radius: 7px;
+	--bs-card-cap-padding-y: 15px;
+	--bs-card-cap-padding-x: 30px;
+	--bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
+	--bs-card-cap-color: ;
+	--bs-card-height: ;
+	--bs-card-color: ;
+	--bs-card-bg: var(--bs-body-bg);
+	--bs-card-img-overlay-padding: 1rem;
+	--bs-card-group-margin: 12px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	height: var(--bs-card-height);
+	color: var(--bs-body-color);
+	word-wrap: break-word;
+	background-color: var(--bs-card-bg);
+	background-clip: border-box;
+	border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+	border-radius: var(--bs-card-border-radius);
+	box-shadow: var(--bs-card-box-shadow);
+}
 /*------------------------ content end -----------------------*/
 
 /*------------------------ element start ---------------------*/

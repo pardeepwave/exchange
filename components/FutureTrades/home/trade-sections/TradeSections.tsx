@@ -39,7 +39,7 @@ export default function TradeSections() {
                     <a
                       className="nav-link active"
                       id="CoreAssets-tab"
-                      data-toggle="tab"
+                      data-bs-toggle="tab"
                       href="#CoreAssets"
                       role="tab"
                       aria-controls="CoreAssets"
@@ -55,7 +55,7 @@ export default function TradeSections() {
                     <a
                       className="nav-link"
                       id="Gainers-tab"
-                      data-toggle="tab"
+                      data-bs-toggle="tab"
                       href="#Gainers"
                       role="tab"
                       aria-controls="Gainers"
@@ -69,7 +69,7 @@ export default function TradeSections() {
                     <a
                       className="nav-link"
                       id="Listings-tab"
-                      data-toggle="tab"
+                      data-bs-toggle="tab"
                       href="#Listings"
                       role="tab"
                       aria-controls="Listings"
@@ -186,15 +186,11 @@ export default function TradeSections() {
                                       {item.last_price}
                                     </td>
                                     <td className="text-center">
-                                      <span
-                                        className={`changePos  ${
-                                          parseFloat(item.price_change) >= 0
-                                            ? "text-success"
-                                            : "text-danger"
-                                        } `}
-                                      >
-                                        {item.price_change}%
-                                      </span>
+                                      { parseFloat(item.price_change) >= 0 ? 
+                                        <span className="changePos  text-success ">+{parseFloat(item.price_change).toFixed(2)}%</span>
+                                            : 
+                                        <span className="changePos  text-danger ">{parseFloat(item.price_change).toFixed(2)}%</span>
+                                      } 
                                     </td>
                                     <td className="text-center">
                                       {parseFloat(item.price_change) >= 0 ? (

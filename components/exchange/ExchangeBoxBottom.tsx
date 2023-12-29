@@ -110,7 +110,7 @@ const ExchangeBoxBottom = () => {
             <li role="presentation" className="nav-item">
               <a
                 id="Limit-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="Limit"
                 aria-selected="true"
@@ -125,7 +125,7 @@ const ExchangeBoxBottom = () => {
             <li role="presentation" className="nav-item">
               <a
                 id="Market-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="Market"
                 aria-selected="false"
@@ -140,7 +140,7 @@ const ExchangeBoxBottom = () => {
             <li role="presentation" className="nav-item">
               <a
                 id="Stop-limit-tab"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab"
                 aria-controls="Stop-limit"
                 aria-selected="false"

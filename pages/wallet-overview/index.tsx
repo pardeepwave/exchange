@@ -80,7 +80,7 @@ const WalletOverview: NextPage = () => {
                                 className="dropdown-toggle wallet-overview-dropdown-btn"
                                 type="button"
                                 id="dropdownMenuButton"
-                                data-toggle="dropdown"
+                                data-bs-toggle="dropdown"
                                 aria-haspopup="true"
                                 aria-expanded="false"
                               ></button>

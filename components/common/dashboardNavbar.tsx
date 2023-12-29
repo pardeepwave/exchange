@@ -682,7 +682,7 @@ const DashboardNavbar = () => {
                             <button
                               type="button"
                               className="btn notification-btn dropdown-toggle"
-                              data-toggle="dropdown"
+                              data-bs-toggle="dropdown"
                               aria-haspopup="true"
                               aria-expanded="false"
                             >
@@ -784,7 +784,7 @@ const DashboardNavbar = () => {
                             <button
                               type="button"
                               className="btn dropdown-toggle"
-                              data-toggle="dropdown"
+                              data-bs-toggle="dropdown"
                               aria-haspopup="true"
                               aria-expanded="false"
                             >
@@ -822,8 +822,9 @@ const DashboardNavbar = () => {
                                 />
                               </span>
                               <div className="user-name">
-                                <p className="nav-userName">
+                                <p className="nav-userName m-0">
                                   {user?.first_name!} {user?.last_name!}
+                                  {JSON.stringify(user)}
                                 </p>
                               </div>
                               <Link href="/user/profile">

@@ -121,7 +121,7 @@ const MyOrderHistory = ({ setdisableCross, setdisableIsolated }: any) => {
               <li role="presentation" className="nav-item">
                 <a
                   id="Open-orders-tab"
-                  data-toggle="tab"
+                  data-bs-toggle="tab"
                   role="tab"
                   aria-controls="Open-orders"
                   aria-selected="true"
@@ -136,7 +136,7 @@ const MyOrderHistory = ({ setdisableCross, setdisableIsolated }: any) => {
               <li role="presentation" className="nav-item">
                 <a
                   id="Open-orders-tab"
-                  data-toggle="tab"
+                  data-bs-toggle="tab"
                   role="tab"
                   aria-controls="Open-orders"
                   aria-selected="true"
@@ -153,7 +153,7 @@ const MyOrderHistory = ({ setdisableCross, setdisableIsolated }: any) => {
               <li role="presentation" className="nav-item">
                 <a
                   id="Open-orders-tab"
-                  data-toggle="tab"
+                  data-bs-toggle="tab"
                   role="tab"
                   aria-controls="Open-orders"
                   aria-selected="true"
@@ -170,7 +170,7 @@ const MyOrderHistory = ({ setdisableCross, setdisableIsolated }: any) => {
               <li role="presentation" className="nav-item">
                 <a
                   id="Open-orders-tab"
-                  data-toggle="tab"
+                  data-bs-toggle="tab"
                   role="tab"
                   aria-controls="Open-orders"
                   aria-selected="true"
@@ -187,7 +187,7 @@ const MyOrderHistory = ({ setdisableCross, setdisableIsolated }: any) => {
               <li role="presentation" className="nav-item">
                 <a
                   id="Open-orders-tab"
-                  data-toggle="tab"
+                  data-bs-toggle="tab"
                   role="tab"
                   aria-controls="Open-orders"
                   aria-selected="true"

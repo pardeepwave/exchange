@@ -166,7 +166,7 @@ const Index = ({ children }: any) => {
         draggable
         pauseOnHover
       />
-      <div className="cp-user-main-wrapper">{children}</div>
+      <div className="cp-user-main-wrapper" data-isLoggedIn={isLoggedIn}>{children}</div>
       {showterms && <CookieAccept iUnderStand={iUnderStand} />}
     </div>
   ) : (

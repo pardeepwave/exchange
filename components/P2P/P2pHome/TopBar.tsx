@@ -85,7 +85,7 @@ export const P2pTopBar = () => {
                 <a
                   href=""
                   className="dropdown-toggle"
-                  data-toggle="dropdown"
+                  data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
                   {t(`More`)}
