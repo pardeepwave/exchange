@@ -54,7 +54,7 @@ const Signup: NextPage = () => {
           
         </div>
         <div className="col-md-6 d-flex align-items-center login_from_res">
-          <div className="row">
+          <div className="row w-100">
             <div className="col-lg-8 col-md-12 mx-md-auto">
               <div className="user-form border-0 my-5 my-md-0">
                 <div className="user-form-inner">

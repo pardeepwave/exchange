@@ -2260,6 +2260,7 @@ a#submit {
   top: 11px;
   color: var(--white);
   font-size: 16px;
+  z-index: 10;
 }
 .content-sec-mobile h2 {
   font-size: 30px;
@@ -4016,7 +4017,7 @@ body._toggle .swipe-area-overlay:before {
   justify-content: space-between;
   padding: 12px 15px;
   border-radius: 2px;
-  background: var(--card-background-color);
+  background: var(--background-color);
 }
 
 .exchange-area .cp-user-profile-info .form-control {
@@ -4027,8 +4028,8 @@ body._toggle .swipe-area-overlay:before {
 }
 
 .exchange-area .cp-user-profile-info .boxShadow {
-  /* position: relative; */
-  /* margin-bottom: 0; */
+  border: 1px solid var(--border-color);
+  border-radius: 8px !important;
   display: flex;
   align-items: center;
 }
@@ -4042,7 +4043,7 @@ body._toggle .swipe-area-overlay:before {
 
 .cstmHead {
   position: absolute;
-  margin-top: 10px;
+  margin-top: 0;
   margin-left: 13px;
   color: var(--text-primary-color-4) ;
 }
@@ -4154,7 +4155,7 @@ table.dataTable tbody tr.selected td {
 
 .trades-section table thead tr th,
 .trades-section table tbody tr td {
-  height: 32px;
+  height: 25px;
   padding: 10px;
   font-size: 14px;
 }
@@ -4321,7 +4322,7 @@ table.table {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  background: var(--main-background-color);
+  background: var(--background-color);
   border-radius: 4px;
   box-sizing: border-box;
   /* margin-bottom: 25px; */
@@ -4378,7 +4379,7 @@ table.table {
   .label {
   font-size: 15px;
   font-weight: 500;
-  color: var(--text-primary-color-4);
+  color: var(--text-primary-color);
 }
 
 .cxchange-summary-wrap
@@ -4823,12 +4824,10 @@ img.left-fiat-img {
 
 .value-increase {
   color: var(--trade-green) ;
-  font-size: 25px;
 }
 
 .value-decrease {
   color: var(--trade-red) ;
-  font-size: 25px;
 }
 
 .value-decreaseicon {
@@ -4876,7 +4875,7 @@ img.left-fiat-img {
 .progress-red {
   position: absolute;
   /* background-color: rgb(255 46 46 / 9%); */
-  background-color: var(--trade-red);
+  background-color: var(--trade-red) !important;
   opacity: 0.3;
   height: 100%;
   top: 0;
@@ -4884,13 +4883,11 @@ img.left-fiat-img {
 }
 
 .buy-order table.dataTable tbody tr td {
-  font-size: 16px;
-  font-weight: 500;
   color: var(--text-primary-color-4) ;
 }
 
 .buy-order table.dataTable tbody tr td.price {
-  color: #ff2e2e;
+  color: var(--trade-red);
 }
 
 .sell-order table.dataTable tbody tr {
@@ -4900,7 +4897,10 @@ img.left-fiat-img {
 }
 
 .sell-order table.dataTable tbody tr td {
-  font-size: 16px;
+  font-size: 12px;  
+  line-height:1.3;
+  font-weight:400;
+  padding:3px;
   font-weight: 500;
   color: var(--text-primary-color-4) ;
 }
@@ -4908,10 +4908,17 @@ img.left-fiat-img {
 .sell-order table.dataTable tbody tr td.price {
   color: #32d7771f;
 }
-
+.orders-area .table tbody td {
+  font-size:10px;
+  color:var(--text-primary-color-4)
+}
+.value-previous {
+  color:#818181;
+  font-size:11px
+}
 .progress-green {
   position: absolute;
-  background-color: var(--trade-green);
+  background-color: var(--trade-green) !important;
   opacity: 0.3;
   height: 100%;
   top: 0;
@@ -5043,7 +5050,7 @@ img.left-fiat-img {
 .exchange-box .theme-btn-red {
   width: 100%;
   border-radius: 0;
-  background: var(--trade-red);
+  background: var(--primary-color);
   color: var(--white);
   font-size: 20px;
   font-weight: 600;
@@ -6153,25 +6160,26 @@ table.dataTable thead th {
 }
 
 table.dataTable thead tr th {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 400;
   text-transform: capitalize;
-  color: var(--text-primary-color-2) ;
+  color: var(--text-primary-color-4) ;
+  background-color: var(--background-color);
 }
 
 table.dataTable tbody tr td {
   font-size: 12px;
   font-weight: 400;
-  color: var(--white);
-  gap: 10px;
-  padding-top: 12px;
+  line-height: 1;
+  background-color: var(--background-color);
 }
 
 table.dataTable tbody tr.dataTable-white td {
   font-size: 11px;
   font-weight: 400;
   color: var(--text-primary-color-4);
-  /* color: #000 ; */
+  border-color: var(--border-color);
+  background-color: var(--background-color);
 }
 
 .responsive-thing {
@@ -8349,7 +8357,8 @@ input {
   cursor:pointer
 }
 .p2pTabList_bg {
-  background-color:var(--background-color)
+  background-color:var(--background-color);
+  padding: 10px;
 }
 .p2pTabListActive {
   padding:21px 0;
@@ -8475,10 +8484,7 @@ input {
 .p2pTerms svg {
   color:var(--primary-color)
 }
-.p2pWork {
-  background-color:var(--card-background-color);
-  border-radius:22px
-}
+
 .p2pWorkBtn button {
   padding:5px 14px;
   border-radius:22px;
@@ -9463,7 +9469,8 @@ a.paginate_button.paginate-number.text-warning {
   color:var(--font-color)
 }
 .trade-dashboard-side-width {
-  width:320px
+  width:320px;
+  max-width: 20.83%;
 }
 .currency-search-box {
   display:flex;
@@ -9543,7 +9550,7 @@ a.paginate_button.paginate-number.text-warning {
   margin-bottom:65px
 }
 .community-home-header {
-  margin-bottom:64px
+  margin-bottom:45px
 }
 .community-home-title-section {
   display:flex;

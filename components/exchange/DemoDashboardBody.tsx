@@ -55,7 +55,7 @@ const DemoDashboardBody = ({ ThemeColor }: any) => {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
-                  className="css-3kwgah w-25"
+                  className="css-3kwgah"
                 >
                   <path d="M4 4h7v16H4V4z" fill={ThemeColor.green}></path>
                   <path
@@ -74,7 +74,7 @@ const DemoDashboardBody = ({ ThemeColor }: any) => {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
-                  className="css-3kwgah  w-25"
+                  className="css-3kwgah"
                 >
                   <path d="M4 4h7v16H4V4z" fill={ThemeColor.red}></path>
                   <path
@@ -93,7 +93,7 @@ const DemoDashboardBody = ({ ThemeColor }: any) => {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
-                  className="css-3kwgah w-25"
+                  className="css-3kwgah"
                 >
                   <path d="M4 4h7v7H4V4z" fill={ThemeColor.green}></path>
                   <path d="M4 13h7v7H4v-7z" fill={ThemeColor.green}></path>

@@ -752,6 +752,20 @@ client-area
 .footer-area .footer-bottom .footer-menu ul li a:hover {
   color: var(--primary-color);
 }
+.wrapper.cookieConsent {
+  position: fixed;
+  z-index: 99999999;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--background-color);
+}
+.wrapper.cookieConsent .content {
+	display: flex;
+	padding: 15px;
+	justify-content: space-between;
+  align-items: center;
+}
 
 @media (max-width: 767px) {
   .footer-area .footer-top {

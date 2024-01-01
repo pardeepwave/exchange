@@ -33,8 +33,7 @@ const GetInTouch = ({ landing, featureListdata }: any) => {
                 <a href={"#"} target={"_blank"} rel="noreferrer">
                   <h3 className="card-title">Community</h3>
                   <p className="card-content">
-                    Help build the future of technology. Start your new career
-                    at Republic Exchange
+                  Become part of the our vibrant community, unlocking a wealth of valuable experiences.
                   </p>
                 </a>
               </div>
@@ -45,8 +44,7 @@ const GetInTouch = ({ landing, featureListdata }: any) => {
                 <a href={"#"} target={"_blank"} rel="noreferrer">
                   <h3 className="card-title">24 / 7 Support</h3>
                   <p className="card-content">
-                    Help build the future of technology. Start your new career
-                    at Republic Exchange.
+                  The answer to 90% of your questions can be found with our 24x7 support.
                   </p>
                 </a>
               </div>

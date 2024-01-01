@@ -12,7 +12,7 @@ export const P2pWork = ({ data }: any) => {
     <div className="container mt-5">
       <div className="row">
         <div className="col-12 px-3 px-md-0">
-          <div className="p2pWork p-4 p-md-5">
+          <div className="p2pWork">
             <div className="d-block d-sm-flex justify-content-between text-center text-sm-start">
               <h3>{t(`How P2P works`)}</h3>
               <div className="p2pWorkBtn pt-4 pt-sm-0">

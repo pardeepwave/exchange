@@ -31,7 +31,7 @@ const OrderBook = () => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
-              className="css-3kwgah w-25"
+              className="css-3kwgah"
             >
               <path d="M4 4h7v16H4V4z" fill="#0ECB81"></path>
               <path
@@ -50,7 +50,7 @@ const OrderBook = () => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
-              className="css-3kwgah  w-25"
+              className="css-3kwgah"
             >
               <path d="M4 4h7v16H4V4z" fill="#F6465D"></path>
               <path
@@ -69,7 +69,7 @@ const OrderBook = () => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
-              className="css-3kwgah w-25"
+              className="css-3kwgah"
             >
               <path d="M4 4h7v7H4V4z" fill="#F6465D"></path>
               <path d="M4 13h7v7H4v-7z" fill="#0ECB81"></path>
