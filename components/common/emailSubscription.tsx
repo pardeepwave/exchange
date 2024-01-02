@@ -38,7 +38,7 @@ return (
         <div className="row">
           <div className="col-lg-7 col-md-6 col-12">
             <h2>Republic Exchange <span>Newsletter!</span></h2>
-            <p>The standard Lorem Ipsum passage, used since the 1500sLorem ipsum dolor sit ame</p>
+            <p>Unlock Exclusive Updates! Subscribe to Our Newsletter</p>
           </div>
           <div className="col-lg-5 col-md-6 col-12">
             <form onSubmit={handleSubscription}>
