@@ -91,6 +91,9 @@ const Footer = () => {
                     </div>
                     <div className="widget-inner">
                       <ul>
+                        <li>
+                          <Link href="list-your-crypto">List Your Crypto</Link>
+                        </li> 
                         {customPageData?.links?.map(
                           (item: any) =>
                             item.type === 1 && (
