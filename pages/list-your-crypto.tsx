@@ -41,8 +41,8 @@ const ListYourCrypto: FC = () => {
     console.log(formdata);
   };
 
-  const countryChange = ({ value }: option) => {
-    if (value !== null) setCode(value);
+  const countryChange = (e: any) => {
+    if (e?.value !== null) setCode(e?.value);
   };
 
   return (
