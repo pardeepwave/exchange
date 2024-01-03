@@ -1,8 +1,10 @@
 import React, { ChangeEvent, FC, useState } from "react";
 import Footer from "components/common/footer";
-import { Field, Formik, Form } from "formik";
+import { Field, Formik, Form, FormikHelpers } from "formik";
 import Head from "next/head";
 import Select, { InputActionMeta, SingleValue } from "react-select";
+import request from "lib/request";
+import { toast } from "react-toastify";
 
 interface ListTypes {
   name: String;
@@ -37,8 +39,29 @@ const ListYourCrypto: FC = () => {
     { value: "+1", label: "Canada" },
   ];
 
-  const onSubmit = (formdata: any) => {
-    console.log(formdata);
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState<any>({});
+
+  const onSubmit = async (
+    formdata: any,
+    { resetForm }: FormikHelpers<ListTypes>
+  ) => {
+    setLoading(true);
+    setErrors({});
+    try {
+      const { data } = await request.post("/listcrypto", {
+        ...formdata,
+        code,
+      });
+      if (data.success) {
+        toast.success(data.message);
+        resetForm({});
+      }
+      setErrors({});
+    } catch (error: any) {
+      if (error.response.status === 422) setErrors(error.response.data.errors);
+    }
+    setLoading(false);
   };
 
   const countryChange = (e: any) => {
@@ -71,6 +94,9 @@ const ListYourCrypto: FC = () => {
                   placeholder="Crypto Name"
                   className="form-control form-control-password look-pass"
                 />
+                {errors.name && (
+                  <span className="text-danger">{errors.name[0]}</span>
+                )}
               </div>
               <div className="col-6 mb-3">
                 <label htmlFor="url">Crypto White Paper URL</label>
@@ -80,15 +106,21 @@ const ListYourCrypto: FC = () => {
                   placeholder="Crypto White Paper URL"
                   className="form-control form-control-password look-pass"
                 />
+                {errors.url && (
+                  <span className="text-danger">{errors.url[0]}</span>
+                )}
               </div>
               <div className="col-6 mb-3">
                 <label htmlFor="contact_name">Contact Name</label>
                 <Field
-                  id="url"
+                  id="contact_name"
                   name="contact_name"
                   placeholder="Contact Name"
                   className="form-control form-control-password look-pass"
                 />
+                {errors.contact_name && (
+                  <span className="text-danger">{errors.contact_name[0]}</span>
+                )}
               </div>
               <div className="col-6 mb-3">
                 <label htmlFor="contact_email">Contact Email</label>
@@ -98,6 +130,9 @@ const ListYourCrypto: FC = () => {
                   placeholder="Contact Email"
                   className="form-control form-control-password look-pass"
                 />
+                {errors.contact_email && (
+                  <span className="text-danger">{errors.contact_email[0]}</span>
+                )}
               </div>
               <div className="col-6 mb-3">
                 <label>Choose Your Country</label>
@@ -126,6 +161,11 @@ const ListYourCrypto: FC = () => {
                     className="form-control form-control-password look-pass"
                   />
                 </div>
+                {errors.contact_number && (
+                  <span className="text-danger">
+                    {errors.contact_number[0]}
+                  </span>
+                )}
               </div>
               <div className="col-6 mb-3">
                 <label htmlFor="cms_link">CMC Link</label>
@@ -135,6 +175,9 @@ const ListYourCrypto: FC = () => {
                   placeholder="CMC Link"
                   className="form-control form-control-password look-pass"
                 />
+                {errors.cms_link && (
+                  <span className="text-danger">{errors.cms_link[0]}</span>
+                )}
               </div>
               <div className="col-6 mb-3">
                 <label htmlFor="website_url">Website URL</label>
@@ -144,10 +187,13 @@ const ListYourCrypto: FC = () => {
                   placeholder="Website URL"
                   className="form-control form-control-password look-pass"
                 />
+                {errors.website_url && (
+                  <span className="text-danger">{errors.website_url[0]}</span>
+                )}
               </div>
               <div className="d-flex d-flex justify-content-center my-3 col-12">
                 <button type="submit" className="btn btn-primary btn-lg">
-                  Submit
+                  {loading ? "Saving" : "Submit"}
                 </button>
               </div>
             </div>
