@@ -5,25 +5,28 @@ import useTranslation from "next-translate/useTranslation";
 import Table from "components/common/Table";
 import axios from "axios";
 
+type Trade = {
+  maker_fee: number;
+  pair_name: string;
+  taker_fee: number;
+};
+
+type Withdrawl = {
+  assets: string;
+  fee: string;
+  min: string;
+  max: string;
+  depmin: string;
+  deposit_status: string;
+  withdrawl_status: string;
+};
 interface props {
-  trade?: {
-    maker_fee: number;
-    pair_name: string;
-    taker_fee: number;
-  };
-  withdrawl?: {
-    assets: string;
-    fee: string;
-    min: string;
-    max: string;
-    depmin: string;
-    deposit_status: string;
-    withdrawl_status: string;
-  };
+  trade?: Trade[];
+  withdrawl?: Withdrawl[];
 }
 
 export const getServerSideProps = async () => {
-  let  props = {  };
+  let props = {};
   try {
     const { data } = await axios.get("/fees/withdrawl");
     const { withdrawl } = data;
@@ -34,13 +37,13 @@ export const getServerSideProps = async () => {
         pair_name,
       })
     );
-     props = {withdrawl,trade}
+    props = { withdrawl, trade };
   } catch (error) {
-    props = {}
+    props = {withdrawl:[],trade:[]};
     console.log(error);
   }
   return {
-    props
+    props,
   };
 };
 
