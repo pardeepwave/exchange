@@ -1,13 +1,6 @@
 @media (min-width: 1300px) {}
 
 @media (max-width: 1600px) {
-    .container-fluid {
-        width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-right: auto;
-        margin-left: auto;
-    }
     .walletHistory .dataTables_head {
         width: 100%;
     }
@@ -172,6 +165,9 @@
     .live-chat {
         width: 80%;
     }
+    .community-home .slick-prev, .community-home .slick-next {
+        top: -26px;
+    }
 }
 
 
@@ -182,8 +178,18 @@
         padding-top: 100px;
         padding-bottom: 100px;
     }
+    .partnersWrap {
+        padding: 50px 0;
+    }
+    .heading1my {
+        font-size: 25px;
+    }
     .client-area {
         padding: 50px 0 100px;
+    }
+    .subheading3 {
+        font-size: 15px;
+        margin-top: 20px;
     }
     .choose-info .btn.btn-link {
         font-size: 0.9rem;
@@ -230,15 +236,32 @@
 }
 
 @media (max-width: 767px) {
-    .login_reg_box {
-        display: block;
-    }
     .login_bg_new {
-        display: none;
+        display: block;
+        height: 200px;
+        padding-top: 60px;
+        margin-bottom: -100px;
+        z-index: 0;
+        min-height: 20vh;
+        background-position: bottom;
+    }
+    .login_from_res {
+        border-radius: 40px;
+        background: var(--main-background-color);
+        position: relative;
+        z-index: 9;
     }
 }
 
 @media (max-width: 768px) {
+    .hero-banner-area .main_banner_img img {
+        width: 100%;
+        height: 290px;
+    }
+    .hero-banner-area .conver-col1 {
+        min-height: 510px;
+        justify-content: flex-end;
+    }
     .faq-wallet-section {
         margin-top: 20px;
     }

@@ -116,6 +116,23 @@ const MarketTrends2 = ({
                 spaceBetween={30}
                 loop={true}
                 modules={[Navigation]}
+                breakpoints={{
+                  390: {
+                    slidesPerView: 2,
+                  },
+                  639: {
+                    slidesPerView: 3,
+                  },
+                  865:{
+                    slidesPerView:4
+                  },
+                  1000:{
+                    slidesPerView:5
+                  },
+                  1500:{
+                    slidesPerView:6
+                  }
+                }}
               >
                 {marketsCardData?.highlight_coin.map(
                   (item: any, index: number) => (

@@ -18,7 +18,7 @@ const Footer = () => {
           <div className="footer-top">
             <div className="container">
               <div className="row">
-                <div className="col-lg-2 col-md-6 col-sm-6 mb-30">
+                <div className="col-lg-2 col-md-6 col-sm-12 mb-30">
                   <div className="cp-user-logo">
                     <Link href="/">
                       <a href="">
@@ -31,7 +31,7 @@ const Footer = () => {
                     </Link>
                   </div>
                 </div>
-                <div className="col-lg-2 col-md-6 col-sm-6 mb-30">
+                <div className="col-lg-2 col-md-6 col-6 mb-30">
                   <div className="single-wedgets text-widget">
                     <div className="widget-title">
                       <h4>{t("About Us")}</h4>
@@ -79,7 +79,7 @@ const Footer = () => {
                   </div>
                 </div>
 
-                <div className="col-lg-2 col-md-6 col-sm-6 mb-30">
+                <div className="col-lg-2 col-md-6 col-6 mb-30">
                   <div className="single-wedgets text-widget">
                     <div className="widget-title">
                       <h4>
@@ -116,7 +116,7 @@ const Footer = () => {
                   </div>
                 </div>
 
-                <div className="col-lg-2 col-md-6 col-sm-6 mb-30">
+                <div className="col-lg-2 col-md-6 col-6 mb-30">
                   <div className="single-wedgets text-widget">
                     <div className="widget-title">
                       <h4>
@@ -152,7 +152,7 @@ const Footer = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-2 col-md-6 col-sm-6 mb-30">
+                <div className="col-lg-2 col-md-6 col-6 mb-30">
                   <div className="single-wedgets text-widget">
                     <div className="widget-title">
                       <h4>
@@ -201,7 +201,7 @@ const Footer = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-2 col-md-6 col-sm-6">
+                <div className="col-lg-2 col-md-6 col-12">
                   <div className="single-wedgets social-link">
                     <div className="widget-title">
                       <h4>

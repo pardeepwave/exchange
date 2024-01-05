@@ -76,7 +76,7 @@ const Exchange = () => {
                     {t(`exchange`)}
                   </button>
                   <Link href={`/p2p/p2p-wallet`}>
-                    <div className="mt-3 text-left d-flex align-items-center gap-5 cursor-pointer">
+                    <div className="mt-3 text-start d-flex align-items-center gap-5 cursor-pointer">
                       <IoArrowBack />
                       {t("Back")}
                     </div>

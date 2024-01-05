@@ -1099,7 +1099,7 @@ const Navbar = ({
                 <nav className="navbar navbar-expand-lg navbar-light">
                   <div className="navbar-collapse">
                     <ul className="navbar-nav mr-auto">
-                      <li className="text-right">
+                      <li className="text-end">
                         <span onClick={() => setActive(false)}>
                           <AiOutlineClose size={20} />
                         </span>
@@ -2157,7 +2157,7 @@ const Navbar = ({
                 <nav className="navbar navbar-expand-lg navbar-light">
                   <div className="navbar-collapse">
                     <ul className="navbar-nav mr-auto">
-                      <li className="text-right">
+                      <li className="text-end">
                         <span onClick={() => setLanguageActive(false)}>
                           <AiOutlineClose size={20} />
                         </span>

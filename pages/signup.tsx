@@ -42,7 +42,7 @@ const Signup: NextPage = () => {
     <div className="container-fluid">
       <div className="row login_reg_box flex-md-row-reverse">
         <div className="col-md-6 col-12 login_bg_new" >
-          <div className="user-content-text text-center text-md-left">
+          <div className="user-content-text text-center text-md-start">
             <a href="/" className="auth-logo d-md-none d-block">
                 <img
                   src={settings.logo || ""}
@@ -58,7 +58,7 @@ const Signup: NextPage = () => {
             <div className="col-lg-8 col-md-12 mx-md-auto">
               <div className="user-form border-0 my-5 my-md-0">
                 <div className="user-form-inner">
-                  <div className="form-top text-left">
+                  <div className="form-top text-start">
                   <a href="/" className="auth-logo dark-logo">
                           <img
                             src={settings.logo || ""}

@@ -284,7 +284,7 @@ const UnAuthNav = ({
                                 <span className="gift-card-buy-slider gift-card-buy"></span>
                               </label>
                             </div>
-                            <div className="pb-3 border-bottom text-left">
+                            <div className="pb-3 border-bottom text-start">
                               <p className="mt-2 text-14 font-medium">
                                 {t("Style Settings")}
                               </p>
@@ -406,7 +406,7 @@ const UnAuthNav = ({
                                 </label>
                               </div>
                             </div>
-                            <div className="pb-3 border-bottom text-left">
+                            <div className="pb-3 border-bottom text-start">
                               <p className="mt-2 text-14 font-medium">
                                 {t("Color Preference")}
                               </p>
@@ -537,7 +537,7 @@ const UnAuthNav = ({
                                 </label>
                               </div>
                             </div>
-                            <div className="pb-3 border-bottom text-left">
+                            <div className="pb-3 border-bottom text-start">
                               <p className="mt-2 text-14 font-medium">Layout</p>
                               <div className="form-check py-1">
                                 <input
@@ -668,7 +668,7 @@ const UnAuthNav = ({
             <nav className="navbar navbar-expand-lg navbar-light">
               <div className="navbar-collapse">
                 <ul className="navbar-nav mr-auto">
-                  <li className="text-right">
+                  <li className="text-end">
                     <span onClick={() => setActive(false)}>
                       <AiOutlineClose size={20} />
                     </span>
@@ -889,7 +889,7 @@ const UnAuthNav = ({
             <nav className="navbar navbar-expand-lg navbar-light">
               <div className="navbar-collapse">
                 <ul className="navbar-nav mr-auto">
-                  <li className="text-right">
+                  <li className="text-end">
                     <span onClick={() => setLanguageActive(false)}>
                       <AiOutlineClose size={20} />
                     </span>
