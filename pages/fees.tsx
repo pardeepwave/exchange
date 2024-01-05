@@ -3,7 +3,7 @@ import Footer from "components/common/footer";
 import Head from "next/head";
 import useTranslation from "next-translate/useTranslation";
 import Table from "components/common/Table";
-import axios from "axios";
+import request from "lib/request";
 
 type Trade = {
   maker_fee: number;
@@ -28,7 +28,7 @@ interface props {
 export const getServerSideProps = async () => {
   let props = {};
   try {
-    const { data } = await axios.get("/fees/withdrawl");
+    const { data } = await request.get("/fees/withdrawl");
     const { withdrawl } = data;
     const trade = data.trade.map(
       ({ maker_fee, taker_fee, pair_name }: any) => ({
@@ -38,9 +38,10 @@ export const getServerSideProps = async () => {
       })
     );
     props = { withdrawl, trade };
-  } catch (error) {
-    props = {withdrawl:[],trade:[]};
+    console.log({ withdrawl, trade });
+  } catch (error:any) {
     console.log(error);
+    props = {withdrawl:[],trade:[]};
   }
   return {
     props,
