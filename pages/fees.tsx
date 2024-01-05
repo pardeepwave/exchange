@@ -3,9 +3,51 @@ import Footer from "components/common/footer";
 import Head from "next/head";
 import useTranslation from "next-translate/useTranslation";
 import Table from "components/common/Table";
+import axios from "axios";
 
-const fees: FC = () => {
+interface props {
+  trade?: {
+    maker_fee: number;
+    pair_name: string;
+    taker_fee: number;
+  };
+  withdrawl?: {
+    assets: string;
+    fee: string;
+    min: string;
+    max: string;
+    depmin: string;
+    deposit_status: string;
+    withdrawl_status: string;
+  };
+}
+
+export const getServerSideProps = async () => {
+  let  props = {  };
+  try {
+    const { data } = await axios.get("/fees/withdrawl");
+    const { withdrawl } = data;
+    const trade = data.trade.map(
+      ({ maker_fee, taker_fee, pair_name }: any) => ({
+        maker_fee,
+        taker_fee,
+        pair_name,
+      })
+    );
+     props = {withdrawl,trade}
+  } catch (error) {
+    props = {}
+    console.log(error);
+  }
+  return {
+    props
+  };
+};
+
+const fees: FC<props> = ({ trade, withdrawl }) => {
   const { t } = useTranslation("common");
+
+  console.log(trade);
 
   const withColumns = [
     "Asset",
@@ -18,14 +60,14 @@ const fees: FC = () => {
   ];
   const tradColumns = ["Markets", "Maker Fee", "Taker Fee"];
   const [search, setSearch] = useState("");
-  const searchData = (e:ChangeEvent<HTMLInputElement>) => {
-      console.log(e.target.value);
-      setSearch(e.target.value);
-  }
+  const searchData = (e: ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+    setSearch(e.target.value);
+  };
 
   const loadMore = () => {
-    console.log('load more data...');
-  }
+    console.log("load more data...");
+  };
 
   return (
     <>
@@ -86,7 +128,12 @@ const fees: FC = () => {
                 </ul>
                 <div className="table-search-wrapper">
                   <i className="fas fa-search"></i>
-                  <input type="text" placeholder="search" value={search} onChange={searchData}/>
+                  <input
+                    type="text"
+                    placeholder="search"
+                    value={search}
+                    onChange={searchData}
+                  />
                 </div>
               </div>
               <div className="tab-content" id="exchangeTabContent">
@@ -96,9 +143,11 @@ const fees: FC = () => {
                   role="tabpanel"
                   aria-labelledby="withdrawal-tab"
                 >
-                  <Table columns={withColumns} />
+                  <Table columns={withColumns} body={withdrawl} />
                   <div className="d-flex justify-content-center mt-3">
-                    <button className="btn btn-primary" onClick={loadMore}>Load More</button>
+                    <button className="btn btn-primary" onClick={loadMore}>
+                      Load More
+                    </button>
                   </div>
                 </div>
                 <div
@@ -107,9 +156,11 @@ const fees: FC = () => {
                   role="tabpanel"
                   aria-labelledby="trading-tab"
                 >
-                  <Table columns={tradColumns} />
+                  <Table columns={tradColumns} body={trade} />
                   <div className="d-flex justify-content-center mt-3">
-                    <button className="btn btn-primary" onClick={loadMore}>Load More</button>
+                    <button className="btn btn-primary" onClick={loadMore}>
+                      Load More
+                    </button>
                   </div>
                 </div>
               </div>
