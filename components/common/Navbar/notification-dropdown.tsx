@@ -39,7 +39,7 @@ const NotificationDropdown = ({
   ThemeColor,
   layout,
   setLayout,
-  setLanguageActive
+  setLanguageActive,
 }: any) => {
   const dispatch = useDispatch();
   const containerRef = useRef<any>(null);
@@ -102,7 +102,7 @@ const NotificationDropdown = ({
                       </p>
                       <div className="user-name">
                         <p className="nav-userName m-0">
-                          {user?.first_name!} {user?.last_name!};<br/>
+                          {user?.first_name!} {user?.last_name!};<br />
                           <small className="text-muted">{user?.email}</small>
                         </p>
                       </div>
@@ -111,7 +111,11 @@ const NotificationDropdown = ({
                       <Link href="/user/profile">
                         <button className="dropdown-item" type="button">
                           <a href="">
-                          <img src="/vector-4.svg" alt="Logo" className="logo-img"></img>
+                            <img
+                              src="/vector-4.svg"
+                              alt="Logo"
+                              className="logo-img"
+                            ></img>
                             {t("Profile")}
                           </a>
                         </button>
@@ -119,7 +123,11 @@ const NotificationDropdown = ({
                       <Link href="/user/my-wallet">
                         <button className="dropdown-item" type="button">
                           <a href="-wallet">
-                           <img src="/vector-3.svg" alt="Logo" className="logo-img"></img>
+                            <img
+                              src="/vector-3.svg"
+                              alt="Logo"
+                              className="logo-img"
+                            ></img>
                             {t("My Wallet")}
                           </a>
                         </button>
@@ -127,18 +135,25 @@ const NotificationDropdown = ({
                       <Link href="/user/settings">
                         <button className="dropdown-item" type="button">
                           <a href="">
-                          <img src="/vector-5.svg" alt="Logo" className="logo-img"></img>
+                            <img
+                              src="/vector-5.svg"
+                              alt="Logo"
+                              className="logo-img"
+                            ></img>
                             {t("Settings")}
                           </a>
                         </button>
                       </Link>
 
-                      
                       <Link href={isLoggedIn ? "/user/faq" : "/signin"}>
                         <button className="dropdown-item" type="button">
                           <a href="-wallet">
-                          {/* <i className="fa-regular fa-circle-question"></i> */}
-                          <img src="/vector-2.svg" alt="Logo" className="logo-img"></img>
+                            {/* <i className="fa-regular fa-circle-question"></i> */}
+                            <img
+                              src="/vector-2.svg"
+                              alt="Logo"
+                              className="logo-img"
+                            ></img>
                             {t("FAQs")}
                           </a>
                         </button>
@@ -151,7 +166,11 @@ const NotificationDropdown = ({
                         }}
                       >
                         <a href="">
-                          <img src="/vector-1.svg" alt="Logo" className="logo-img"></img>
+                          <img
+                            src="/vector-1.svg"
+                            alt="Logo"
+                            className="logo-img"
+                          ></img>
                           {t("Logout")}
                         </a>
                       </button>
@@ -160,159 +179,143 @@ const NotificationDropdown = ({
                 </div>
               </li>
 
-              <li
-                className="hm-notify"
-                id="notification_item"
-                style={{ margin: "0 10px" }}
+           {/* <li className="hm-notify" id="notification_item" style={{ margin: "0 10px" }}>
+  <div className="btn-group dropdown">
+    <button
+      type="button"
+      className="notification-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <span className="notify-value hm-notify-number" onClick={() => {}}>
+        {notificationData?.length > 100 ? "99+" : notificationData?.length}
+      </span>
+      <img src="/notification.png" className="img-fluid" alt="" />
+    </button>
+    <div className="dropdown-menu notification-list dropdown-menu-right">
+      <div className="notify-menu">
+        <div className="notification-list-title">
+          <div className="notify-counter">
+            <div className="notify-pending">
+              <p>
+                <span>{notificationData.length}</span>
+                {t("Notifications")}
+              </p>
+              <a
+                onClick={() => {
+                  seen();
+                }}
+                className="clear-all"
+                href="#"
               >
-                <div className="btn-group dropdown">
-                  <button
-                    type="button"
-                    className="notification-btn dropdown-toggle"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <span
-                      className="notify-value hm-notify-number"
-                      onClick={() => {}}
-                    >
-                      {notificationData?.length > 100
-                        ? "99+"
-                        : notificationData?.length}
-                    </span>
-                    <img src="/notification.png" className="img-fluid" alt="" />
-                  </button>
-                  <div className="dropdown-menu notification-list dropdown-menu-right">
-                    <div className="notify-menu">
-                      <div className="notification-list-title">
-                        <div className="notify-counter">
-                          <div className="notify-pending">
-                            <p>
-                              {/* <span>{notificationData.length}</span> */}
-                              {t("Notifications")}
-                            </p>
-                            <a
-                              onClick={() => {
-                                seen();
-                              }}
-                              className="clear-all"
-                              href="#"
-                            ><i className="fa-regular fa-circle-xmark"></i>
-                              {/* {t("Clear All")} */}
-                            </a>
-                          </div>
+                <i className="fa-regular fa-circle-xmark"></i>
+                {t("Clear All")}
+              </a>
+            </div>
+          </div>
+          <div className="Notification-detail">
+            <div className="inner-sec-detail">
+              <div className="ntfscn-dtal">
+                <p>Notification Details</p>
+              </div>
+              <div className="date-sec">
+                <p>12/12/12</p>
+              </div>
+            </div>
+            <div className="inner-sec-detail">
+              <div className="ntfscn-dtal">
+                <p>Notification Details</p>
+              </div>
+              <div className="date-sec">
+                <p>12/12/12</p>
+              </div>
+            </div>
+            <div className="inner-sec-detail">
+              <div className="ntfscn-dtal">
+                <p>Notification Details</p>
+              </div>
+              <div className="date-sec">
+                <p>12/12/12</p>
+              </div>
+            </div>
+            <div className="internal-sec-detail">
+              <div className="ntfscn-dtal">
+                <p>Notification Details</p>
+              </div>
+              <div className="date-sec">
+                <p>12/12/12</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                          
-                        </div>
-                        <div className="Notification-detail">
-                          <div className="inner-sec-detail">
-                            <div className="ntfscn-dtal">
-                              <p>Notification Details</p>
-                            </div>  
-                            <div className="date-sec">
-                              <p>12/12/12</p>
-                            </div>
-                          </div>
-                          <div className="inner-sec-detail">
-                            <div className="ntfscn-dtal">
-                              <p>Notification Details</p>
-                            </div>  
-                            <div className="date-sec">
-                              <p>12/12/12</p>
-                            </div>
-                          </div>
-                          <div className="inner-sec-detail">
-                            <div className="ntfscn-dtal">
-                              <p>Notification Details</p>
-                            </div>  
-                            <div className="date-sec">
-                              <p>12/12/12</p>
-                            </div>
-                          </div>
-                          <div className="internal-sec-detail">
-                            <div className="ntfscn-dtal">
-                              <p>Notification Details</p>
-                            </div>  
-                            <div className="date-sec">
-                              <p>12/12/12</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="notifiy-clear">
-                            <Link href="/user/notification">
-                              <a className="view-all">{t("View All")}</a>
-                            </Link>
-                            <i className="fa-solid fa-greater-than"></i>
-                            {/* <HiArrowNarrowRight /> */}
-                          </div>
-                      {/* <div>
-                        <div className="notify-grid-item">
-                          {notificationData?.length > 0 ? (
-                            notificationData
-                              ?.slice(0, 5)
-                              ?.map((item: any, index: number) => (
-                                <div className="notify-icon-title" key={index}>
-                                  <RiNotificationBadgeLine
-                                    size={20}
-                                    className="notify-menu-icon"
-                                  />
-                                  <div>
-                                    <h6>{item.title.substring(0, 40)}</h6>
-                                    <p>
-                                      {item.notification_body.substring(0, 50)}
-                                    </p>
-                                    <span>
-                                      {moment(item.created_at).format(
-                                        "DD MMM YYYY"
-                                      )}
-                                    </span>
-                                  </div>
-                                </div>
-                              ))
-                          ) : (
-                            <p className="notFountNotifyText">
-                              {t("No Notification Found!")}
-                            </p>
-                          )}
-                        </div>
-                      </div> */}
-                    </div>
-
-                    <div
-                      className="scroll-wrapper scrollbar-inner"
-                      style={{
-                        position: "relative",
-                      }}
-                    >
-                      <ul
-                        className="scrollbar-inner scroll-content"
-                        style={{
-                          height: "auto",
-                          marginBottom: "0px",
-                          marginRight: "0px",
-                          maxHeight: "0px",
-                        }}
-                      ></ul>
-                      <div className="scroll-element scroll-x">
-                        <div className="scroll-element_outer">
-                          <div className="scroll-element_size"></div>
-                          <div className="scroll-element_track"></div>
-                          <div className="scroll-bar"></div>
-                        </div>
-                      </div>
-                      <div className="scroll-element scroll-y">
-                        <div className="scroll-element_outer">
-                          <div className="scroll-element_size"></div>
-                          <div className="scroll-element_track"></div>
-                          <div className="scroll-bar"></div>
-                        </div>
-                      </div>
-                    </div>
+        <div className="notifiy-clear">
+          <Link href="/user/notification">
+            <a className="view-all">{t("View All")}</a>
+          </Link>
+          <i className="fa-solid fa-greater-than"></i>
+          <HiArrowNarrowRight />
+        </div>
+        <div>
+          <div className="notify-grid-item">
+            {notificationData?.length > 0 ? (
+              notificationData?.slice(0, 5)?.map((item: any, index: number) => (
+                <div className="notify-icon-title" key={index}>
+                  <RiNotificationBadgeLine
+                    size={20}
+                    className="notify-menu-icon"
+                  />
+                  <div>
+                    <h6>{item.title.substring(0, 40)}</h6>
+                    <p>{item.notification_body.substring(0, 50)}</p>
+                    <span>{moment(item.created_at).format("DD MMM YYYY")}</span>
                   </div>
                 </div>
-              </li>
+              ))
+            ) : (
+              <p className="notFountNotifyText">
+                {t("No Notification Found!")}
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="scroll-wrapper scrollbar-inner"
+        style={{
+          position: "relative",
+        }}
+      >
+        <ul
+          className="scrollbar-inner scroll-content"
+          style={{
+            height: "auto",
+            marginBottom: "0px",
+            marginRight: "0px",
+            maxHeight: "0px",
+          }}
+        ></ul>
+        <div className="scroll-element scroll-x">
+          <div className="scroll-element_outer">
+            <div className="scroll-element_size"></div>
+            <div className="scroll-element_track"></div>
+            <div className="scroll-bar"></div>
+          </div>
+        </div>
+        <div className="scroll-element scroll-y">
+          <div className="scroll-element_outer">
+            <div className="scroll-element_size"></div>
+            <div className="scroll-element_track"></div>
+            <div className="scroll-bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</li> */}
+
 
               <nav className="main-menu">
                 <ul>

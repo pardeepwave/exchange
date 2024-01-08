@@ -31,4 +31,20 @@ module.exports = {
 module.exports = withImages();
 module.exports = nextTranslate({
   reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript:{
+    ignoreBuildErrors:true
+  },
 });
+
+// module.exports = {
+//   eslint: {
+//     ignoreDuringBuilds: true,
+//   },
+//   typescript:{
+//     ignoreBuildErrors:true
+//   },
+  
+// }

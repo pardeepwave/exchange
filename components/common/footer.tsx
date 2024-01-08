@@ -92,7 +92,10 @@ const Footer = () => {
                     <div className="widget-inner">
                       <ul>
                         <li>
-                          <Link href="list-your-crypto">List Your Crypto</Link>
+                          <Link href="/list-your-crypto">List Your Crypto</Link>
+                        </li> 
+                        <li>
+                          <Link href="/fees">Fees</Link>
                         </li> 
                         {customPageData?.links?.map(
                           (item: any) =>

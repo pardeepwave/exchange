@@ -95,3 +95,28 @@ input:focus,
 .StripeElement.PaymentRequestButton {
   height: 40px;
 }
+
+/** fees page design **/
+.table-search-wrapper {
+  border: 1px solid #ebeaea;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 0px 14px;
+  border-radius: 44px;
+  height: 41px;
+  background: white;
+  margin: 10px;
+  box-shadow: var(--box-shadow-color);
+}
+
+.table-search-wrapper input {
+  border: unset !important;
+}
+
+.table-search-wrapper input::placeholder {
+  color: #020202;
+}
+.table-search-wrapper i.fas.fa-search {
+  color: #020202;
+}
