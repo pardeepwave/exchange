@@ -345,7 +345,7 @@ const DemoNotificationDropdown = ({
                                 <span className="gift-card-buy-slider gift-card-buy"></span>
                               </label>
                             </div>
-                            <div className="pb-3 border-bottom text-left">
+                            <div className="pb-3 border-bottom text-start">
                               <p className="mt-2 text-14 font-medium">
                                 {t(`Style Settings`)}
                               </p>
@@ -467,7 +467,7 @@ const DemoNotificationDropdown = ({
                                 </label>
                               </div>
                             </div>
-                            <div className="pb-3 border-bottom text-left">
+                            <div className="pb-3 border-bottom text-start">
                               <p className="mt-2 text-14 font-medium">
                                 {t(`Color Preference`)}
                               </p>
@@ -598,7 +598,7 @@ const DemoNotificationDropdown = ({
                                 </label>
                               </div>
                             </div>
-                            <div className="pb-3 border-bottom text-left">
+                            <div className="pb-3 border-bottom text-start">
                               <p className="mt-2 text-14 font-medium">{t(`Layout`)}</p>
                               <div className="form-check py-1">
                                 <input

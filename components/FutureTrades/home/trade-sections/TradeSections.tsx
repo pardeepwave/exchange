@@ -150,7 +150,7 @@ export default function TradeSections() {
                                 </th>
                                 <th
                                   scope="col"
-                                  className="sorting_disabled text-right"
+                                  className="sorting_disabled text-end"
                                   rowSpan={1}
                                   colSpan={1}
                                   style={{ width: "67.344px" }}
@@ -211,7 +211,7 @@ export default function TradeSections() {
                                       {item.volume} {item.parent_coin_name}
                                     </td>
                                     <td
-                                      className="text-right"
+                                      className="text-end"
                                       onClick={async () => {
                                         await localStorage.setItem(
                                           "base_coin_id",

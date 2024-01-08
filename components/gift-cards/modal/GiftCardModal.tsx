@@ -45,7 +45,7 @@ export default function GiftCardModal({
         </div>
 
         {activeBtn !== "check" && Object.keys(giftCardData).length !== 0 && (
-          <div className="text-right">
+          <div className="text-end">
             <button
               type="button"
               className="btn bg-primary-color capitalize"

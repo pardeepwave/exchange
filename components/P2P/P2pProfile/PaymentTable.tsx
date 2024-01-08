@@ -55,7 +55,7 @@ export const PaymentTable = () => {
               <div className="col-md-7">
                 <h5>{t(`P2P Payment Methods`)}</h5>
               </div>
-              <div className="col-md-5 text-right">
+              <div className="col-md-5 text-end">
                 <Link href={"/p2p/add-payment-method"}>
                   <button className="orderFilterNoButton border-0 text-warning shadow-sm rounded px-3 ml-0 ml-md-4 mt-4 mt-md-0 ">
                     <GoPlus className="mr-2" /> {t(`Add a payment method`)}

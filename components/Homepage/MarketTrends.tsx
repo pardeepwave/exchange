@@ -61,7 +61,7 @@ const MarketTrends = ({
                     {t("Core Assets")}
                   </a>
                 </li>
-                <li className="nav-item mx-4" role="presentation">
+                <li className="nav-item mx-1 mx-md-4" role="presentation">
                   <a
                     className="exchangeTabButton nav-link"
                     id="Gainers-tab"

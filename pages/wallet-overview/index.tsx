@@ -134,7 +134,7 @@ const WalletOverview: NextPage = () => {
                           <thead>
                             <tr>
                               <th className="p-2 border-0">{t(`Wallet`)}</th>
-                              <th className="p-2 border-0 text-right">
+                              <th className="p-2 border-0 text-end">
                                 {t(`Amount`)}
                               </th>
                             </tr>
@@ -149,7 +149,7 @@ const WalletOverview: NextPage = () => {
                                   </div>
                                 </Link>
                               </td>
-                              <td className="p-2 text-right align-middle">
+                              <td className="p-2 text-end align-middle">
                                 <div>
                                   <span className="d-block">
                                     {`${
@@ -187,7 +187,7 @@ const WalletOverview: NextPage = () => {
                                     </div>
                                   </Link>
                                 </td>
-                                <td className="p-2 text-right align-middle">
+                                <td className="p-2 text-end align-middle">
                                   <div>
                                     <span className="d-block">
                                       {`${
@@ -226,7 +226,7 @@ const WalletOverview: NextPage = () => {
                                     </div>
                                   </Link>
                                 </td>
-                                <td className="p-2 text-right align-middle">
+                                <td className="p-2 text-end align-middle">
                                   <div>
                                     <span className="d-block">
                                       {`${
@@ -314,7 +314,7 @@ const WalletOverview: NextPage = () => {
                                         </div>
                                       </div>
                                     </td>
-                                    <td className="p-2 text-right align-middle">
+                                    <td className="p-2 text-end align-middle">
                                       <div>
                                         <span className="d-block">
                                           -{parseFloat(item?.amount).toFixed(8)}{" "}
@@ -366,7 +366,7 @@ const WalletOverview: NextPage = () => {
                                         </div>
                                       </div>
                                     </td>
-                                    <td className="p-2 text-right align-middle">
+                                    <td className="p-2 text-end align-middle">
                                       <div>
                                         <span className="d-block">
                                           +{parseFloat(item?.amount).toFixed(8)}{" "}

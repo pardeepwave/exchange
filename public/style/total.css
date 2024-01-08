@@ -824,7 +824,7 @@ span.cp-user-icon {
 .cp-user-main-wrapper {
   margin-left: 70px;
   padding: 0;
-  margin-top: 90px ;
+  margin-top: 76px ;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
@@ -7567,7 +7567,7 @@ table.dataTable tbody tr.dataTable-white td {
   color: var(--text-primary-color-4) ;
   font-weight: 400;
 }
-.user-form .form-top.text-left {
+.user-form .form-top.text-start {
   margin-bottom: 2rem;
 }
 .user-form .form-group {
@@ -8329,7 +8329,8 @@ input {
   background-image:url(https://images.unsplash.com/photo-1631758236057-0aedf1bc584d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80);
   background-repeat:no-repeat;
   background-size:cover;
-  padding:50px 0
+  padding:50px 0;
+  background-position: center;
 }
 .topBarList {
   gap:24px
@@ -8501,6 +8502,11 @@ input {
 }
 .workCard svg {
   font-size:48px
+}
+.workCard img {
+  max-width:68px;
+  object-fit: contain;
+  height: auto !important;
 }
 .workCard p {
   line-height:24px
@@ -9707,7 +9713,8 @@ a.paginate_button.paginate-number.text-warning {
 }
 @media (max-width:1199px) {
   .trade-dashboard-side-width {
-    width:100%
+    width:100%;
+    max-width: 100%;
   }
   .select-deposit-method-item,
   .select-deposit-method-item-active {
@@ -9871,18 +9878,6 @@ a.paginate_button.paginate-number.text-warning {
 }
 .p2p-custom-scrollbar::-webkit-scrollbar-thumb {
   background:var(--color-pallet-1)
-}
-@media (max-width:1600px) {
-  .container-fluid {
-    width:100%;
-    padding-right:15px;
-    padding-left:15px;
-    margin-right:auto;
-    margin-left:auto
-  }
-  .walletHistory .dataTables_head {
-    width:100%
-  }
 }
 @media (max-width:1440px) {
   .walletHistory .dataTables_head {

@@ -35,7 +35,7 @@ const AddPaymentMethod = () => {
         <div className="row">
           <div className="col-md-6 mx-auto ">
             <Link href={`/p2p/p2p-profile`}>
-              <div className="mb-3 text-left d-flex align-items-center gap-5 cursor-pointer">
+              <div className="mb-3 text-start d-flex align-items-center gap-5 cursor-pointer">
                 <IoArrowBack />
                 {t("Back")}
               </div>
