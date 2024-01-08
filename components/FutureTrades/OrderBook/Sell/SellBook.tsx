@@ -36,7 +36,7 @@ const SellBook = ({ height = 425 }) => {
                   style={{ width: "120.75px" }}
                 />
                 <th
-                  className="table-col time text-right sorting_desc"
+                  className="table-col time text-end sorting_desc"
                   rowSpan={1}
                   colSpan={1}
                   aria-label="Time"

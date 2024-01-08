@@ -34,35 +34,24 @@ const ForgotPassword: NextPage = () => {
     <>
       <div className="row flex-md-row-reverse">
         <div className="col-md-6 col-12 login_bg_new" >
-          <div className="user-content-text text-center text-md-left">
-            <a href="/" className="auth-logo d-md-none d-block">
+          <div className="user-content-text text-center text-md-start">
+            {/* <a href="/" className="auth-logo d-md-none d-block">
                 <img
                   src={settings.logo || ""}
                   className="pt-5 img-fluid mw-50"
                   alt=""
                 />
-            </a>
+            </a> */}
           </div>
           
         </div>
         <div className="col-md-6 d-flex align-items-center login_from_res">
           <div className="row w-100 mx-auto">
             <div className="col-lg-8 col-md-12 mx-md-auto">
-              <div className="user-content-text text-left d-block d-md-none">
-                <Link href="/">
-                  <a className="auth-logo" href="">
-                    <img
-                      width="60%"
-                      src={settings.logo || ""}
-                      className="pt-5 pt-md-4"
-                      alt=""
-                    />
-                  </a>
-                </Link>
-              </div>
+              
               <div className="user-form border-0 my-4 my-md-0">
                 <div className="user-form-inner">
-                  <div className="form-top text-left">
+                  <div className="form-top text-start">
                       <a href="/" className="auth-logo dark-logo">
                           <img
                             src={settings.logo || ""}

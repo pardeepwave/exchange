@@ -99,11 +99,11 @@ export default function TradesTable({ selectedCurrency }: any) {
       <div className="row">
         <div className="col-12 px-2">
           <div className="market-trend-area ">
-              <div className="row">
+              <div className="row align-items-center mb-4">
                 <div className="col-md-9 col-12">
                   <div className="exchange-tab-menu">
                     <ul
-                      className="nav nav-tabs"
+                      className="nav nav-tabs mb-0"
                       id="exchangeTab"
                       role="tablist"
                     >
@@ -169,7 +169,7 @@ export default function TradesTable({ selectedCurrency }: any) {
                   </div>
                 </div>
                 <div className="col-md-3 col-12">
-                  <div className="form-group has-search-market-trade">
+                  <div className="has-search-market-trade">
                     <span className="fa fa-search form-control-feedback"></span>
                     <input
                       type="text"
@@ -264,7 +264,7 @@ export default function TradesTable({ selectedCurrency }: any) {
                                     </th>
                                     {/* <th
                                   scope="col"
-                                  className="sorting_disabled text-right"
+                                  className="sorting_disabled text-end"
                                   rowSpan={1}
                                   colSpan={1}
                                   style={{ width: "67.344px" }}
@@ -340,7 +340,7 @@ export default function TradesTable({ selectedCurrency }: any) {
                                           : 0}
                                       </td>
                                       {/* <td
-                                      className="text-right"
+                                      className="text-end"
                                       onClick={async () => {
                                         await localStorage.setItem(
                                           "base_coin_id",

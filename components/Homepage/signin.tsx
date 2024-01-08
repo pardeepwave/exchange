@@ -47,8 +47,8 @@ const Signin: NextPage = () => {
           //   backgroundImage: `url(${settings.login_background})`,
           // }}
         >
-          <div className="user-content-text text-center text-md-left">
-            <Link href="/">
+          <div className="user-content-text text-center text-md-start">
+            {/* <Link href="/">
               <a className="auth-logo" href="">
                 <img
                   width="50%"
@@ -57,12 +57,12 @@ const Signin: NextPage = () => {
                   alt=""
                 />
               </a>
-            </Link>
+            </Link> */}
           </div>
           
           <div className="d-md-flex d-block align-items-center justify-content-center h-75">
           <img src="/Vector Image.png"></img>
-            {/* <div className="text-center text-md-left">
+            {/* <div className="text-center text-md-start">
               <h1 className="text-white">
                 {t("Welcome To")} {settings.app_title}
               </h1>
@@ -80,7 +80,7 @@ const Signin: NextPage = () => {
         <div className="col-md-7 d-flex align-items-center login_from_res">
           <div className="row w-100 mx-auto">
             <div className="col-lg-8 col-md-12 mx-md-auto">
-              <div className="user-content-text text-left d-block d-md-none">
+              <div className="user-content-text text-start d-block d-md-none">
                 <Link href="/">
                   <a className="auth-logo" href="">
                     <img
@@ -94,7 +94,7 @@ const Signin: NextPage = () => {
               </div>
               <div className="user-form border-0 my-4 my-md-0">
                 <div className="user-form-inner">
-                  <div className="form-top text-left">
+                  <div className="form-top text-start">
                     <h2>{t("Welcome Back!")}</h2>
                     {/* <p>{t("Please Sign In To Your Account")}</p> */}
                   </div>
@@ -199,7 +199,7 @@ const Signin: NextPage = () => {
                               {t("Remember me")}
                             </label>
                           </div>
-                          <div className="text-right">
+                          <div className="text-end">
                             <Link href="/forgot-password">
                               <a className="text-theme forgot-password">
                                 {t("Forgot Password?")}

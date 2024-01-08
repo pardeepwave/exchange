@@ -109,7 +109,7 @@ const DemoAllBuyOrdersFull = ({ buy, show }: any) => {
                         aria-label="Amount"
                       ></th>
                       <th
-                        className="table-col time text-right sorting_desc"
+                        className="table-col time text-end sorting_desc"
                         rowSpan={1}
                         colSpan={1}
                         // style={{ width: "79.8438px" }}

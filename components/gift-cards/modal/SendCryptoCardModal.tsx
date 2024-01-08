@@ -104,7 +104,7 @@ export default function SendCryptoCardModal({
           </div>
         )}
         {Object.keys(activeType).length !== 0 && (
-          <div className="text-right">
+          <div className="text-end">
             <button
               type="button"
               className="btn bg-primary-color capitalize"

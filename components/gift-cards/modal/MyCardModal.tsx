@@ -140,7 +140,7 @@ export default function MyCardModal({
           </div>
         </div>
 
-        <div className="text-right">
+        <div className="text-end">
           {Number(giftCardData.lock_status) === 1 && (
             <button
               type="button"

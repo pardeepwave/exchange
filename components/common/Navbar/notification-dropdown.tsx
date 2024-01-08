@@ -390,7 +390,7 @@ const NotificationDropdown = ({
                                 <span className="gift-card-buy-slider gift-card-buy"></span>
                               </label>
                             </div>
-                            <div className="pb-3 border-bottom text-left">
+                            <div className="pb-3 border-bottom text-start">
                               <p className="mt-2 text-14 font-medium">
                                 Style Settings
                               </p>
@@ -512,7 +512,7 @@ const NotificationDropdown = ({
                                 </label>
                               </div>
                             </div>
-                            <div className="pb-3 border-bottom text-left">
+                            <div className="pb-3 border-bottom text-start">
                               <p className="mt-2 text-14 font-medium">
                                 Color Preference
                               </p>
@@ -643,7 +643,7 @@ const NotificationDropdown = ({
                                 </label>
                               </div>
                             </div>
-                            <div className="pb-3 border-bottom text-left">
+                            <div className="pb-3 border-bottom text-start">
                               <p className="mt-2 text-14 font-medium">Layout</p>
                               <div className="form-check py-1">
                                 <input

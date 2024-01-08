@@ -74,7 +74,7 @@ const DemoTradesHistory = ({ marketTrades }: any) => {
                           {t("Amount")}({dashboard?.order_data?.trade_coin})
                         </th>
                         <th
-                          className="table-col time text-right sorting_desc"
+                          className="table-col time text-end sorting_desc"
                           rowSpan={1}
                           colSpan={1}
                           style={{ padding: "4px" }}

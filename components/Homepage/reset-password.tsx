@@ -28,67 +28,35 @@ const ResetPassword: NextPage = () => {
   };
 
   return (
-    <>
-      <div className="d-md-flex d-block">
-        <div
-          className="col-md-5 login_bg_new"
-          // style={{
-          //   backgroundImage: `url(${settings.login_background})`,
-          // }}
-        >
-          <div className="user-content-text text-center text-md-left">
-            <Link href="/">
-              <a className="auth-logo" href="">
+    <div className="container-fluid">
+      <div className="row login_reg_box flex-md-row-reverse">
+        <div className="col-md-6 col-12 login_bg_new" >
+          <div className="user-content-text text-center text-md-start">
+            <a href="/" className="auth-logo d-md-none d-block">
                 <img
-                  width="50%"
                   src={settings.logo || ""}
-                  className="pt-5 pt-md-4"
+                  className="pt-5 img-fluid mw-50"
                   alt=""
                 />
-              </a>
-            </Link>
+            </a>
           </div>
-          <div className="d-md-flex d-block align-items-center justify-content-center h-75">
-          <img src="/Vector Image.png"></img>
-            {/* <div className="text-center text-md-left">
-              <h1 className="text-white">
-                {t("Welcome To")} {settings.app_title}
-              </h1>
-              <Link href="/signin">
-                <p className="text-white h4">
-                  {t("Return to")}
-                  <a className="text-theme" href="">
-                    {t(" Sign In ")}
-                  </a>
-                </p>
-              </Link>
-            </div> */}
-          </div>
+          
         </div>
-        <div className="col-md-7 d-flex align-items-center login_from_res">
-          <div className="row w-100 mx-auto">
+        <div className="col-md-6 d-flex align-items-center login_from_res">
+          <div className="row w-100">
             <div className="col-lg-8 col-md-12 mx-md-auto">
-              <div className="user-content-text text-left d-block d-md-none">
-                <Link href="/">
-                  <a className="auth-logo" href="">
-                    <img
-                      width="60%"
-                      src={settings.logo || ""}
-                      className="pt-5 pt-md-4"
-                      alt=""
-                    />
-                  </a>
-                </Link>
-              </div>
-              <div className="user-form border-0 my-4 my-md-0">
+            <div className="user-form border-0 my-5 my-md-0">
                 <div className="user-form-inner">
-                  <div className="form-top text-left">
+                  <div className="form-top text-start">
+                  <a href="/" className="auth-logo dark-logo">
+                          <img
+                            src={settings.logo || ""}
+                            className="w-50 mb-3 img-fluid"
+                            alt=""
+                          />
+                      </a>
                     <h2>{t("Reset Password ")}</h2>
-                    <p>
-                      {t(
-                        "Please enter the new password and code to reset the password"
-                      )}
-                    </p>
+                    <p>{t("Please enter the new password and code to reset the password")}.</p>
                   </div>
                   <Formik
                     initialValues={{
@@ -152,6 +120,11 @@ const ResetPassword: NextPage = () => {
                             }`}
                             placeholder={t("Your email here")}
                           />
+                          <span
+                            className="eye rev"
+                          >
+                            <img className="toggle-password" src={"/user.svg"} />
+                          </span>
                         </div>
 
                         <div className="form-group">
@@ -166,6 +139,11 @@ const ResetPassword: NextPage = () => {
                             }`}
                             placeholder={t("Type your new password")}
                           />
+                          <span
+                            className="eye rev"
+                          >
+                            <img className="toggle-password" src={"/hide.svg"} />
+                          </span>
                         </div>
 
                         <div className="form-group">
@@ -181,6 +159,11 @@ const ResetPassword: NextPage = () => {
                             }`}
                             placeholder={t("Reenter your new password")}
                           />
+                          <span
+                            className="eye rev"
+                          >
+                            <img className="toggle-password" src={"/hide.svg"} />
+                          </span>
                         </div>
 
                         <div className="form-group">
@@ -193,6 +176,11 @@ const ResetPassword: NextPage = () => {
                             }`}
                             placeholder={t("Your code here")}
                           />
+                          <span
+                            className="eye rev"
+                          >
+                            <img className="toggle-password" src={"/show.svg"} />
+                          </span>
                         </div>
 
                         {captchaData?.NOCAPTCHA_SITEKEY &&
@@ -210,7 +198,7 @@ const ResetPassword: NextPage = () => {
                         <button
                           onClick={() => resetCaptcha()}
                           type="submit"
-                          className="btn nimmu-user-sibmit-button mt-3"
+                          className="btn btn-primary"
                         >
                           {processing ? (
                             <>
@@ -234,7 +222,7 @@ const ResetPassword: NextPage = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export const getServerSideProps: GetServerSideProps = async (ctx: any) => {
