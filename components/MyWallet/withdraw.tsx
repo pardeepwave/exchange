@@ -21,7 +21,6 @@ export const WithdrawComponent = ({
   baseType,
   fullPage,
 }: any) => {
-  console.log("responseData", baseType);
   const { t } = useTranslation("common");
   const { settings } = useSelector((state: RootState) => state.common);
 
@@ -33,8 +32,10 @@ export const WithdrawComponent = ({
     address: "",
     amount: "",
     note: "withdrawal",
+    memo: "",
     network_type: selectedNetwork?.network_type ?? "",
     network_id: "",
+    base_type:""
   });
 
   const [feesData, setFeesData] = React.useState<any>({});
@@ -55,11 +56,13 @@ export const WithdrawComponent = ({
       responseData?.data?.base_type == 8 ||
       responseData?.data?.base_type == 6
     ) {
+      console.log('bb', selectedNetwork?.base_type);
       credentials = {
         ...credentials,
         base_type: selectedNetwork?.base_type,
       };
     }
+    
     WalletWithdrawProcessApiAction(credentials, setProcessing);
   };
   const CheckG2faEnabled = async () => {
@@ -75,6 +78,18 @@ export const WithdrawComponent = ({
       });
     }
   };
+
+  React.useEffect(() => {
+    if (
+      responseData?.data?.base_type == 8 ||
+      responseData?.data?.base_type == 6
+    ) {
+      setWithdrawalCredentials((prev) => ({
+        ...prev,
+        base_type: selectedNetwork?.base_type,
+      }));
+    }
+  }, [responseData?.wallet?.id,selectedNetwork]);
 
   React.useEffect(() => {
     setWithdrawalCredentials((prev) => ({
@@ -93,6 +108,7 @@ export const WithdrawComponent = ({
       setWithdrawalCredentials((prev) => ({
         ...prev,
         network_type: selectedNetwork?.network_type,
+        
       }));
       return;
     }
@@ -146,7 +162,6 @@ export const WithdrawComponent = ({
       return;
     }
     setFeesData(response.data);
-    console.log("response", response);
   };
 
   console.log("withdrawalCredentials", withdrawalCredentials);
@@ -340,6 +355,40 @@ export const WithdrawComponent = ({
                   </span>
                 </small>
               )}
+            </div>
+          </div>
+        </div>
+        <div className="wallet-addres">
+          <h5>{t("Memo")} ({t("optional")})</h5>
+          <div className="">
+            <div className="">
+              <div className="input-group input-address-bar mt-3">
+                <input
+                  type="text"
+                  className="form-control border-0 h-50"
+                  id="memo"
+                  name="memo"
+                  placeholder={t("Memo if needed")}
+                  value={withdrawalCredentials.memo}
+                  onChange={(e) => {
+                    setWithdrawalCredentials({
+                      ...withdrawalCredentials,
+                      memo: e.target.value,
+                    });
+                  }}
+                />
+                
+              </div>
+              
+                <div>
+                  <small>
+                    {t(
+                      `Add your memo if needed but please ensure it that's correct, otherwise you lost coin.`
+                    )}
+                  </small>
+                </div>
+              
+              
             </div>
           </div>
         </div>

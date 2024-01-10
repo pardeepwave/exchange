@@ -12,6 +12,7 @@ const WalletGoogleAuth = ({
     e.preventDefault();
     WalletWithdrawProcessApiAction(withdrawalCredentials, setProcessing);
   };
+  console.log('w credentials => ',withdrawalCredentials)
   return (
     <div
       className="modal fade"
