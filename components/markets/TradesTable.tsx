@@ -44,6 +44,8 @@ export default function TradesTable({ selectedCurrency }: any) {
   const [updatedTradeData, setUpdatedTradeData] = useState<any>({});
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
+  /** for load more  functionlity  */
+  const [isLoading, setIsLoading] = useState(false);
   // use
   const router = useRouter();
 
@@ -72,7 +74,11 @@ export default function TradesTable({ selectedCurrency }: any) {
   }, [selectType, search, selectedCurrency]);
 
   const getMarketsTradeSectionData = async (page: any) => {
-    setLoading(true);
+    if (page == 1) {
+      /** remove array prev elements when page is one  */
+      setTradeItems([]);
+      setLoading(true);
+    } else setIsLoading(true);
     const data = await getMarketsTradeSectionDataApi(
       selectedCurrency.value,
       selectType,
@@ -86,11 +92,18 @@ export default function TradesTable({ selectedCurrency }: any) {
       return;
     }
     setTradeDatas(data.data);
-    setTradeItems(data.data.data);
-    setLoading(false);
+    setTradeItems((prev: any[]) => [...prev, ...data.data.data]);
+    if (page == 1) setLoading(false);
+    else setIsLoading(false);
   };
-  const handlePageClick = (event: any) => {
-    getMarketsTradeSectionData(event.selected + 1);
+  // const handlePageClick = (event: any) => {
+  //   getMarketsTradeSectionData(event.selected + 1);
+  // };
+
+  const loadMore = async () => {
+    let page = tradeDatas.current_page + 1;
+    if (page <= tradeDatas.last_page) await getMarketsTradeSectionData(page);
+    else toast.success("All rows are fetched.");
   };
 
   const { t } = useTranslation();
@@ -99,143 +112,143 @@ export default function TradesTable({ selectedCurrency }: any) {
       <div className="row">
         <div className="col-12 px-2">
           <div className="market-trend-area ">
-              <div className="row align-items-center mb-4">
-                <div className="col-md-9 col-12">
-                  <div className="exchange-tab-menu">
-                    <ul
-                      className="nav nav-tabs mb-0"
-                      id="exchangeTab"
-                      role="tablist"
-                    >
-                      <li className="nav-item" role="presentation">
-                        <a
-                          className="nav-link active"
-                          id="CoreAssets-tab"
-                          data-bs-toggle="tab"
-                          href="#CoreAssets"
-                          role="tab"
-                          aria-controls="CoreAssets"
-                          aria-selected="true"
-                          onClick={() => {
-                            setSelectType(1);
-                          }}
-                        >
-                          {t("All Cryptos")}
-                        </a>
-                      </li>
-                      <li className="nav-item" role="presentation">
-                        <a
-                          className="nav-link"
-                          id="Gainers-tab"
-                          data-bs-toggle="tab"
-                          href="#Gainers"
-                          role="tab"
-                          aria-controls="Gainers"
-                          aria-selected="false"
-                          onClick={() => setSelectType(2)}
-                        >
-                          {t("Spot Markets")}
-                        </a>
-                      </li>
-                      <li className="nav-item" role="presentation">
-                        <a
-                          className="nav-link"
-                          id="Listings-tab"
-                          data-bs-toggle="tab"
-                          href="#Listings"
-                          role="tab"
-                          aria-controls="Listings"
-                          aria-selected="false"
-                          onClick={() => setSelectType(3)}
-                        >
-                          {t("Futures Markets")}
-                        </a>
-                      </li>
-                      <li className="nav-item" role="presentation">
-                        <a
-                          className="nav-link"
-                          id="Listings-tab"
-                          data-bs-toggle="tab"
-                          href="#Listings"
-                          role="tab"
-                          aria-controls="Listings"
-                          aria-selected="false"
-                          onClick={() => setSelectType(4)}
-                        >
-                          {t("New Listing")}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-md-3 col-12">
-                  <div className="has-search-market-trade">
-                    <span className="fa fa-search form-control-feedback"></span>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Search Coin Name"
-                      value={search}
-                      onChange={(e) => setSearch(e.target.value)}
-                    />
-                  </div>
+            <div className="row align-items-center mb-4">
+              <div className="col-md-9 col-12">
+                <div className="exchange-tab-menu">
+                  <ul
+                    className="nav nav-tabs mb-0"
+                    id="exchangeTab"
+                    role="tablist"
+                  >
+                    <li className="nav-item" role="presentation">
+                      <a
+                        className="nav-link active"
+                        id="CoreAssets-tab"
+                        data-bs-toggle="tab"
+                        href="#CoreAssets"
+                        role="tab"
+                        aria-controls="CoreAssets"
+                        aria-selected="true"
+                        onClick={() => {
+                          setSelectType(1);
+                        }}
+                      >
+                        {t("All Cryptos")}
+                      </a>
+                    </li>
+                    <li className="nav-item" role="presentation">
+                      <a
+                        className="nav-link"
+                        id="Gainers-tab"
+                        data-bs-toggle="tab"
+                        href="#Gainers"
+                        role="tab"
+                        aria-controls="Gainers"
+                        aria-selected="false"
+                        onClick={() => setSelectType(2)}
+                      >
+                        {t("Spot Markets")}
+                      </a>
+                    </li>
+                    <li className="nav-item" role="presentation">
+                      <a
+                        className="nav-link"
+                        id="Listings-tab"
+                        data-bs-toggle="tab"
+                        href="#Listings"
+                        role="tab"
+                        aria-controls="Listings"
+                        aria-selected="false"
+                        onClick={() => setSelectType(3)}
+                      >
+                        {t("Futures Markets")}
+                      </a>
+                    </li>
+                    <li className="nav-item" role="presentation">
+                      <a
+                        className="nav-link"
+                        id="Listings-tab"
+                        data-bs-toggle="tab"
+                        href="#Listings"
+                        role="tab"
+                        aria-controls="Listings"
+                        aria-selected="false"
+                        onClick={() => setSelectType(4)}
+                      >
+                        {t("New Listing")}
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </div>
+              <div className="col-md-3 col-12">
+                <div className="has-search-market-trade">
+                  <span className="fa fa-search form-control-feedback"></span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Search Coin Name"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
 
-              <div className="tab-content" id="exchangeTabContent">
-                <div
-                  className="tab-pane fade show active"
-                  id="CoreAssets"
-                  role="tabpanel"
-                  aria-labelledby="CoreAssets-tab"
-                >
-                  {loading ? (
-                    <SectionLoading />
-                  ) : (
-                    <>
-                      {tradeItems?.length > 0 ? (
-                        <div className="exchange-volume-table">
-                          <div className="table-responsive">
-                            <div
-                              id="DataTables_Table_0_wrapper"
-                              className="dataTables_wrapper no-footer"
+            <div className="tab-content" id="exchangeTabContent">
+              <div
+                className="tab-pane fade show active"
+                id="CoreAssets"
+                role="tabpanel"
+                aria-labelledby="CoreAssets-tab"
+              >
+                {loading ? (
+                  <SectionLoading />
+                ) : (
+                  <>
+                    {tradeItems?.length > 0 ? (
+                      <div className="exchange-volume-table">
+                        <div className="table-responsive">
+                          <div
+                            id="DataTables_Table_0_wrapper"
+                            className="dataTables_wrapper no-footer"
+                          >
+                            <table
+                              className="table table-borderless dataTable no-footer"
+                              id="DataTables_Table_0"
+                              role="grid"
+                              aria-describedby="DataTables_Table_0_info"
                             >
-                              <table
-                                className="table table-borderless dataTable no-footer"
-                                id="DataTables_Table_0"
-                                role="grid"
-                                aria-describedby="DataTables_Table_0_info"
-                              >
-                                <thead>
-                                  <tr role="row">
-                                    <th
-                                      scope="col"
-                                      className="sorting_disabled"
-                                      rowSpan={1}
-                                      colSpan={1}
-                                      style={{ width: "217.516px" }}
-                                    >
-                                      {t("Market")}
-                                    </th>
-                                    <th
-                                      scope="col"
-                                      className="sorting_disabled"
-                                      rowSpan={1}
-                                      colSpan={1}
-                                      style={{ width: "81.2812px" }}
-                                    >
-                                      {t("Price")}
-                                    </th>
-                                    <th
-                                      scope="col"
-                                      className="sorting_disabled"
-                                      rowSpan={1}
-                                      colSpan={1}
-                                      style={{ width: "143.797px" }}
-                                    >
-                                      {t("Change (24h)")}
-                                    </th>
-                                    {/* <th
+                              <thead>
+                                <tr role="row">
+                                  <th
+                                    scope="col"
+                                    className="sorting_disabled"
+                                    rowSpan={1}
+                                    colSpan={1}
+                                    style={{ width: "217.516px" }}
+                                  >
+                                    {t("Market")}
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    className="sorting_disabled"
+                                    rowSpan={1}
+                                    colSpan={1}
+                                    style={{ width: "81.2812px" }}
+                                  >
+                                    {t("Price")}
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    className="sorting_disabled"
+                                    rowSpan={1}
+                                    colSpan={1}
+                                    style={{ width: "143.797px" }}
+                                  >
+                                    {t("Change (24h)")}
+                                  </th>
+                                  {/* <th
                                   scope="col"
                                   className="sorting_disabled"
                                   rowSpan={1}
@@ -244,25 +257,25 @@ export default function TradesTable({ selectedCurrency }: any) {
                                 >
                                   {t("Chart")}
                                 </th> */}
-                                    <th
-                                      scope="col"
-                                      className="sorting_disabled"
-                                      rowSpan={1}
-                                      colSpan={1}
-                                      style={{ width: "107.766px" }}
-                                    >
-                                      {t("Volume")}
-                                    </th>
-                                    <th
-                                      scope="col"
-                                      className="sorting_disabled"
-                                      rowSpan={1}
-                                      colSpan={1}
-                                      style={{ width: "147.766px" }}
-                                    >
-                                      {t("Market Cap")}
-                                    </th>
-                                    {/* <th
+                                  <th
+                                    scope="col"
+                                    className="sorting_disabled"
+                                    rowSpan={1}
+                                    colSpan={1}
+                                    style={{ width: "107.766px" }}
+                                  >
+                                    {t("Volume")}
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    className="sorting_disabled"
+                                    rowSpan={1}
+                                    colSpan={1}
+                                    style={{ width: "147.766px" }}
+                                  >
+                                    {t("Market Cap")}
+                                  </th>
+                                  {/* <th
                                   scope="col"
                                   className="sorting_disabled text-end"
                                   rowSpan={1}
@@ -271,50 +284,52 @@ export default function TradesTable({ selectedCurrency }: any) {
                                 >
                                   {t("Actions")}
                                 </th> */}
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  {tradeItems?.map((item: any, index: any) => (
-                                    <tr role="row" className="odd" key={index}>
-                                      <td>
-                                        <div  className="d-flex">
-                                          <img
-                                            className="icon mr-3"
-                                            src={
-                                              item?.coin_icon || "/bitcoin.png"
-                                            }
-                                            alt="coin"
-                                            width="25px"
-                                            height="25px"
-                                          />
-                                          <a className="cellMarket" href="#">
-                                            <div className="marketSymbols">
-                                              <span className="quoteSymbol">
-                                                {selectType == 2 ||
-                                                selectType == 3 ? (
-                                                  <>
-                                                    {item.coin_type}/
-                                                    {item.base_coin_type}
-                                                  </>
-                                                ) : (
-                                                  <>{item.coin_type}</>
-                                                )}
-                                              </span>
-                                            </div>
-                                          </a>
-                                        </div>
-                                      </td>
-                                      <td>
-                                        {item.price}
-                                      </td>
-                                      <td>
-                                        { parseFloat(item.change) >= 0 ? 
-                                          <span className="changePos  text-success ">+{parseFloat(item.change).toFixed(2)}%</span>
-                                              : 
-                                          <span className="changePos  text-danger ">{parseFloat(item.change).toFixed(2)}%</span>
-                                        } 
-                                      </td>
-                                      {/* <td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {tradeItems?.map((item: any, index: any) => (
+                                  <tr role="row" className="odd" key={index}>
+                                    <td>
+                                      <div className="d-flex">
+                                        <img
+                                          className="icon mr-3"
+                                          src={
+                                            item?.coin_icon || "/bitcoin.png"
+                                          }
+                                          alt="coin"
+                                          width="25px"
+                                          height="25px"
+                                        />
+                                        <a className="cellMarket" href="#">
+                                          <div className="marketSymbols">
+                                            <span className="quoteSymbol">
+                                              {selectType == 2 ||
+                                              selectType == 3 ? (
+                                                <>
+                                                  {item.coin_type}/
+                                                  {item.base_coin_type}
+                                                </>
+                                              ) : (
+                                                <>{item.coin_type}</>
+                                              )}
+                                            </span>
+                                          </div>
+                                        </a>
+                                      </div>
+                                    </td>
+                                    <td>{item.price}</td>
+                                    <td>
+                                      {parseFloat(item.change) >= 0 ? (
+                                        <span className="changePos  text-success ">
+                                          +{parseFloat(item.change).toFixed(2)}%
+                                        </span>
+                                      ) : (
+                                        <span className="changePos  text-danger ">
+                                          {parseFloat(item.change).toFixed(2)}%
+                                        </span>
+                                      )}
+                                    </td>
+                                    {/* <td>
                                       {parseFloat(item.change) >= 0 ? (
                                         <img
                                           src="/chart-image-1.png"
@@ -329,17 +344,17 @@ export default function TradesTable({ selectedCurrency }: any) {
                                         />
                                       )}
                                     </td> */}
-                                      <td>
-                                        {parseFloat(item.volume).toFixed(2)}
-                                      </td>
-                                      <td>
-                                        {item.total_balance
-                                          ? parseFloat(
-                                              item.total_balance
-                                            ).toFixed(2)
-                                          : 0}
-                                      </td>
-                                      {/* <td
+                                    <td>
+                                      {parseFloat(item.volume).toFixed(2)}
+                                    </td>
+                                    <td>
+                                      {item.total_balance
+                                        ? parseFloat(
+                                            item.total_balance
+                                          ).toFixed(2)
+                                        : 0}
+                                    </td>
+                                    {/* <td
                                       className="text-end"
                                       onClick={async () => {
                                         await localStorage.setItem(
@@ -373,35 +388,44 @@ export default function TradesTable({ selectedCurrency }: any) {
                                         {t("Trade")}
                                       </a>
                                     </td> */}
-                                    </tr>
-                                  ))}
-                                </tbody>
-                              </table>
-                            </div>
-                          </div>
-                          <div className="p-2">
-                            <ReactPaginate
-                              nextLabel=">"
-                              onPageChange={handlePageClick}
-                              pageRangeDisplayed={5}
-                              pageCount={Math.ceil(tradeDatas.total / 15)}
-                              previousLabel="<"
-                              renderOnZeroPageCount={null}
-                              className={`d-flex align-items-center justify-content-center`}
-                              pageLinkClassName={`paginate-number`}
-                              activeLinkClassName={`active-paginate-cls`}
-                              previousLinkClassName={`text-primary-color text-25 mr-2`}
-                              nextLinkClassName={`text-primary-color text-25 ml-2`}
-                            />
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
                           </div>
                         </div>
-                      ) : (
-                        <NoItemFound />
-                      )}
-                    </>
-                  )}
-                </div>
+                        <div className="p-2 text-center">
+                          {/* <ReactPaginate
+                            nextLabel=">"
+                            onPageChange={handlePageClick}
+                            pageRangeDisplayed={5}
+                            pageCount={Math.ceil(tradeDatas.total / 15)}
+                            previousLabel="<"
+                            renderOnZeroPageCount={null}
+                            className={`d-flex align-items-center justify-content-center`}
+                            pageLinkClassName={`paginate-number`}
+                            activeLinkClassName={`active-paginate-cls`}
+                            previousLinkClassName={`text-primary-color text-25 mr-2`}
+                            nextLinkClassName={`text-primary-color text-25 ml-2`}
+                          /> */}
+                          {tradeDatas.last_page > 1 && (
+                            <button
+                              className="btn btn-primary"
+                              onClick={loadMore}
+                              disabled={isLoading}
+                            >
+                              {isLoading ? "Loading..." : "Load More"}
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    ) : (
+                      <NoItemFound />
+                    )}
+                  </>
+                )}
               </div>
+            </div>
           </div>
         </div>
       </div>
