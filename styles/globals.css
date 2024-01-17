@@ -120,3 +120,7 @@ input:focus,
 .table-search-wrapper i.fas.fa-search {
   color: #020202;
 }
+
+.cp-user-sidebar {
+  z-index: 999 !important;
+}
